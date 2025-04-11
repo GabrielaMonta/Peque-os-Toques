@@ -12,6 +12,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <!-- Contenido del menu-->
+             
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                  <!-- Menú a la izquierda -->
@@ -49,7 +50,7 @@
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 
-                <!-- Menu izquierda -->
+                <!-- Menu derecha -->
                 <form class="d-flex ms-3" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
@@ -75,7 +76,7 @@
     <!-- Pie de página -->
     <footer>© 2025 - Taller de Programación I </footer> 
 
-    <script src="assets/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
   
   </body>
 
