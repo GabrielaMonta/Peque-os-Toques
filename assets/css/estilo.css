@@ -1,0 +1,16 @@
+.navbar {
+    background-color: #f6f5f2; /*fondo del nav*/
+}
+.navbar-brand {
+    color: #1c1c1c !important; /* caracteristicas del titulo*/
+}
+  
+.navbar-nav .nav-link {
+    color: #1c1c1c  !important; /* caracteristicas de las opciones*/
+   
+}
+  
+.navbar-nav .nav-link:hover { /* resaltar al pasar el mouse*/
+    background-color: #eae0d5;
+    border-radius: 5px; 
+}
