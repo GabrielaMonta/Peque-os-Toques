@@ -48,6 +48,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
+                
                 <!-- Menu izquierda -->
                 <form class="d-flex ms-3" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
