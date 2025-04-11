@@ -66,6 +66,25 @@
             </div>
         </div>
     </nav>
+   
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+             <div class="carousel-inner" >
+                <div class="carousel-item active">
+                    <img src="assets/img/carrusel/imagen1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/carrusel/imagen2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/carrusel/imagen3.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        
+    
+        
+
+    
      <!-- Contenedor para el título y el párrafo -->
     <div> 
       <h1 class="titulo">Pequeños Toques</h1>
