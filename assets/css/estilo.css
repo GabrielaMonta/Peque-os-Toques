@@ -2,11 +2,11 @@
     background-color: #f6f5f2; /*fondo del nav*/
 }
 .navbar-brand {
-    color: #1c1c1c !important; /* caracteristicas del titulo*/
+    color: #1c1c1c; /* caracteristicas del titulo*/
 }
   
 .navbar-nav .nav-link {
-    color: #1c1c1c  !important; /* caracteristicas de las opciones*/
+    color: #1c1c1c ; /* caracteristicas de las opciones*/
    
 }
   
@@ -14,3 +14,25 @@
     background-color: #eae0d5;
     border-radius: 5px; 
 }
+
+.boton-buscar{
+    border-color: #bfc86a; 
+    color:#1c1c1c;
+}
+
+.boton-buscar:hover{
+    border-color: #bfc86a; 
+    background-color:#bfc86a;
+}
+
+.boton-comprar{
+    background-color: #9da53a;
+    border: 1px solid #1c1c1c; 
+}
+
+.boton-comprar:hover{
+    background-color: #eae0d5;
+    border-color: #1c1c1c;
+    text-decoration: underline;   
+}
+
