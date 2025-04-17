@@ -4,10 +4,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ledger&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap");
 
 .titulo-central{
     font-family: 'Hurricane', cursive; /*proba cambiando Hurricane por Cookie"*/
-    font-size: 48px;
+    font-size: 3rem;
 }
 
 .titulo-categorias{
@@ -25,4 +26,43 @@
     font-family: 'Ledger';
     color: #1c1c1c;
     font-size: 16px;
+}
+
+.footer-news{
+    font-family: 'Libre Bondi', serif;
+    color: white;
+    text-align: center 
+}
+
+.footer-hora{
+    font-family: 'Libre Bondi', serif;
+    color: white;
+    text-align: center 
+}
+
+.footer-consulta{
+    font-family: 'Hurricane', cursive, text-center; 
+    font-size: 35px;
+    text-align: center 
+}
+.boton-ok{
+    font-family: 'Forum';
+    color: rgb(0, 0, 0);
+}
+.boton-ok:hover{
+    font-family: 'Forum';
+    color: white;
+}
+.resaltado{
+    font-family: 'Libre Bondi', serif;
+    font-size: 1.5rem;
+    color: #9da53a;
+}
+.creditos{
+    font-size: 13px;
+    text-align: center;
+    font-family: 'Nunito Sans';
+}
+.letra-footer{
+    font-family: 'Nunito Sans', serif;
 }

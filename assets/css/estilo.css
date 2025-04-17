@@ -1,18 +1,22 @@
 .navbar {
     background-color: #f6f5f2; /*fondo del nav*/
+    
 }
 .navbar-brand {
     color: #1c1c1c; /* caracteristicas del titulo*/
 }
-  
+.navbar-nav .nav-link:hover{
+    background-color: #eae0d5;
+    border-radius: 5px; 
+}  
 .navbar-nav .nav-link {
     color: #1c1c1c ; /* caracteristicas de las opciones*/
    
 }
   
-.navbar-nav .nav-link:hover { /* resaltar al pasar el mouse*/
+.lupa:hover { /* resaltar al pasar el mouse*/
     background-color: #eae0d5;
-    border-radius: 5px; 
+    border-radius: 10px; 
 }
 
 .boton-buscar{
@@ -36,3 +40,94 @@
     text-decoration: underline;   
 }
 
+.footer-news{
+  background-color: #bfc86a;
+  border-radius: 10px;
+  padding: 6px;
+  width: 60%;
+  font-weight: bold;
+
+}
+
+.footer-hora{
+    background-color: #bfc86a;
+    border-radius: 10px;/*redondear*/
+    padding: 6px;/*margenes internos*/
+    width: 60%;/*tamaño del fondo*/
+    font-weight: bold;/*negrita*/
+}
+
+.boton-ok{
+  background-color: #eae0d5;
+  border-color: #bfc86a;
+  border-radius: 10px;
+  padding: 3px 10px;
+  font-size: 1rem;
+  width: 120px;
+}
+
+.form-suscription{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.input-email{
+    flex: 1 1 10%;
+    padding: 3px;
+    font-size: 1rem;
+    
+}
+
+.boton-ok:hover{
+    border-color: #bfc86a; 
+    background-color:#bfc86a;
+}
+
+.container-p1{
+    background-color: #eae0d5;
+    /*empuja todo el contenido hacia abajo, desde el borde superior del fondo*/
+    padding-top: 20px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+}
+.container-p2{
+    background-color: #bfc86a;
+    margin-top: 0;     /* Elimina el margen superior */
+    margin-bottom: 0;  /* Elimina el margen inferior */
+    padding-top: 15px;  /* Podés ajustar si querés un poco de aire */
+    padding-bottom: 1px;
+}
+
+.input-short{
+    width: 210px;
+}
+
+.toggle-busqueda {
+    display: none;
+  }
+  
+  @media (max-width: 991.98px) {
+    .form-busqueda {
+      position: relative;
+    }
+  
+    .toggle-busqueda:checked ~ .input-busqueda {
+      display: block !important;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      width: 200px;
+      z-index: 1000;
+      background: white;
+      border: 1px solid #bfc86a;
+      border-radius: 5px;
+      padding: 5px 10px;
+    }
+  
+    .input-busqueda {
+      display: none;
+    }
+  }
+  
