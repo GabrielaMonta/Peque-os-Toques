@@ -1,5 +1,5 @@
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg ps-2">
+    <nav class="navbar fixed-top navbar-expand-lg">
             <div class="container-fluid">
                 
                 <!--Boton hamburguesa-->
@@ -15,37 +15,36 @@
                     <img src="assets\img\Pequeños toques logo.png" alt="Logo" height="40">
                 </a>
 
-                <!-- Contenedor derecho, buscador e icoonos -->
-                <div class="d-flex align-items-center order-lg-3 ms-auto">
-                
-                    <!-- Buscador -->
-                    <form class="d-flex align-items-center form-busqueda position-relative me-2" role="search">
-                        <input type="checkbox" id="toggleBusqueda" class="toggle-busqueda">
-                
-                        <!-- Lupa (solo visible en responsive) -->
-                        <label for="toggleBusqueda" class="btn lupa-busqueda p-0 d-lg-none">
-                            <a class="lupa" href="#"><i class=" bi bi-search fs-4" style="color: #bfc86a;"></i></a>
-                        </label>
+                <!-- Contenedor derecho iconos -->
+                <div class="d-flex align-items-center order-lg-3">
 
-                        <!-- Input visible en pantallas grandes -->
-                        <input class="form-control input-busqueda d-none d-lg-block" type="search" placeholder="Buscar" aria-label="Buscar">
-                        <button class="btn btn-outline-successboton boton-buscar letra-nav d-none d-lg-block" type="submit">Buscar</button>
-                    </form>
+                    <!-- Íconos lupa para buscador -->
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item  ms-3">
+                            <form class=" form-busqueda" role="search">
+                                <input type="checkbox" id="toggleBusqueda" class="toggle-busqueda">
+                                
+                                <label for ="toggleBusqueda" class="btn lupa-busqueda p-0">
+                                <a class="nav-link"><i class="bi bi-search fs-4" style="color: #bfc86a;"></i></a>
+                                </label>
+                               
+                                <input class="form-control input-busqueda" type="search" placeholder="Buscar" aria-label="Buscar">
+                            </form>
+                        </li>
 
+                        <li class="nav-item ms-3">
+                            <a class="nav-link d-none d-md-block " href="#"><i class="bi bi-person-circle fs-4" style="color: #bfc86a;"></i></a>
+                        </li>
 
-                <!-- Íconos -->
-                <ul class="navbar-nav flex-row">
-                    <li class="nav-item ms-3">
-                        <a class="nav-link" href="#"><i class="bi bi-person-circle fs-4" style="color: #bfc86a;"></i></a>
-                    </li>
-                    <li class="nav-item ms-3">
-                        <a class="nav-link" href="#"><i class="bi bi-heart fs-4" style="color: #bfc86a;"></i></a>
-                    </li>
-                    <li class="nav-item ms-3">
-                        <a class="nav-link" href="#"><i class="bi bi-basket3 fs-4" style="color: #bfc86a;"></i></a>
-                    </li>
-                </ul>
-            </div>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link d-none d-md-block " href="#"><i class="bi bi-heart fs-4" style="color: #bfc86a;"></i></a>
+                        </li>
+
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="#"><i class="bi bi-basket3 fs-4" style="color: #bfc86a;"></i></a>
+                        </li>
+                    </ul>
+                </div>
                 <!-- Contenido del menu-->
                 <div class="collapse navbar-collapse order-lg-1" id="navbarSupportedContent">
 
@@ -79,6 +78,13 @@
                             </ul>
                         </li>
                     </ul>    
+                    <div class="d-block d-md-none">
+                     <a href="#"><i class="bi bi-person-circle fs-4 me-3" style="color: #bfc86a;"></i>Iniciar Sesión</a>
+                    </div> 
+                    
+                    <div class="d-block d-md-none">
+                     <a href="#"><i class="bi bi-heart fs-4 me-3" style="color: #bfc86a;"></i>Favoritos</a>
+                    </div>
                     
                 </div>        
 

@@ -19,16 +19,6 @@
     border-radius: 10px; 
 }
 
-.boton-buscar{
-    border-color: #bfc86a; 
-    color:#1c1c1c;
-}
-
-.boton-buscar:hover{
-    border-color: #bfc86a; 
-    background-color:#bfc86a;
-}
-
 .boton-comprar{
     background-color: #9da53a;
     border: 1px solid #1c1c1c; 
@@ -56,7 +46,7 @@ main {
   background-color: #bfc86a;
   border-radius: 10px;
   padding: 6px;
-  width: 70%;
+  width: 50%;
   font-weight: bold;
 
 }
@@ -65,7 +55,7 @@ main {
     background-color: #bfc86a;
     border-radius: 10px;/*redondear*/
     padding: 6px;/*margenes internos*/
-    width: 60%;/*tamaño del fondo*/
+    width: 50%;/*tamaño del fondo*/
     font-weight: bold;/*negrita*/
 }
 
@@ -115,31 +105,37 @@ main {
 .input-short{
     width: 210px;
 }
-
+  
+   /* Ocultamos el checkbox (controlador del toggle) */
 .toggle-busqueda {
     display: none;
+
   }
   
-  @media (max-width: 991.98px) {
-    .form-busqueda {
-      position: relative;
-    }
+  /* Ocultamos el input por defecto */
+  .input-busqueda {
+    display: none;
+    position: absolute;
+    top: 40px; /* o como quieras posicionarlo */
+    right: 0;
+    width: 0px;
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
   
-    .toggle-busqueda:checked ~ .input-busqueda {
-      display: block !important;
-      position: absolute;
-      top: 50px;
-      right: 0;
-      width: 200px;
-      z-index: 1000;
-      background: white;
-      border: 1px solid #bfc86a;
-      border-radius: 5px;
-      padding: 5px 10px;
-    }
-  
-    .input-busqueda {
-      display: none;
-    }
+  /* Cuando el checkbox está chequeado, mostramos el input */
+  .toggle-busqueda:checked ~ .input-busqueda {
+    display: block;
+  }
+
+  /** {
+    outline: 1px solid red;
+  }*/
+
+  html, body {
+    overflow-x: hidden;
   }
   
