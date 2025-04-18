@@ -40,11 +40,23 @@
     text-decoration: underline;   
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0; /* por si el navegador agrega márgenes por defecto */
+}
+  
+main {
+    flex: 1; /* esto empuja el footer hacia abajo */
+    padding-top: 90px;
+}
+
 .footer-news{
   background-color: #bfc86a;
   border-radius: 10px;
   padding: 6px;
-  width: 60%;
+  width: 70%;
   font-weight: bold;
 
 }

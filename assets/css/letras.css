@@ -42,7 +42,7 @@
 
 .footer-consulta{
     font-family: 'Hurricane', cursive, text-center; 
-    font-size: 35px;
+    font-size: 25px;
     text-align: center 
 }
 .boton-ok{
@@ -55,13 +55,15 @@
 }
 .resaltado{
     font-family: 'Libre Bondi', serif;
-    font-size: 1.5rem;
+    font-size: 18px;
     color: #9da53a;
 }
 .creditos{
     font-size: 13px;
     text-align: center;
     font-family: 'Nunito Sans';
+    color: rgb(0, 0, 0);
+    text-decoration: none
 }
 .letra-footer{
     font-family: 'Nunito Sans', serif;
