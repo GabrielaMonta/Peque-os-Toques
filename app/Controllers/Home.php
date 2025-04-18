@@ -51,7 +51,7 @@ class Home extends BaseController
 
     public function novedades()
     {
-        $data['titulo'] = 'Preguntas Frecuentes';
+        $data['titulo'] = 'Novedades';
         echo view('front/head', $data);
         echo view('front/navbar', $data);
         echo view('front/novedades', $data);
