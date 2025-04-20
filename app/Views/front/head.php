@@ -8,5 +8,6 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
         <link href="assets/css/estilo.css" rel="stylesheet" > 
         <link href="assets/css/letras.css" rel="stylesheet" > 
+        <link href="assets/css/estiloCard.css" rel="stylesheet" > 
         <link rel="icon" type="image/x-icon" href="assets\img\Pequeños-toques.ico">
     </head>

@@ -48,10 +48,55 @@
     </section>
       
 
-     <!-- Contenedor para el título y el párrafo -->
+     <!-- Contenedor para el título y el párrafo 
     <div> 
       <h1 class="titulo">Pequeños Toques</h1>
       <p class="text-center text-uppercase fw-bold fst-italic">Somos un emprendimiento dedicado a la venta de indumentaria</p>
+    </div>-->
+
+    <div class="container mt-5">
+    <div class="row g-4">
+    
+            <!-- Card 1: Indumentaria -->
+            <div class="col-md-6">
+                <a href="<?php echo base_url('novedades');?>" class="text-decoration-none"> 
+                    <div class="categoria-card imagen-derecha">
+                        <img src="assets/img/indumentaria.png" class="categoria-imagen" alt="Indumentaria">
+                        <div class="categoria-texto categoria-texto-derecha">INDUMENTARIA</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 2: Calzado -->
+            <div class="col-md-6">
+                <a href="<?php echo base_url('novedades');?>" class="text-decoration-none"> 
+                    <div class="categoria-card">
+                        <img src="assets/img/calzado.png" class="categoria-imagen" alt="Calzado">
+                        <div class="categoria-texto">CALZADO</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 3: Blanquería -->
+            <div class="col-md-6">
+                <a href="<?php echo base_url('novedades');?>" class="text-decoration-none color: inherit;"> 
+                    <div class="categoria-card imagen-derecha" >
+                        <img src="assets/img/blanqueria.png" class="categoria-imagen" alt="Blanqueria">
+                        <div class="categoria-texto categoria-texto-derecha">BLANQUERIA</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 4: Marroquinería la imagen cambia, le pongo la por defecto de boostrsap-->
+            <div class="col-md-6">
+                <a href="<?php echo base_url('novedades');?>" class="text-decoration-none"> 
+                    <div class="categoria-card">
+                        <img src="assets/img/marroquineria.png" class="categoria-imagen" alt="Marroquineria">
+                        <div class="categoria-texto">MARROQUINERIA</div>
+                    </div>
+                 </a>
+            </div>
+        </div>
     </div>
    
 
