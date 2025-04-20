@@ -25,9 +25,11 @@
 }
 
 .boton-comprar:hover{
-    background-color: #eae0d5;
-    border-color: #1c1c1c;
-    text-decoration: underline;   
+    background-color: white;
+    border-color: #9da53a;
+    color:#9da53a;
+    font-weight: bold;
+   
 }
 
 body {

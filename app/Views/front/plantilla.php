@@ -1,4 +1,4 @@
-    <section class="w-100">
+    <section class="w-100 mb-5">
         <div id="carouselExampleDark" class="carousel carousel-dark slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -48,13 +48,11 @@
     </section>
       
 
-     <!-- Contenedor para el título y el párrafo 
-    <div> 
-      <h1 class="titulo">Pequeños Toques</h1>
-      <p class="text-center text-uppercase fw-bold fst-italic">Somos un emprendimiento dedicado a la venta de indumentaria</p>
-    </div>-->
+    <div class="container-fluid mt-5 mb-5 ingresos">
+        <h2>¡NUEVOS INGRESOS!</h2>
+    </div> 
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
     <div class="row g-4">
     
             <!-- Card 1: Indumentaria -->
@@ -79,7 +77,7 @@
 
             <!-- Card 3: Blanquería -->
             <div class="col-md-6">
-                <a href="<?php echo base_url('novedades');?>" class="text-decoration-none color: inherit;"> 
+                <a href="<?php echo base_url('novedades');?>" class="text-decoration-none"> 
                     <div class="categoria-card imagen-derecha" >
                         <img src="assets/img/blanqueria.png" class="categoria-imagen" alt="Blanqueria">
                         <div class="categoria-texto categoria-texto-derecha">BLANQUERIA</div>
@@ -99,5 +97,25 @@
         </div>
     </div>
    
+    <div class= "container-fluid mt-5 mb-5 eslogan">
+        <h2 class="titulo-central">Pequeños Toques</h2>
+        <p class="letra-eslogan">Estilo, comodidad y variedad en todos los talles, para damas, caballeros, jóvenes y niños</p>
+        <a href="#" class="btn boton-comprar letra-botones">Comprar</a>
+    </div>
 
+    <div class="container-fluid mt-5 mb-5 d-flex justify-content-center gap-5">
+        <div class="card text-center extra-card">
+            <i class="bi bi-truck iconos-extra mb-0"></i>
+            <div class="card-body pt-0">
+                <p class="card-text mb-0">Envíos a todo el país</p>
+            </div>
+        </div>
+
+        <div class="card text-center extra-card">
+            <i class="bi bi-credit-card iconos-extra mb-0"></i>
+            <div class="card-body pt-0">
+                <p class="card-text mb-0">Todos los medios de pago</p>
+            </div>
+        </div>
+    </div>
   
