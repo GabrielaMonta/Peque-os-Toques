@@ -33,6 +33,18 @@
     width: 50%;
 }
 
+@media (max-width: 768px) {
+    .categoria-texto {
+      font-size: 1.1rem;
+    }
+}
+  
+@media (max-width: 576px) {
+    .categoria-texto {
+      font-size: 1rem;
+    }
+}
+
 .categoria-texto-derecha{
     text-align: left;
     padding-left: 1rem;
