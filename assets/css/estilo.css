@@ -139,3 +139,29 @@ main {
     overflow-x: hidden;
   }
   
+  .container-quienessomos{
+    background-color: #ffffff;
+    padding-top: 20px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+  }
+
+  .img-container{
+    position: relative;
+        height: auto;
+        width: 50%; 
+        height: auto;
+        
+  }
+
+  
+
+  .preguntas-frecuentes{
+    background-color: #bfc86a;
+    border-radius: 10px;
+    padding: 6px;
+    width: auto; 
+    display: inline-block;
+  }
+  
