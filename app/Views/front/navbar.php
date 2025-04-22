@@ -33,7 +33,7 @@
                         </li>
 
                         <li class="nav-item ms-3">
-                            <a class="nav-link d-none d-md-block " href="#"><i class="bi bi-person-circle fs-4" style="color: #bfc86a;"></i></a>
+                            <a class="nav-link d-none d-md-block " href="<?php echo base_url('inicio-sesion');?>"><i class="bi bi-person-circle fs-4" style="color: #bfc86a;"></i></a>
                         </li>
 
                         <li class="nav-item ms-3">
@@ -60,10 +60,11 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle letra-nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Indumentaria</a></li>
-                                <li><a class="dropdown-item" href="#">Calzado</a></li>
-                                <li><a class="dropdown-item" href="#">Blanqueria</a></li>
-                                <li><a class="dropdown-item" href="#">Marroquineria</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url('catalogo-indumentaria');?>">Indumentaria</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url('catalogo-calzado');?>">Calzado</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url('catalogo-blanqueria');?>">Blanqueria</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url('catalogo-marroquineria');?>">Marroquineria</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url('catalogo-todo');?>">Ver todo</a></li>
                             </ul>
                         </li>
                         <!-- Dropdown Nosotros -->
@@ -79,7 +80,7 @@
                         </li>
                     </ul>    
                     <div class="d-block d-md-none">
-                     <a href="#"><i class="bi bi-person-circle fs-4 me-3" style="color: #bfc86a;"></i>Iniciar Sesión</a>
+                     <a href="<?php echo base_url('inicio-sesion');?>"><i class="bi bi-person-circle fs-4 me-3" style="color: #bfc86a;"></i>Iniciar Sesión</a>
                     </div> 
                     
                     <div class="d-block d-md-none">
