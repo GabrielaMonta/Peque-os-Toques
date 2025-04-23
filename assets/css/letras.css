@@ -82,11 +82,24 @@
     font-family: 'Libre Bondi', serif; 
     font-size: clamp(12px, 1.1vw, 32px);
 }
+
+.parrafos-contacto{
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1.1vw, 32px);
+    margin:0;
+}
+
 .letra-sub-nosotros{
     font-family: 'Ledger', serif;
     text-align: center;
     font-size: clamp(20px, 3vw, 32px);
     color: #bfc86a;
+}
+.letra-sub-contacto{
+    font-family: 'Ledger', serif;
+    text-align: center;
+    font-size: clamp(20px, 3vw, 32px);
+    color: #000000;
 }
 .letra-valores{
     font-family: 'Libre Bondi', serif; 
@@ -99,6 +112,13 @@
     margin-top: 2rem;
     margin-bottom: 0px;
 }
+.letra-consulta{
+    font-family: 'Hurricane'; 
+    text-align: center;
+    
+    font-size: clamp(30px, 4vw, 32px);
+    /*margin-bottom: 0px;*/
+}
 
 .preguntas-frecuentes{
     font-family: 'Libre Bondi', serif;
@@ -108,3 +128,14 @@
     letter-spacing: 1.2px;
     font-weight: bold;
 }
+.boton-enviarcon{
+    font-family: 'Libre Bondi', serif;
+    color: #ffffff; 
+    font-size: clamp(12px, 1.1vw, 32px);
+  }
+  .boton-enviarcon:hover{
+    font-family: 'Libre Bondi', serif;
+    color: #000000; 
+    font-size: clamp(12px, 1.1vw, 32px);
+}
+
