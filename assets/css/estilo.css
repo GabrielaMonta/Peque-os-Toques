@@ -141,3 +141,118 @@ main {
     overflow-x: hidden;
   }
   
+  .container-quienessomos{
+    background-color: #ffffff;
+    padding-top: 20px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+  }
+
+  .img-container{
+    position: relative;
+        height: auto;
+        width: 50%; 
+        height: auto;
+        
+  }
+
+  
+
+  .preguntas-frecuentes{
+    background-color: #bfc86a;
+    border-radius: 10px;
+    padding: 6px;
+    width: auto; 
+    display: inline-block;
+  }
+  
+  .container-contacto{
+    background-color: #eae0d5;
+    padding-top: 2vw;
+    padding-right: 30px;
+    padding-bottom: 4vw;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    /*padding-left: 20px;*/
+  }
+  .letra-sub-contacto{
+    background-color: #f6f5f2;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 5px;
+    width: clamp(180px, 25vw, 25vw);
+    display: inline-block;
+
+  }
+
+  .icono-redes{
+    background-color: #f6f5f2;
+    padding: 10px;              /* espacio alrededor del ícono */
+    border-radius: 50%;         /* ¡esto lo hace redondo! */
+    display: inline-flex;       /* para centrar el ícono */
+    align-items: center;
+    justify-content: center;
+    width: 50px;                /* ancho fijo */
+    height: 50px;               /* alto igual al ancho = círculo */
+  }
+
+  .fila-contacto{
+    display: flex;
+    align-items: center; /* Alinea verticalmente al centro */
+    gap: 2vw;            /* Espacio entre ícono y número */
+    margin-top:2vw;  
+  }
+
+  .container-formulario-consulta{
+    background-color: #ffffff;
+    border-radius: 15px; 
+    padding-bottom: 15px;
+    
+  }
+
+  .input-nombre{
+    flex: 1 1 100%;
+    padding: 3px;
+    border-radius: 5px; 
+    background-color: #f6f5f2;
+    border-color: #b38b6d;
+  }
+  .input-nombre :hover{
+    flex: 1 1 100%;
+    padding: 3px;
+    border-radius: 5px; 
+    background-color: #b38b6d;
+    border-color: #f6f5f2;
+  }
+
+  .input-emailcon{
+    flex: 1 1 100%;
+    padding: 3px;
+    border-radius: 5px; 
+    background-color: #f6f5f2;
+    border-color: #b38b6d;
+  }
+  .input-emailcon :hover{
+    flex: 1 1 100%;
+    padding: 3px;
+    border-radius: 5px; 
+    background-color: #b38b6d;
+    border-color: #f6f5f2;
+  }
+  
+  .input-mensaje{
+    flex: 1 1 100%;
+    padding: 3px;
+    border-radius: 5px; 
+    background-color: #f6f5f2;
+  }
+  
+  .boton-enviarcon{
+    background-color: #b38b6d;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+   
+  }
+  
+  
