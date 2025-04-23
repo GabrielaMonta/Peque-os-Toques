@@ -25,11 +25,9 @@
 }
 
 .boton-comprar:hover{
-    background-color: white;
-    border-color: #9da53a;
-    color:#9da53a;
-    font-weight: bold;
-   
+    background-color: #eae0d5;
+    border-color: #1c1c1c;
+    text-decoration: underline;   
 }
 
 body {
@@ -41,7 +39,7 @@ body {
   
 main {
     flex: 1; /* esto empuja el footer hacia abajo */
-    padding-top: 90px;
+    padding-top: 70px;
 }
 
 .footer-news{
@@ -156,16 +154,6 @@ main {
         height: auto;
         
   }
-
-  
-
-  .preguntas-frecuentes{
-    background-color: #bfc86a;
-    border-radius: 10px;
-    padding: 6px;
-    width: auto; 
-    display: inline-block;
-  }
   
   .container-contacto{
     background-color: #eae0d5;
@@ -176,7 +164,7 @@ main {
     margin-bottom: 0px;
     /*padding-left: 20px;*/
   }
-  .letra-sub-contacto{
+  .letra-sub{
     background-color: #f6f5f2;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
@@ -185,12 +173,39 @@ main {
     display: inline-block;
 
   }
+  .letra-sub-nosotros{
+    background-color: #f6f5f2;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 5px;
+    width: clamp(250px, 36vw, 36vw);
+    display: inline-block;
+    margin-top: 20px;
+  }
+  .letra-sub-comercializacion{
+    background-color: #f6f5f2;
+    margin-top: 20px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 5px;
+    width: clamp(260px, 41vw, 41vw);
+    display: inline-block;
+  }
+  .letra-sub-preguntas{
+    background-color: #f6f5f2;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 5px;
+    width: clamp(180px, 48vw, 48vw);
+    display: inline-block;
+    margin-top: 20px;
+  }
 
   .icono-redes{
     background-color: #f6f5f2;
-    padding: 10px;              /* espacio alrededor del ícono */
-    border-radius: 50%;         /* ¡esto lo hace redondo! */
-    display: inline-flex;       /* para centrar el ícono */
+    padding: 10px;              
+    border-radius: 50%;        
+    display: inline-flex;       
     align-items: center;
     justify-content: center;
     width: 50px;                /* ancho fijo */
@@ -206,35 +221,34 @@ main {
 
   .container-formulario-consulta{
     background-color: #ffffff;
-    border-radius: 15px; 
-    padding-bottom: 15px;
+    border-radius: 10px; 
+    padding-bottom: 50px;
+    padding-top: 50px;
     
   }
 
   .input-nombre{
-    flex: 1 1 100%;
+    
     padding: 3px;
     border-radius: 5px; 
     background-color: #f6f5f2;
     border-color: #b38b6d;
   }
   .input-nombre :hover{
-    flex: 1 1 100%;
-    padding: 3px;
+    padding: 5px;
     border-radius: 5px; 
     background-color: #b38b6d;
     border-color: #f6f5f2;
   }
 
   .input-emailcon{
-    flex: 1 1 100%;
     padding: 3px;
     border-radius: 5px; 
     background-color: #f6f5f2;
     border-color: #b38b6d;
   }
   .input-emailcon :hover{
-    flex: 1 1 100%;
+
     padding: 3px;
     border-radius: 5px; 
     background-color: #b38b6d;
@@ -242,7 +256,7 @@ main {
   }
   
   .input-mensaje{
-    flex: 1 1 100%;
+    
     padding: 3px;
     border-radius: 5px; 
     background-color: #f6f5f2;
@@ -254,5 +268,54 @@ main {
     border: 1px solid #ccc;
    
   }
+  
+  .titulo-subrayado {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px; 
+  }
+  
+  .titulo-subrayado::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50vw;
+    height: 2px; /* grosor de la línea */
+    background-color: #eae0d5; /* color de la línea */
+  }
+  
+  .cuadro-mvv{
+    background-color: #f6f5f2; /* Cambiá el color a gusto */
+    border-color: #f6f5f2;
+    border-radius: 15px;
+    height: 100%; /* Para igualar altura si los textos son distintos */
+    display: flex;
+    margin-left: 2vw;
+   margin-left: 4vw;
+  }
+
+.contacto-horario{
+    display:inline-block;
+    border: 2px solid #bfc86a;
+    border-radius: 10px;/*redondear*/
+    padding: 6px;/*margenes internos*/
+    width: 40%;/*tamaño del fondo*/
+    
+}
+
+.container-horario{
+    text-align: center;
+    padding-top: 90px;
+
+}
+  
+.quienessomos-mvv{
+  
+}  
+  
+  
+  
+  
   
   

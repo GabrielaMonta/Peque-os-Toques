@@ -11,28 +11,28 @@
                 <img src="assets/img/carrusel/zapateria.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                     <h5 class="display-4 titulo-categorias">ZAPATERIA</h5>
-                    <a href="#" class="btn boton-comprar letra-botones">Comprar</a>
+                    <a href="<?php echo base_url('catalogo-calzado');?>" class="btn boton-comprar letra-botones">Comprar</a>
                 </div>
                 </div>
                 <div class="carousel-item">
                 <img src="assets/img/carrusel/indumentaria.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                     <h5 class="display-4 titulo-categorias">INDUMENTARIA</h5>
-                    <a href="#" class="btn boton-comprar letra-botones">Comprar</a>
+                    <a href="<?php echo base_url('catalogo-indumentaria');?>" class="btn boton-comprar letra-botones">Comprar</a>
                 </div>
                 </div>
                 <div class="carousel-item">
                 <img src="assets/img/carrusel/marroquineria.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                     <h5 class="display-4 titulo-categorias">MARROQUINERIA</h5>
-                    <a href="#" class="btn boton-comprar letra-botones">Comprar</a>
+                    <a href="<?php echo base_url('catalogo-marroquineria');?>" class="btn boton-comprar letra-botones">Comprar</a>
                 </div>
                 </div>
                 <div class="carousel-item">
                 <img src="assets/img/carrusel/blanqueria.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                     <h5 class="display-4 titulo-categorias">BLANQUERIA</h5>
-                    <a href="#" class="btn boton-comprar letra-botones">Comprar</a>
+                    <a href="<?php echo base_url('catalogo-blanqueria');?>" class="btn boton-comprar letra-botones">Comprar</a>
                 </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
     
             <!-- Card 1: Indumentaria -->
             <div class="col-md-6">
-                <a href="<?php echo base_url('novedades');?>" class="text-decoration-none"> 
+                <a href="<?php echo base_url('catalogo-indumentaria');?>" class="text-decoration-none"> 
                     <div class="categoria-card imagen-derecha">
                         <img src="assets/img/indumentaria.png" class="categoria-imagen" alt="Indumentaria">
                         <div class="categoria-texto categoria-texto-derecha">INDUMENTARIA</div>
@@ -67,7 +67,7 @@
 
             <!-- Card 2: Calzado -->
             <div class="col-md-6">
-                <a href="<?php echo base_url('novedades');?>" class="text-decoration-none"> 
+                <a href="<?php echo base_url('catalogo-calzado');?>" class="text-decoration-none"> 
                     <div class="categoria-card">
                         <img src="assets/img/calzado.png" class="categoria-imagen" alt="Calzado">
                         <div class="categoria-texto">CALZADO</div>
@@ -77,7 +77,7 @@
 
             <!-- Card 3: Blanquería -->
             <div class="col-md-6">
-                <a href="<?php echo base_url('novedades');?>" class="text-decoration-none"> 
+                <a href="<?php echo base_url('catalogo-blanqueria');?>" class="text-decoration-none"> 
                     <div class="categoria-card imagen-derecha" >
                         <img src="assets/img/blanqueria.png" class="categoria-imagen" alt="Blanqueria">
                         <div class="categoria-texto categoria-texto-derecha">BLANQUERIA</div>
@@ -87,7 +87,7 @@
 
             <!-- Card 4: Marroquinería la imagen cambia, le pongo la por defecto de boostrsap-->
             <div class="col-md-6">
-                <a href="<?php echo base_url('novedades');?>" class="text-decoration-none"> 
+                <a href="<?php echo base_url('catalogo-marroquineria');?>" class="text-decoration-none"> 
                     <div class="categoria-card">
                         <img src="assets/img/marroquineria.png" class="categoria-imagen" alt="Marroquineria">
                         <div class="categoria-texto">MARROQUINERIA</div>
@@ -100,7 +100,7 @@
     <div class= "container-fluid mt-5 mb-5 eslogan">
         <h2 class="titulo-central">Pequeños Toques</h2>
         <p class="letra-eslogan">Estilo, comodidad y variedad en todos los talles, para damas, caballeros, jóvenes y niños</p>
-        <a href="#" class="btn boton-comprar letra-botones">Comprar</a>
+        <a href="<?php echo base_url('catalogo-todo');?>" class="btn boton-comprar letra-botones">Comprar</a>
     </div>
 
     <div class="container-fluid mt-5 mb-5 d-flex justify-content-center gap-5">

@@ -27,8 +27,8 @@
                 <a href="#" class="text-dark "><i class="bi bi-instagram fs-4"style="color: #9da53a;"></i></a>
             </div>
 
-            <h4 class="footer-consulta ms-0 ">¿Tiene alguna otra duda o sugerencia? 
-                <a href="#" class="resaltado"> Contactanos </a>
+            <h4 class="footer-consulta ms-0 ">¿Tienes alguna otra duda o sugerencia? 
+                <a href="<?= site_url('contacto'); ?>" class="resaltado"> Contactanos </a>
             </h4> 
         
         </div>

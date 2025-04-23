@@ -41,8 +41,8 @@
 }
 
 .footer-consulta{
-    font-family: 'Hurricane', cursive, text-center; 
-    font-size: 25px;
+    font-family: 'Libre Bondi', text-center; 
+    font-size: clamp(12px, 1.1vw, 32px);
     text-align: center 
 }
 .boton-ok{
@@ -54,8 +54,9 @@
     color: white;
 }
 .resaltado{
-    font-family: 'Libre Bondi', serif;
-    font-size: 18px;
+    font-family: 'Libre Bondi';
+    font-style: italic;
+    font-size: clamp(12px, 1.2vw, 32px);
     color: #9da53a;
 }
 .creditos{
@@ -66,7 +67,8 @@
     text-decoration: none
 }
 .letra-footer{
-    font-family: 'Nunito Sans', serif;
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1.1vw, 32px);
 }
 
 .nosotros-titulos{
@@ -82,7 +84,12 @@
     font-family: 'Libre Bondi', serif; 
     font-size: clamp(12px, 1.1vw, 32px);
 }
-
+.parrafos-preguntas{
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1.1vw, 32px);
+    margin-left: 8vw;
+    
+}
 .parrafos-contacto{
     font-family: 'Libre Bondi', serif; 
     font-size: clamp(12px, 1.1vw, 32px);
@@ -95,7 +102,13 @@
     font-size: clamp(20px, 3vw, 32px);
     color: #bfc86a;
 }
-.letra-sub-contacto{
+.letra-sub{
+    font-family: 'Ledger', serif;
+    text-align: center;
+    font-size: clamp(20px, 3vw, 32px);
+    color: #000000;
+}
+.letra-comer{
     font-family: 'Ledger', serif;
     text-align: center;
     font-size: clamp(20px, 3vw, 32px);
@@ -108,7 +121,7 @@
 
 .letra-agradecimiento{
     font-family: 'Hurricane'; 
-    text-align: center;
+    text-align:end;
     margin-top: 2rem;
     margin-bottom: 0px;
 }
@@ -122,9 +135,26 @@
 
 .preguntas-frecuentes{
     font-family: 'Libre Bondi', serif;
-    color: #ffffff; 
+    color: #000000; 
+    margin-left: 10vw;
+    font-size: clamp(12px, 1.1vw, 32px);
+    letter-spacing: 1.2px;
+    font-weight: bold;
+}
+
+.preguntas-comercializacion{
+    font-family: 'Libre Bondi', serif;
+    color: #000000; 
     text-align: center;
     font-size: clamp(12px, 1.1vw, 32px);
+    letter-spacing: 1.2px;
+    font-weight: bold;
+}
+.titulos-quienessomos{
+    font-family: 'Libre Bondi', serif;
+    color: #000000; 
+   
+    font-size: clamp(12px, 1.5vw, 32px);
     letter-spacing: 1.2px;
     font-weight: bold;
 }
@@ -137,5 +167,13 @@
     font-family: 'Libre Bondi', serif;
     color: #000000; 
     font-size: clamp(12px, 1.1vw, 32px);
+}
+
+.contacto-horario{
+    font-family: 'Libre Bondi', serif;
+    text-align: center;
+    color: #bfc86a; 
+    font-size: clamp(12px, 1.2vw, 32px);
+    
 }
 
