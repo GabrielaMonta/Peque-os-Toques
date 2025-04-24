@@ -106,8 +106,8 @@ class Home extends BaseController
     public function inicioSesion()
     {
         $data['titulo'] = 'Inicio Sesion';
-        echo view('front/head', $data);
         echo view('front/auth/login', $data);
+        
     }
     public function registro()
     {

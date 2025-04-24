@@ -33,9 +33,11 @@
                         </li>
 
                         <li class="nav-item ms-3">
-                            <a class="nav-link d-none d-md-block " href="<?php echo base_url('inicio-sesion');?>"><i class="bi bi-person-circle fs-4" style="color: #bfc86a;"></i></a>
+                            <button type="button" class="nav-link d-none d-md-block btn" data-bs-toggle="modal" data-bs-target="#loginModal" style="background: none; border: none; padding: 0;">
+                                <i class="bi bi-person-circle fs-4" style="color: #bfc86a; line-height: 2.1;"></i>
+                            </button>
                         </li>
-
+                        
                         <li class="nav-item ms-3">
                             <a class="nav-link d-none d-md-block " href="#"><i class="bi bi-heart fs-4" style="color: #bfc86a;"></i></a>
                         </li>
@@ -79,9 +81,13 @@
                             </ul>
                         </li>
                     </ul>    
+             
                     <div class="d-block d-md-none">
-                     <a href="<?php echo base_url('inicio-sesion');?>"><i class="bi bi-person-circle fs-4 me-3" style="color: #bfc86a;"></i>Iniciar Sesión</a>
-                    </div> 
+                    <button type="button" class="btn p-0 text-decoration-none d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginModal" style="color: #bfc86a;">
+                        <i class="bi bi-person-circle fs-4 me-2"></i>
+                        <span class="fs-6">Iniciar Sesión</span>
+                    </button>
+                    </div>
                     
                     <div class="d-block d-md-none">
                      <a href="#"><i class="bi bi-heart fs-4 me-3" style="color: #bfc86a;"></i>Favoritos</a>
