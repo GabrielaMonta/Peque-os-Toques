@@ -282,17 +282,18 @@ main {
     bottom: 0;
     width: 50vw;
     height: 2px; /* grosor de la línea */
-    background-color: #eae0d5; /* color de la línea */
+    background-color: #eae0d5;
   }
   
   .cuadro-mvv{
-    background-color: #f6f5f2; /* Cambiá el color a gusto */
+    background-color: #f6f5f2; 
     border-color: #f6f5f2;
-    border-radius: 15px;
-    height: 100%; /* Para igualar altura si los textos son distintos */
+    border-radius: 5px;
     display: flex;
-    margin-left: 2vw;
-   margin-left: 4vw;
+    flex-direction: column;
+    width: 33vw;     /* ancho fijo */
+    margin-top: 50px;
+    min-width: 200px;
   }
 
 .contacto-horario{
@@ -311,10 +312,33 @@ main {
 }
   
 .quienessomos-mvv{
+  width: 150px;
+  background-color: #eae0d5;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 30px;
+  transform: translate(0px, -12px);
   
 }  
+
+.container-mvv{
+  display: flex;
+  align-items: stretch;
+}
   
-  
+.cuadro-valores{
+  background-color: #f6f5f2; 
+  border-color: #f6f5f2;
+  border-radius: 5px;
+   /* Para igualar altura si los textos son distintos */
+  display: flex;
+  flex-direction: column;
+  width: 17vw;     /* ancho fijo */
+  margin-top: 50px;
+  min-width: 200px;
+} 
   
   
   

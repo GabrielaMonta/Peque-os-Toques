@@ -27,32 +27,36 @@
             </div>
         </div>
         
-        <div class="container-mvv row">
-        <div class="cuadro-mvv col-12 col-md-3 me-5 mb-4 h-100">
-            <h6 class="quienessomos-mvv mb-2">Misión</h6>
-            <p class="parrafos-nosotros">Brindar productos que combinen estilo, comodidad e inclusión para 
-            toda la familia, ofreciendo una atención personalizada y una experiencia cálida. 
-            Nos comprometemos a entregar calidad en cada detalle, generando pequeños gestos que dejen 
-            grandes sensaciones en nuestros clientes y sus hogares.</p>
-        </div>
-        <div class="cuadro-mvv col-12 col-md-3 me-5 mb-4 h-100">
-            <h6 class="preguntas-frecuentes mb-2">Visión</h6>
-            <p class="parrafos-nosotros">Convertirnos en la tienda de confianza para quienes buscan 
-                productos con estilo y calidad, que marquen la diferencia en su día a día. Aspiramos a 
-                expandir nuestra marca, manteniendo siempre el compromiso familiar y la atención personalizada, 
-                creando vínculos duraderos con nuestros clientes.</p>
+        <div class="container-mvv  mb-1 row">
+            <div class="cuadro-mvv  col-12 col-md-5  ms-5">
+                <h6 class="quienessomos-mvv ">Misión</h6>
+                <p class="parrafos-nosotros">Brindar productos que combinen estilo, comodidad e inclusión para 
+                toda la familia, ofreciendo una atención personalizada y una experiencia cálida. 
+                Nos comprometemos a entregar calidad en cada detalle, generando pequeños gestos que dejen 
+                grandes sensaciones en nuestros clientes y sus hogares.</p>
+            </div>
+
+            <div class="cuadro-mvv  col-12 col-md-5 ms-5">
+                <h6 class="quienessomos-mvv ">Visión</h6>
+                <p class="parrafos-nosotros">Convertirnos en la tienda de confianza para quienes buscan 
+                    productos con estilo y calidad, que marquen la diferencia en su día a día. Aspiramos a 
+                    expandir nuestra marca, manteniendo siempre el compromiso familiar y la atención personalizada, 
+                    creando vínculos duraderos con nuestros clientes.</p>
+            </div>
+
+            <div class="cuadro-valores  col-12 col-md-2 ms-5 me-5">
+                <h6 class="quienessomos-mvv">Valores</h6>
+                <ul class="parrafos-nosotros">
+                   <li> Compromiso</li>
+                   <li> Calidez humana</li>
+                   <li> Inclusión</li>
+                   <li> Calidad</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="cuadro-mvv col-12 col-md-3 me-5 mb-4 h-100">
-            <h6 class="preguntas-frecuentes mb-2">Valores</h6>
-            <p class="letra-valores">
-                Compromiso<br>
-                Calidez humana<br>
-                Inclusión<br>
-                Calidad
-            </p>
-        </div>
-        <h2 class= letra-agradecimiento>¡Gracias por ser parte de Pequeños toques!</h2>
+        <h6 class="letra-agradecimiento " >¡Gracias por ser parte de Pequeños toques!</h6>
+
     </div>
         
 </main>

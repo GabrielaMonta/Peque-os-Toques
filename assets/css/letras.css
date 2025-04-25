@@ -82,7 +82,7 @@
 
 .parrafos-nosotros{
     font-family: 'Libre Bondi', serif; 
-    font-size: clamp(12px, 1.1vw, 32px);
+    font-size: clamp(12px, 1rem, 32px);
 }
 .parrafos-preguntas{
     font-family: 'Libre Bondi', serif; 
@@ -121,9 +121,11 @@
 
 .letra-agradecimiento{
     font-family: 'Hurricane'; 
-    text-align:end;
+    text-align:center;
+    font-size: clamp(12px, 3vw, 32px);
     margin-top: 2rem;
     margin-bottom: 0px;
+    
 }
 .letra-consulta{
     font-family: 'Hurricane'; 
@@ -154,7 +156,7 @@
     font-family: 'Libre Bondi', serif;
     color: #000000; 
    
-    font-size: clamp(12px, 1.5vw, 32px);
+    font-size: clamp(12px, 1.2rem, 32px);
     letter-spacing: 1.2px;
     font-weight: bold;
 }
@@ -163,6 +165,7 @@
     color: #ffffff; 
     font-size: clamp(12px, 1.1vw, 32px);
   }
+
   .boton-enviarcon:hover{
     font-family: 'Libre Bondi', serif;
     color: #000000; 
@@ -177,3 +180,9 @@
     
 }
 
+.quienessomos-mvv{
+    /*text-align: center;*/
+    color: #000000; 
+    font-family: 'Libre Bondi', serif;
+    font-size: clamp(12px, 1rem, 32px);
+}
