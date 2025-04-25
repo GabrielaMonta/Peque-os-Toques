@@ -39,7 +39,8 @@
             </p>
         </div>
     </footer>
-
+    <?= view('front/auth/login') ?>
+    <?= view('front/auth/registro') ?>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
   
   </body>

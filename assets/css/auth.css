@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+AU+SA:wght@100..400&family=Shippori+Mincho+B1&family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/*Head*/
+.modal-content{
+    background-color:#f6f5f2;
+    border-radius: 20px;  
+}
+.logo-modal {
+    display: flex;
+    justify-content: center;  
+}
+.logo-modal-estilo {
+    height: 65px;
+    width: auto;
+}
+.titulo-auth{
+    text-align: center; 
+    padding: 0 1rem; 
+}
+.modal-title{
+    font-size: 1.25rem;
+    color:black;
+    font-family: 'Shippori Mincho B1';
+    font-weight: 580;
+    
+}
+
+/*Body*/
+.form-label{
+    font-size: 0.9rem;
+    font-family: 'Inter';
+    margin-left: 25px;
+}
+.fo-textrm{
+    font-size: 0.8rem;
+    text-align: right;
+    color:#6c757d;
+    font-family: 'Inter';
+    margin-right: 30px;
+}
+.botones-modal{
+    padding: 0.5rem;
+}
+.boton-inicio{
+    width: 50%;       
+    max-width: 300px;
+    font-size: 0.9rem;
+    font-family: 'Inter';
+    color:white;
+    background-color: #9da53a;
+    border: 1px solid #9da53a; 
+    border-radius: 10px;
+}
+.boton-registro{
+    width: 50%;       
+    max-width: 300px;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-family: 'Inter';
+    color:#9da53a;
+    background-color: white;
+    border: 1px solid #9da53a; 
+    border-radius: 10px;
+}
+.input-auth {
+    max-width: 420px; /* o el valor que prefieras */
+    margin: 0 auto; /* para centrar */
+    border: 1px solid #f2f2f2; 
+}
+
+/*Footer*/
+.btn-inicio-alternativo{
+    width: 200px; 
+    text-align: center;
+    font-size: 0.8rem;
+    padding:  6px 0px;
+    font-family: 'Inter';
+    color:black;
+    background-color: white;
+    border: 1px solid #f2f2f2; 
+    border-radius: 10px;
+}
+.btn-inicio-alternativo i {
+    font-size: 1rem;  /* ícono más grande */
+    color: #9da53a;     /* ícono verde */
+  }
+.divisor-texto {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: 'Inter';
+    color: black;
+}
+
+.divisor-texto::before,
+.divisor-texto::after {
+    content: '';
+    width: 170px;
+    border-bottom: 1px solid #9da53a;
+}
+.divisor-texto::before {
+    margin-right: .75em;
+}
+.divisor-texto::after {
+    margin-left: .75em;
+}
+.text-footer-modal{
+    color:#6c757d;
+    font-size: 0.9rem;
+}
+
