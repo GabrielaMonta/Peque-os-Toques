@@ -114,4 +114,13 @@ class Home extends BaseController
         $data['titulo'] = 'Registro';
         echo view('front/auth/registro', $data);
     }
+
+    public function carrito()
+{
+    $data['titulo'] = 'Carrito';
+    echo view('front/head', $data);
+    echo view('front/navbar', $data);
+    echo view('front/carrito', $data);
+    echo view('front/footer', $data);
+}
 }

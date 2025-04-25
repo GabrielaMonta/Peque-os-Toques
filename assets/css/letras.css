@@ -128,10 +128,9 @@
     
 }
 .letra-consulta{
-    font-family: 'Hurricane'; 
+    font-family: 'Spectral SC'; 
     text-align: center;
-    
-    font-size: clamp(30px, 4vw, 32px);
+    font-size: clamp(25px, 1rem, 50px);
     /*margin-bottom: 0px;*/
 }
 
@@ -166,7 +165,7 @@
     font-size: clamp(12px, 1.1vw, 32px);
   }
 
-  .boton-enviarcon:hover{
+.boton-enviarcon:hover{
     font-family: 'Libre Bondi', serif;
     color: #000000; 
     font-size: clamp(12px, 1.1vw, 32px);

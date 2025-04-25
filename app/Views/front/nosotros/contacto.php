@@ -27,7 +27,7 @@
             </a>
         </div>
 
-        <div class="container-formulario-consulta col-12 col-md-4 mt-3 ms-5">
+        <div class="container-formulario-consulta col-12 col-md-4 mt-3 ms-4">
             
             <p class="letra-consulta mt-1">¡Dejanos tu consulta!</p>
                 <form action="/enviar-consulta" method="post">

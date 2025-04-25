@@ -43,7 +43,8 @@
                         </li>
 
                         <li class="nav-item ms-3">
-                            <a class="nav-link" href="#"><i class="bi bi-basket3 fs-4" style="color: #bfc86a;"></i></a>
+                            <button type="button" class="nav-link btn btn-primary"  data-bs-toggle="offcanvas" data-bs-target="#carritoOffcanvas">
+                                <i class="bi bi-basket3 fs-4" style="color: #bfc86a;"></i></button>
                         </li>
                     </ul>
                 </div>

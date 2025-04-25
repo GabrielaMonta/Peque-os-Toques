@@ -219,61 +219,81 @@ main {
     margin-top:2vw;  
   }
 
+.container-formulario-consulta{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;    
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  width: 35vw;
+  min-width: 300px;
+}
+@media(max-width: 899px){
   .container-formulario-consulta{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;    
     background-color: #ffffff;
-    border-radius: 10px; 
+    border-radius: 10px;
     padding-bottom: 50px;
     padding-top: 50px;
-    
+    width:20vw;
   }
+}
 
-  .input-nombre{
-    
-    padding: 3px;
-    border-radius: 5px; 
-    background-color: #f6f5f2;
-    border-color: #b38b6d;
-  }
-  .input-nombre :hover{
-    padding: 5px;
-    border-radius: 5px; 
-    background-color: #b38b6d;
-    border-color: #f6f5f2;
-  }
+.input-nombre{
+  width: 27vw;
+  padding: 3px;
+  border-radius: 5px; 
+  background-color: #f6f5f2;
+  border-color: #f2f2f2;
+  margin: 0 auto;
+  font-family: 'Inter';
+  font-size: 0.9rem;
+}
 
-  .input-emailcon{
-    padding: 3px;
-    border-radius: 5px; 
-    background-color: #f6f5f2;
-    border-color: #b38b6d;
-  }
-  .input-emailcon :hover{
-
-    padding: 3px;
-    border-radius: 5px; 
-    background-color: #b38b6d;
-    border-color: #f6f5f2;
-  }
+.input-emailcon{
+  width: 27vw;
+  padding: 3px;
+  border-radius: 5px; 
+  background-color: #f6f5f2;
+  border-color: #f2f2f2;
+  margin: 0 auto;
+  font-family: 'Inter';
+  font-size: 0.9rem;
+}
   
-  .input-mensaje{
-    
-    padding: 3px;
-    border-radius: 5px; 
-    background-color: #f6f5f2;
-  }
+.input-mensaje{
+  width: 27vw;
+  padding: 3px;
+  border-radius: 5px; 
+  background-color: #f6f5f2;
+  border-color: #f6f5f2;
+  margin: 0 auto;
+  font-family: 'Inter';
+  font-size: 0.9rem;
+}
   
-  .boton-enviarcon{
-    background-color: #b38b6d;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-   
-  }
+.boton-enviarcon{
+  background-color: #b38b6d;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: right;
+  margin-right: 30px;
+  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
   
-  .titulo-subrayado {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 5px; 
-  }
+.titulo-subrayado {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px; 
+}
   
   .titulo-subrayado::after {
     content: "";
