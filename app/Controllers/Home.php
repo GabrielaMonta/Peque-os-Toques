@@ -112,7 +112,6 @@ class Home extends BaseController
     public function registro()
     {
         $data['titulo'] = 'Registro';
-        echo view('front/head', $data);
         echo view('front/auth/registro', $data);
     }
 }

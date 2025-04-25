@@ -28,3 +28,4 @@ $routes->get('/catalogo-todo', 'Home::verTodo');
 /*Boton Auth*/
 $routes->get('/inicio-sesion', 'Home::inicioSesion');
 $routes->get('/registro', 'Home::registro');
+

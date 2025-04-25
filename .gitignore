@@ -1,3 +1,4 @@
 assets/css/miestilo.css
 app/Views/principal.html
 app/Views/plantilla.php
+writable/debugbar/
