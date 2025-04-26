@@ -21,27 +21,28 @@
                 </div>
         </div>  
 
-        <div class="col-12 col-md-3 d-none d-md-flex justify-content-center align-items-center ms-4" style="min-height: 200px;">
+        <div class="col-12 col-md-3 d-none d-md-flex justify-content-center align-items-center ms-5" style="min-height: 200px;">
             <a href="#">
                 <img src="assets/img/Pequeños toques t.png" alt="Logo" height="40">
             </a>
         </div>
 
-        <div class="container-formulario-consulta col-12 col-md-4 mt-3 ms-4">
-            
-            <p class="letra-consulta mt-1">¡Dejanos tu consulta!</p>
-                <form action="/enviar-consulta" method="post">
-                    <input class="input-nombre form-control mt-5 " type="text" name="nombre" placeholder="Tu nombre" required><br><br>
-                    <input class="input-emailcon form-control mb-0" type="email" name="email" placeholder="Tu email" required><br><br>
-                    <textarea class="input-mensaje form-control mb-0" name="mensaje" placeholder="Tu consulta" required></textarea><br><br>
-                    
-                    <div style="text-align: right;">
-                        <button class="boton-enviarcon" type="submit">Enviar</button>
-                    </div>
+        <div class="display-flex-center col-12 col-md-4 mt-3 ">
+            <div class="container-formulario-consulta  ">
+                <p class="letra-consulta mt-1">¡Dejanos tu consulta!</p>
+                    <form action="/enviar-consulta" method="post">
+                        <input class="input-nombre form-control mt-5 " type="text" name="nombre" placeholder="Tu nombre" required><br><br>
+                        <input class="input-emailcon form-control mt-0 mb-0" type="email" name="email" placeholder="Tu email" required><br><br>
+                        <textarea class="input-mensaje form-control mb-0" name="mensaje" placeholder="Tu consulta" required></textarea><br><br>
+                        
+                        <div style="text-align: right;">
+                            <button class="boton-enviarcon" type="submit">Enviar</button>
+                        </div>
 
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
+        </div>    
     </div>
 
     <div class="row">
