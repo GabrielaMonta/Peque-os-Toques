@@ -1,60 +1,39 @@
-# CodeIgniter 4 Framework
+# Ecommerce - Pequeños Toques
 
-## What is CodeIgniter?
+## Trabajo de la materia Taller de Programacion I - UNNE-FaCENA
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Este proyecto consiste en el desarrollo de una tienda en línea (eCommerce) como parte del trabajo práctico de la materia Taller de programacion I de la Universidad Nacional del Nordeste. Tiene como objetivo la creacion una plataforma funcional que permita realizar compras, gestionar productos y ofrecer una experiencia de usuario intuitiva.
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Tecnologías Utilizadas
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+- CodeIgniter: Framework de PHP utilizado para desarrollar la parte backend del proyecto. CodeIgniter proporciona una estructura ligera y eficiente para manejar el enrutamiento, controladores, modelos y vistas.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+- PHP: Lenguaje de programación utilizado para la lógica del servidor y la interacción con la base de datos.
 
-## Important Change with index.php
+- CSS: Se utilizó para el diseño y estilo visual del sitio web, creando una interfaz atractiva y responsiva.
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+- HTML: Estructura básica del sitio web, utilizado en combinación con CSS para crear las páginas del ecommerce.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+- XAMPP: Herramienta de desarrollo que incluye Apache, MySQL y PHP, utilizada para configurar el servidor local y gestionar la base de dato
 
-**Please** read the user guide for a better explanation of how CI4 works!
+## Funcionalidades
 
-## Repository Management
+- Registro de usuarios y autenticación.
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+- Visualización y búsqueda de productos.
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+- Carrito de compras y proceso de pago.
 
-## Contributing
+- Gestión de productos por parte de los administradores.
 
-We welcome contributions from the community.
+- Funcionalidades adicionales como el historial de pedidos y opciones de filtrado de productos.
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+## Idea y creacion del proyecto
 
-## Server Requirements
+https://www.canva.com/design/DAGiswMZSeg/n7MWY0YR__v-EPqBTGXyJA/edit?utm_content=DAGiswMZSeg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-PHP version 8.1 or higher is required, with the following extensions installed:
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+## Desarrolladoras
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+- ISASI VITALE, Bianca Ailin https://mail.google.com/mail/?view=cm&fs=1&to=ivbianca25@gmail.com
+- MONTANARO, Gabriela Antonella https://mail.google.com/mail/?view=cm&fs=1&to=gabrielaam201@gmail.com
