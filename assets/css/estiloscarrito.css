@@ -67,17 +67,17 @@
     font-family: 'Libre Bondi', serif; 
     font-size: clamp(12px, 1rem, 32px);
     margin-top: 1rem;
-    
-    
 }
 
 .boton-ver-carrito:hover{
     background-color: #eae0d5;
     border-radius: 15px;
     border: #eae0d5;
+    width: 50%;
+    height: auto;
     font-family: 'Libre Bondi', serif; 
     font-size: clamp(12px, 1rem, 32px);
-    width: 50%;
+    margin-top: 1rem;
 }
 
 .boton-seguir-comprando{
@@ -92,10 +92,10 @@
 .boton-seguir-comprando:hover{
     font-family: 'Libre Bondi', serif; 
     font-size: clamp(12px, 1rem, 32px);
+    width: 50%;
+    height: auto;
     border-radius: 15px;
     color:#b7ada0;
-    width: 50%;
-    
 }
 
 .cuadro-total{
@@ -110,5 +110,45 @@
 .letra-total{
     font-family: 'Libre Bondi', serif; 
     font-size: clamp(16px, 1.2rem, 32px);
+    
+}
+
+.titulo-micompra{
+    font-family: 'Ledger', serif;
+    text-align:left;
+    font-size: clamp(20px, 2.5vw, 32px);
+    color: #9da53a;
+    
+}
+
+.titulos-resumen{
+    font-family: 'Nunito Sans', serif; 
+    font-size: clamp(1rem, 1rem, 32px);
     font: bold;
+    text-align: center;
+}
+.bi-trash{
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border: 0;
+}
+
+.bi-trash:hover{
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border: 0;
+    background-color: #eae0d5;
+    border-radius: 15px;
+    border: #eae0d5;
+}
+
+.card-resumen{
+    background-color: #f6f5f2;
+}
+
+.titulo-resumen{
+    font-family: 'Ledger', serif;
+    text-align:center;
+    font-size: clamp(1rem, 1.5rem, 40px);
+    color: #9da53a;
 }

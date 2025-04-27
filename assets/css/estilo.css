@@ -294,14 +294,14 @@ main {
   padding-bottom: 5px; 
 }
   
-  .titulo-subrayado::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50vw;
-    height: 2px; /* grosor de la línea */
-    background-color: #eae0d5;
+.titulo-subrayado::after {
+  content: "";
+  position: absolute;    
+  left: 0;
+  bottom: 0;
+  width: 50vw;
+  height: 2px; /* grosor de la línea */
+  background-color: #eae0d5;
   }
   
   .cuadro-mvv{

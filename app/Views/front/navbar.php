@@ -119,13 +119,12 @@
             </div>   
         </div>
 
+        <div class="d-flex justify-content-between p-3">
+                <strong class="letra-total" >Subotal</strong>
+                <strong class="letra-total" >$1234,56</strong>
+        </div>
         <div class="pie-carrito">
-            <div class="cuadro-total">
-                <div class="row">
-                    <p class="col-6 text-start letra-total">Subtotal:</p>
-                    <p class="col-6 text-end letra-total">$1234.56</p>
-                </div>
-            </div>
+                    
             <a href="<?php echo base_url('carrito');?>" class="btn boton-ver-carrito">Ver carrito</a>
             <a href="<?php echo base_url('catalogo-todo');?>" class="btn boton-seguir-comprando">Seguir comprando</a>
             <img src="assets/img/logo.png" class="img-fluid rounded-start mb-2" alt="Imagen" style="width: 50px; height: 50px;">
