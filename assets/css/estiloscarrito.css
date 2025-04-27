@@ -9,26 +9,28 @@
     width: 21rem;
 }
 
-.card{
+.offcanvas{
     background-color: #f6f5f2;
     
 }
+
 .container-card{
     background-color: #ffffff;
-    max-width: 23rem;
+    
     flex-direction: row;
-    height: 5rem;
-    
-    
+    width: fit-content;
+    max-width: auto;
 }
 
 
 .card-body{
     background-color: #f6f5f2;
-    height: 4.6rem;
-    padding-top: 2px;
+
+    max-width: auto;
+    padding-top: 5px;
     padding-bottom: 5px;
-    margin-top: 1.5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 .btn-danger{
@@ -46,42 +48,67 @@
     font-size: 0.8rem;
 }
 
-.boton-ver-carrito{
-    background-color: #ffffff;
-    border-radius: 15px;
-    border: 1px solid #eae0d5;
-    width: 20vw;
-    text-align: center;
-    font-family: 'Nunito Sans';
-    font-size: 1rem;;
-    
-    
-}
-
-.botones-compras{
+.pie-carrito{
     display: flex;
     flex-direction: column; /* Alinea los elementos en columna */
     align-items: center; /* Centra los elementos horizontalmente */
     justify-content: center; /* Centra los elementos verticalmente */
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.boton-ver-carrito{
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #eae0d5;
+    width: 50%;
+    height: auto;
+    text-align: center;
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1rem, 32px);
+    margin-top: 1rem;
+    
+    
 }
 
 .boton-ver-carrito:hover{
     background-color: #eae0d5;
     border-radius: 15px;
     border: #eae0d5;
-    font-family: 'Nunito Sans';
-    font-size: 1rem;
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1rem, 32px);
+    width: 50%;
 }
 
 .boton-seguir-comprando{
-    font-family: 'Nunito Sans'; 
-    font-size: 1rem;
-    width: 20vw;
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1rem, 32px);
+    width: 50%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 0.5rem;
 }
 
 .boton-seguir-comprando:hover{
-    font-family: 'Nunito Sans'; 
-    font-size: 1rem;
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1rem, 32px);
+    border-radius: 15px;
     color:#b7ada0;
+    width: 50%;
     
+}
+
+.cuadro-total{
+    background-color: #eae0d5;
+    width: 90%;
+    height: 28px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+}
+
+.letra-total{
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(16px, 1.2rem, 32px);
+    font: bold;
 }

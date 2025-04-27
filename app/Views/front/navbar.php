@@ -106,24 +106,29 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         
-        <div class="offcanvas-body ">
-
+        <div class="offcanvas-body  ">
             <div class= "card container-card row g-0">
                 <div class="foto-producto col-4 d-flex align-items-center">
                     <img src="assets/img/calzado.png" class="img-fluid rounded-start" alt="Imagen">
                 </div>
-                <div class="card-body col-5">
+                <div class="card-body  col-5">
                     <h5 class="card-title">Stiletto Vizzano taco cuadrado</h5>
                     <p class="card-text">$39.000</p>
                 </div>
                 <button class="col-1 btn btn-danger d-flex align-items-center justify-content-center" onclick="eliminarProducto(this)">X</button>
-            </div>
-
-
-            
+            </div>   
         </div>
-        <div class="botones-compras">
-                <a href="#" class="btn boton-ver-carrito">Ver carrito</a>
-                <a href="<?php echo base_url('catalogo-todo');?>" class="btn boton-seguir-comprando">Seguir comprando</a>
+
+        <div class="pie-carrito">
+            <div class="cuadro-total">
+                <div class="row">
+                    <p class="col-6 text-start letra-total">Subtotal:</p>
+                    <p class="col-6 text-end letra-total">$1234.56</p>
+                </div>
             </div>
+            <a href="<?php echo base_url('carrito');?>" class="btn boton-ver-carrito">Ver carrito</a>
+            <a href="<?php echo base_url('catalogo-todo');?>" class="btn boton-seguir-comprando">Seguir comprando</a>
+            <img src="assets/img/logo.png" class="img-fluid rounded-start mb-2" alt="Imagen" style="width: 50px; height: 50px;">
+        
+        </div>
     </div>
