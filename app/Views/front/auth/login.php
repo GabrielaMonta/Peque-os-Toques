@@ -21,7 +21,7 @@
       <!-- TÍTULO centrado -->
       <div class="titulo-auth mb-2 mt-3">
         <h4 class="modal-title" id="loginModalLabel">
-          Registrate con correo y contraseña
+          Ingresar con correo y contraseña
         </h4>
       </div>
 

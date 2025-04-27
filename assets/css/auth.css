@@ -51,6 +51,11 @@
     border: 1px solid #9da53a; 
     border-radius: 10px;
 }
+.boton-inicio:hover{
+    background-color: #9da53a;/* Cambio de color de fondo en hover */
+    transform: scale(1.05); /* Efecto de expansión en hover */
+    border: 1px solid #9da53a; 
+}
 .boton-registro{
     width: 50%;       
     max-width: 300px;
@@ -61,6 +66,12 @@
     background-color: white;
     border: 1px solid #9da53a; 
     border-radius: 10px;
+}
+.boton-registro:hover{
+    background-color: white;/* Cambio de color de fondo en hover */
+    transform: scale(1.05); /* Efecto de expansión en hover */
+    border: 1px solid #9da53a; 
+    color:#9da53a;
 }
 .input-auth {
     max-width: 420px; /* o el valor que prefieras */
@@ -79,6 +90,12 @@
     background-color: white;
     border: 1px solid #f2f2f2; 
     border-radius: 10px;
+}
+.btn-inicio-alternativo:hover{
+    background-color: white;/* Cambio de color de fondo en hover */
+    transform: scale(1.05); /* Efecto de expansión en hover */
+    border: 1px solid #f2f2f2;  
+    color:black;
 }
 .btn-inicio-alternativo i {
     font-size: 1rem;  /* ícono más grande */

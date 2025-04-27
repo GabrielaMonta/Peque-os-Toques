@@ -1,0 +1,137 @@
+.section-title {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.section-title h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #b38b6d; 
+    text-align: left;
+    font-family: 'Spectral SC';
+}
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 250px; /* Largo de la línea */
+    height: 2px; /* Grosor de la línea */
+    background-color: #b38b6d; /* Mismo color que el título */
+}
+.titulo-filtro{
+    font-family: 'Inter';
+    font-size: 0.9rem;
+}
+.letra-filtro{
+    font-family:'Inter';
+    font-size: 1rem;
+}
+.letra-migas{
+    color:black;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-family: 'Inter';
+}
+.letra-migas:hover{
+    color:#b38b6d;
+    text-decoration: underline;
+}
+.cajita-filtro{
+    border: 1px solid #b38b6d80;
+    background-color:#f6f5f2;
+}
+.form-select:focus {
+    box-shadow: none;
+    outline: none;
+    border: 1px solid #b38b6d80;
+}
+option:hover {
+    background-color: #b38b6d;
+    color: white;
+}
+
+/*ACORDEON*/
+.accordion-item {
+    border: none;
+}
+/* Cuando está abierto */
+.accordion-button:not(.collapsed) {
+    background-color: transparent;
+    box-shadow: none;
+}
+.form-check-label {
+    font-size: 0.9rem;
+    color:black;
+    font-family: 'Inter';
+}
+/* Cambia el color de la flechita */
+.accordion-button::after {
+    filter: brightness(0) invert(0.5);
+}
+/*Check*/
+.form-check-input {
+    background-color: #fff;
+    border: px solid #9da53a; 
+}
+.form-check-input:checked {
+    background-color: #9da53a; /* Color cuando está tildado */
+}
+.titulo-acordeon{
+    font-family: 'Inter';
+    font-size: 0.9rem;
+}
+.titulo-acordeon:hover{
+    color:#9da53a;
+}
+#ordenar{
+    border: 1px solid #b38b6d80;
+    background-color:#f6f5f2;
+}
+#ordenar:focus {
+    box-shadow: none;
+    outline: none;
+}
+.accordion-button:not(.collapsed) {
+    color:#9da53a ;
+    background-color: #f6f5f2;
+    box-shadow: none;
+}
+.accordion-button:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+/*PAGINACION*/
+.mi-paginacion .pagination {
+    border-radius: 0.5rem; /* Bordes redondeados */
+    background-color: #f8f9fa; /* Fondo de la paginación */
+}
+.mi-paginacion .page-item {
+    margin: 0 5px; /* Espaciado entre los ítems */
+}
+.mi-paginacion .page-link {
+    color: black; /* Color del texto */
+    font-family: 'Inter';
+    font-size: 0.9rem;
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde del enlace */
+    border-radius: 0.25rem; /* Bordes redondeados */
+}
+.mi-paginacion .page-link:hover {
+    background-color: #f6f5f2; /* Fondo al pasar el mouse */
+    color: black; /* Color del texto al pasar el mouse */
+}
+.mi-paginacion .page-item.active .page-link {
+    background-color: #f6f5f2; /* Fondo de la página activa */
+    color: black; /* Texto blanco en la página activa */
+}
+.mi-paginacion .page-item.disabled .page-link {
+    color: #6c757d; /* Color de los enlaces deshabilitados */
+    pointer-events: none; /* Desactiva el clic */
+}
+.mi-paginacion .page-link:focus {
+    outline: none;  /* Elimina el borde de enfoque */
+    box-shadow: 0 0 8px 2px #b38b6d80;;
+}
+
