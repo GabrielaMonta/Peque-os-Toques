@@ -75,15 +75,14 @@ main {
 }
 
 .input-email{
-    flex: 1 1 10%;
-    padding: 3px;
-    font-size: 1rem;
-    
+  flex: 1 1 10%;
+  padding: 3px;
+  font-size: 1rem;
 }
 
 .boton-ok:hover{
-    border-color: #bfc86a; 
-    background-color:#bfc86a;
+  border-color: #bfc86a; 
+  background-color:#bfc86a;
 }
 
 .container-p1{

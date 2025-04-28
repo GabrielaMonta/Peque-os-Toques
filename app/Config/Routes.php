@@ -29,5 +29,8 @@ $routes->get('/catalogo-todo', 'Home::verTodo');
 $routes->get('/inicio-sesion', 'Home::inicioSesion');
 $routes->get('/registro', 'Home::registro');
 
+/*Carrito */
 $routes->get('/carrito', 'Home::carrito');
+$routes->get('/iniciar-pago', 'Home::iniciarPago');
+
 

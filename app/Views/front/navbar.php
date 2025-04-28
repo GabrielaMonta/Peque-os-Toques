@@ -39,7 +39,8 @@
                     </li>
                             
                     <li class="nav-item ms-3">
-                        <a class="nav-link d-none d-md-block " href="#"><i class="bi bi-heart fs-4" style="color: #bfc86a;"></i></a>
+                        <button type="button" class="nav-link d-none d-md-block btn btn-primary " data-bs-toggle="offcanvas" data-bs-target="#favoritosBackdrop" aria-controls="staticBackdrop" >
+                            <i class="bi bi-heart fs-4" style="color: #bfc86a;"></i></button>
                     </li>
 
                     <li class="nav-item ms-3">
@@ -106,7 +107,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         
-        <div class="offcanvas-body  ">
+        <div class="offcanvas-body ">
             <div class= "card container-card row g-0">
                 <div class="foto-producto col-4 d-flex align-items-center">
                     <img src="assets/img/calzado.png" class="img-fluid rounded-start" alt="Imagen">
@@ -127,6 +128,36 @@
                     
             <a href="<?php echo base_url('carrito');?>" class="btn boton-ver-carrito">Ver carrito</a>
             <a href="<?php echo base_url('catalogo-todo');?>" class="btn boton-seguir-comprando">Seguir comprando</a>
+            <img src="assets/img/logo.png" class="img-fluid rounded-start mb-2" alt="Imagen" style="width: 50px; height: 50px;">
+        
+        </div>
+    </div>
+    
+    <div class="offcanvas offcanvas-end"  data-bs-backdrop="static" tabindex="-1" id="favoritosBackdrop" aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title canvas-titulo" id="staticBackdropLabel">Favoritos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        
+        <div class="offcanvas-body ">
+            <div class= "card container-card row g-0">
+                <div class="foto-producto col-4 d-flex align-items-center">
+                    <img src="assets/img/calzado.png" class="img-fluid rounded-start" alt="Imagen">
+                </div>
+                <div class="card-body  col-5">
+                    <h5 class="card-title">Stiletto Vizzano taco cuadrado</h5>
+                    <p class="card-text">$39.000</p>
+
+                    <div class="d-flex justify-content-end">
+                        <button class="boton-fav bi bi-heart d-flex  " onclick="eliminarProducto(this)"></button>
+                        <button class="boton-fav bi bi-basket d-flex  ms-1" onclick="agregarAlCarrito(this)"></button>
+                    </div>
+                </div>
+                
+            </div>   
+        </div>
+
+        <div class="pie-carrito">
             <img src="assets/img/logo.png" class="img-fluid rounded-start mb-2" alt="Imagen" style="width: 50px; height: 50px;">
         
         </div>

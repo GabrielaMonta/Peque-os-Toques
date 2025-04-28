@@ -11,5 +11,5 @@
         <link href="assets/css/letras.css" rel="stylesheet" > 
         <link href="assets/css/estiloCard.css" rel="stylesheet" > 
         <link href="assets/css/auth.css" rel="stylesheet" > 
-        <link rel="icon" type="image/x-icon" href="assets\img\Pequeños-toques.ico">
+        <link rel="icon" type="image/x-icon" href="assets\img\logofinal.ico">
     </head>
