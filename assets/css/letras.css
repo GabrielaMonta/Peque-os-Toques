@@ -31,13 +31,16 @@
 .footer-news{
     font-family: 'Libre Bondi', serif;
     color: white;
-    text-align: center 
+    text-align: center ;
+    font-size: clamp(20px, 1.1rem, 32px);
+    
 }
 
 .footer-hora{
     font-family: 'Libre Bondi', serif;
     color: white;
-    text-align: center 
+    text-align: center;
+    font-size: clamp(20px, 1.1rem, 32px);
 }
 
 .footer-consulta{
@@ -64,11 +67,12 @@
     text-align: center;
     font-family: 'Nunito Sans';
     color: rgb(0, 0, 0);
-    text-decoration: none
+    text-decoration: none;
+    font-size: clamp(16px, 1rem, 32px);
 }
 .letra-footer{
     font-family: 'Libre Bondi', serif; 
-    font-size: clamp(12px, 1.1vw, 32px);
+    font-size: clamp(16px, 1rem, 32px);
 }
 
 .nosotros-titulos{
@@ -82,12 +86,13 @@
 
 .parrafos-nosotros{
     font-family: 'Libre Bondi', serif; 
-    font-size: clamp(12px, 1rem, 32px);
+    font-size: clamp(16px, 1rem, 32px);
 }
 .parrafos-preguntas{
     font-family: 'Libre Bondi', serif; 
-    font-size: clamp(12px, 1.1vw, 32px);
+    font-size: clamp(16px, 1.1vw, 32px);
     margin-left: 8vw;
+    padding-right: 5vw;
     
 }
 .parrafos-contacto{

@@ -1,0 +1,277 @@
+.canvas-titulo{
+    font-family: 'Libre Bondi', serif;
+    color: #000000; 
+    font-size: clamp(12px, 1.2rem, 32px);
+    text-align: center;
+
+    background-color: #eae0d5;
+    border-radius: 5px;
+    width: 21rem;
+}
+
+.offcanvas{
+    background-color: #f6f5f2;
+    
+}
+
+.container-card{
+    background-color: #ffffff;
+    
+    flex-direction: row;
+    width: fit-content;
+    max-width: auto;
+}
+
+
+.card-body{
+    background-color: #f6f5f2;
+    max-width: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.btn-danger{
+    background-color: #ffffff;
+    border: #ffffff;
+    color: black;
+    height: 1rem;
+}
+
+.card-title{
+    font-size: 1rem;
+}
+
+.card-text{
+    font-size: 0.8rem;
+}
+
+.pie-carrito{
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.boton-ver-carrito{
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #eae0d5;
+    width: 70%;
+    height: auto;
+    text-align: center;
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1rem, 32px);
+    margin-top: 1rem;
+}
+
+.boton-ver-carrito:hover{
+    background-color: #eae0d5;
+    border-radius: 15px;
+    border: #eae0d5;
+    width: 70%;
+    height: auto;
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1rem, 32px);
+    margin-top: 1rem;
+}
+
+.boton-seguir-comprando{
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1rem, 32px);
+    width: 70%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 0.5rem;
+}
+
+.boton-seguir-comprando:hover{
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1rem, 32px);
+    width: 70%;
+    height: auto;
+    border-radius: 15px;
+    color:#b7ada0;
+}
+
+.cuadro-total{
+    background-color: #eae0d5;
+    width: 90%;
+    height: 28px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+}
+
+.letra-total{
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(16px, 1.2rem, 32px);
+    
+}
+
+.titulo-micompra{
+    font-family: 'Ledger', serif;
+    text-align:left;
+    font-size: clamp(20px, 2.5rem, 32px);
+    color: #9da53a;
+}
+.titulo-pasos{
+    font-family: 'Ledger', serif;
+    text-align:left;
+    font-size: clamp(16px, 1.2rem, 32px);
+    margin-top: 1rem;
+}
+.titulos-resumen{
+    font-family: 'Nunito Sans', serif; 
+    font-size: clamp(1rem, 1rem, 32px);
+    font: bold;
+    text-align: center;
+}
+.bi-trash{
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border: 0;
+}
+
+.bi-trash:hover{
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border: 0;
+    background-color: #eae0d5;
+    border-radius: 15px;
+    border: #eae0d5;
+}
+
+.card-resumen{
+    background-color: #f6f5f2;
+    border:  #f6f5f2;
+    margin-top: 31px;
+    margin-left: 2rem;
+    width: 100%;
+}
+
+.card-body-producto{
+    background-color: #ffffff;
+    border: #ffffff;
+    max-width: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.card-body-precio{
+    background-color: #ffffff;
+    border: #ffffff;
+    max-width: auto;
+    
+}
+.titulo-resumen{
+    font-family: 'Ledger', serif;
+    text-align:center;
+    font-size: clamp(1rem, 1.5rem, 40px);
+    color: #9da53a;
+}
+
+.container-card-producto{
+    background-color: #ffffff;
+    border-color: #ffffff;
+    flex-direction: row;
+    width: auto;
+    margin-top: 5px;
+}
+.card-body-precio{
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+}
+
+.resumen{
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    padding-right: 2rem;
+    width: auto;
+}
+/** {
+    outline: 1px solid red;
+  }*/
+
+.obligatorio {
+    color: red;
+    margin-left: 3px;
+}
+
+.input-facturacion{
+    border: none;
+    width: 80%;
+    padding: 3px;
+    border-radius: 5px; 
+    background-color: #f6f5f2;
+    border-color: #f2f2f2;
+    font-family: 'Inter';
+    font-size: clamp(14px, 0.9rem,32px);
+}
+
+.leyenda-pasos{
+    margin:0px;
+    font-family:"Nunito Sans";
+    font-style: italic;
+    font-size: clamp(14px, 0.9rem,32px);
+}
+
+.boton-finalizarcompra{
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #eae0d5;
+    width: 70%;
+    height: auto;
+    text-align: center;
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1rem, 32px);
+    margin-top: 1rem;
+    
+    justify-content: center
+}
+
+
+.boton-finalizarcompra:hover{
+    background-color: #eae0d5;
+    border-radius: 5px;
+    border: #eae0d5;
+    width: 70%;
+    height: auto;
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1rem, 32px);
+    margin-top: 1rem;
+}
+.boton-fav{
+    background-color: #eae0d5;
+    border-radius: 5px;
+    border: #eae0d5;
+    
+    width: auto;
+    height: auto;
+}
+
+.boton-fav{
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: #eae0d5;
+    
+    width: auto;
+    height: 20px;
+}
+.boton-fav:hover{
+    background-color: #eae0d5;
+    border-radius: 5px;
+    border: #eae0d5;
+    
+    width: auto;
+    height: 20px;
+
+}

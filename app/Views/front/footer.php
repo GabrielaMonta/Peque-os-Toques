@@ -8,6 +8,7 @@
                         <p class="letra-footer me-4 ms-5">Suscribete a nuestro newsletter.<br> Recibe novedades, descuentos y lanzamientos exclusivos.</p>
                         <form class="form-suscription  me-5 ms-5">
                             <input type="email" class="input-email" placeholder="Su e-mail" required>
+                        </input>
                             <button type="submit" class="boton-ok">Suscribirme</button>
                         </form>
                     </div>
@@ -68,6 +69,6 @@
     <?= view('front/auth/registro') ?>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
-
 </html>

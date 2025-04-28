@@ -120,7 +120,7 @@ class Home extends BaseController
         $data['titulo'] = 'Carrito';
         echo view('front/head', $data);
         echo view('front/navbar', $data);
-        echo view('front/carrito', $data);
+        echo view('front/Carrito/carrito', $data);
         echo view('front/footer', $data);
     }
 
@@ -131,4 +131,15 @@ class Home extends BaseController
         echo view('front/catalogo/producto-view', $data);
         echo view('front/footer', $data);
     }
+
+    public function iniciarPago()
+    {
+    $data['titulo'] = 'Pequeños Toques';
+    echo view('front/head', $data);
+    echo view('front/navbar', $data);
+    echo view('front/Carrito/iniciarPago', $data);
+    echo view('front/footer', $data);
+    }
+
+
 }
