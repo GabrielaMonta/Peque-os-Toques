@@ -17,9 +17,9 @@
                         <tr style= "border-bottom: 1px solid #bfc86a; margin: 0">
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="assets/img/calzado.png" alt="Producto" style="width: 50px; height: auto;">
+                                    <img src="assets/img/productos/zapato1.jpeg" alt="Producto" style="width: 50px; height: auto;">
                                     <div class="ms-2">
-                                        <strong>Producto 1</strong>
+                                        <strong>Stiletto Vizzano</strong>
                                         <br>Color
                                         <br>Talle
                                     </div>
@@ -33,9 +33,9 @@
                         <tr style= "border-bottom: 1px solid #bfc86a; margin: 0">
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="assets/img/calzado.png" alt="Producto" style="width: 50px; height: auto;">
+                                    <img src="assets/img/productos/indu1.jpeg" alt="Producto" style="width: 50px; height: auto;">
                                     <div class="ms-2">
-                                    <strong>Producto 2</strong><br>
+                                    <strong>Blazer</strong><br>
                                     Color<br>
                                     Talle
                                     </div>
@@ -66,7 +66,7 @@
                         <strong>Total</strong>
                         <strong>$1234,56</strong>
                     </div>
-                    
+
                     <div class="pie-carrito">
                         <a href="<?php echo base_url('iniciar-pago');?>" class="btn boton-ver-carrito">Iniciar pago</a>
                         <a href="<?php echo base_url('catalogo-todo');?>" class="btn boton-seguir-comprando">Seguir comprando</a>

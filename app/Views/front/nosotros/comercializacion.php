@@ -29,7 +29,7 @@
             <h6 class= "preguntas-comercializacion"> Métodos de pago </h6>
             <hr style= "border: 1px solid #bfc86a; width:80%; margin-top: 5px; margin-left: 8vw; margin-right: auto;">
             <p class="parrafos-preguntas me-5"> Para compras a través de la tienda online aceptamos Mercado Pago, 
-                tarjetas de débito/crédito, transferencia/deposito bancario, pagos con QR.
+                tarjetas de débito/crédito, transferencia/depósito bancario, pagos con QR.
             <br> Para retiro o compras en la tienda física todo lo anteriormente 
                 nombrado y efectivo.
             <br> En Pequeños toques cada producto cuenta con un precio de lista que

@@ -64,7 +64,7 @@
                     
                     <div class= "card container-card-producto row g-0">
                         <div class="card-body card-body-producto col-sm-5 d-flex flex-column ">
-                            <h6 class="card-title ">Stiletto Vizzano taco cuadrado</h6>
+                            <h6 class="card-title ">Stiletto Vizzano</h6>
                             <div class="row d-flex  p-0 ">
                                 <div class="col-12 col-sm-6  card-text justify-content-start  mb-0">Color:</div>
                                 <div class="col-12 col-sm-6 card-text mb-0">Talle:</div>
@@ -72,7 +72,21 @@
                         </div> 
 
                         <div class="card-body card-body-precio col-12 col-sm-2">
-                            <p class="card-text ">$39.000</p>
+                            <p class="card-text ">$1234,56</p>
+                        </div>
+                    </div>
+
+                    <div class= "card container-card-producto row g-0">
+                        <div class="card-body card-body-producto col-sm-5 d-flex flex-column ">
+                            <h6 class="card-title ">Blazer</h6>
+                            <div class="row d-flex  p-0 ">
+                                <div class="col-12 col-sm-6  card-text justify-content-start  mb-0">Color:</div>
+                                <div class="col-12 col-sm-6 card-text mb-0">Talle:</div>
+                            </div>
+                        </div> 
+
+                        <div class="card-body card-body-precio col-12 col-sm-2">
+                            <p class="card-text ">$1234,56</p>
                         </div>
                     </div>
                 

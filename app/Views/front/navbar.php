@@ -102,7 +102,7 @@
 
         </div>
     </nav>
-
+     <!-- Offcanvas carrito -->
     <div class="offcanvas offcanvas-end"  data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title canvas-titulo" id="staticBackdropLabel">Carrito</h5>
@@ -112,14 +112,24 @@
         <div class="offcanvas-body ">
             <div class= "card container-card row g-0">
                 <div class="foto-producto col-4 d-flex align-items-center">
-                    <img src="assets/img/calzado.png" class="img-fluid rounded-start" alt="Imagen">
+                    <img src="assets/img/productos/zapato1.jpeg" style="width: 200px; height: 100px;" class="img-fluid rounded-start" alt="Imagen">
                 </div>
                 <div class="card-body  col-5">
-                    <h5 class="card-title">Stiletto Vizzano taco cuadrado</h5>
-                    <p class="card-text">$39.000</p>
+                    <h5 class="card-title">Stiletto Vizzano</h5>
+                    <p class="card-text">$1234,56</p>
                 </div>
                 <button class="col-1 btn btn-danger d-flex align-items-center justify-content-center" onclick="eliminarProducto(this)">X</button>
             </div>   
+            <div class= "card container-card row g-0">
+                <div class="foto-producto col-4 d-flex align-items-center">
+                    <img src="assets/img/productos/indu1.jpeg" style="width: 200px; height: 100px;" class="img-fluid rounded-start" alt="Imagen">
+                </div>
+                <div class="card-body  col-5">
+                    <h5 class="card-title">Blazer</h5>
+                    <p class="card-text">$1234,56</p>
+                </div>
+                <button class="col-1 btn btn-danger d-flex align-items-center justify-content-center" onclick="eliminarProducto(this)">X</button>
+            </div>  
         </div>
 
         <div class="d-flex justify-content-between p-3">
@@ -134,7 +144,7 @@
         
         </div>
     </div>
-    
+    <!-- Offcanvas favoritos -->
     <div class="offcanvas offcanvas-end"  data-bs-backdrop="static" tabindex="-1" id="favoritosBackdrop" aria-labelledby="staticBackdropLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title canvas-titulo" id="staticBackdropLabel">Favoritos</h5>
@@ -144,11 +154,11 @@
         <div class="offcanvas-body ">
             <div class= "card container-card row g-0">
                 <div class="foto-producto col-4 d-flex align-items-center">
-                    <img src="assets/img/calzado.png" class="img-fluid rounded-start" alt="Imagen">
+                    <img src="assets/img/productos/marro2.jpeg" style="width: 200px; height: 100px;" class="img-fluid rounded-start" alt="Imagen">
                 </div>
                 <div class="card-body  col-5">
-                    <h5 class="card-title">Stiletto Vizzano taco cuadrado</h5>
-                    <p class="card-text">$39.000</p>
+                    <h5 class="card-title">Billetera</h5>
+                    <p class="card-text">$1234,56</p>
 
                     <div class="d-flex justify-content-end">
                         <button class="boton-fav bi bi-heart d-flex align-items-center " onclick="eliminarProducto(this)"></button>
