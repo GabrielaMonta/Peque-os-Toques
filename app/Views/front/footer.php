@@ -65,7 +65,7 @@
                 <p>Todos los productos ofrecidos están sujetos a disponibilidad. Las imágenes son ilustrativas y pueden diferir del producto real.</p>
 
                 <h6>4. Precios</h6>
-                <p>Los precios están expresados en [moneda local] e incluyen impuestos, salvo que se indique lo contrario. Nos reservamos el derecho de cambiar precios sin previo aviso.</p>
+                <p>Los precios están expresados en pesos argentinos e incluyen impuestos, salvo que se indique lo contrario. Nos reservamos el derecho de cambiar precios sin previo aviso.</p>
 
                 <h6>5. Compras</h6>
                 <p>Al realizar una compra, te comprometés a proporcionar información verdadera y actualizada. La aceptación de un pedido depende de la validación de stock y disponibilidad.</p>
@@ -74,10 +74,10 @@
                 <p>Los envíos se realizan a la dirección proporcionada. No somos responsables de errores causados por datos incorrectos.</p>
 
                 <h6>7. Devoluciones y cambios</h6>
-                <p>Podés realizar cambios o devoluciones dentro de [10 días] desde la recepción, siempre que el producto esté en perfecto estado y en su empaque original.</p>
+                <p>Podés realizar cambios o devoluciones dentro de 10 días desde la recepción, siempre que el producto esté en perfecto estado y en su empaque original.</p>
 
                 <h6>8. Propiedad intelectual</h6>
-                <p>Todo el contenido del sitio pertenece a [Nombre de tu tienda] o a sus proveedores y está protegido por leyes de propiedad intelectual.</p>
+                <p>Todo el contenido del sitio pertenece a Pequeños Toques o a sus proveedores y está protegido por leyes de propiedad intelectual.</p>
 
                 <h6>9. Protección de datos</h6>
                 <p>Respetamos tu privacidad. La información que nos brindes será tratada según nuestra Política de Privacidad.</p>
@@ -86,7 +86,7 @@
                 <p>No nos responsabilizamos por daños derivados del uso o imposibilidad de uso de este sitio web.</p>
 
                 <h6>11. Jurisdicción</h6>
-                <p>Estos términos se rigen por las leyes de [país o región]. Cualquier conflicto será resuelto ante los tribunales de [ciudad o región].</p>
+                <p>Estos términos se rigen por las leyes de Argentina. Cualquier conflicto será resuelto ante los tribunales de la ciudad de Formosa.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
