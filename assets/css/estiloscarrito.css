@@ -226,7 +226,7 @@
 
 .boton-finalizarcompra{
     background-color: #ffffff;
-    border-radius: 15px;
+    border-radius: 5px;
     border: 1px solid #eae0d5;
     width: 70%;
     height: auto;
@@ -241,7 +241,7 @@
 
 .boton-finalizarcompra:hover{
     background-color: #eae0d5;
-    border-radius: 15px;
+    border-radius: 5px;
     border: #eae0d5;
     width: 70%;
     height: auto;
@@ -250,9 +250,28 @@
     margin-top: 1rem;
 }
 .boton-fav{
-    background-color: #9da53a;
-    border-color: #9da53a;
-    border: none;
+    background-color: #eae0d5;
+    border-radius: 5px;
+    border: #eae0d5;
+    
     width: auto;
     height: auto;
+}
+
+.boton-fav{
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: #eae0d5;
+    
+    width: auto;
+    height: 20px;
+}
+.boton-fav:hover{
+    background-color: #eae0d5;
+    border-radius: 5px;
+    border: #eae0d5;
+    
+    width: auto;
+    height: 20px;
+
 }

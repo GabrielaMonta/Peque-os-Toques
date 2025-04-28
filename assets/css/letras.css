@@ -92,6 +92,7 @@
     font-family: 'Libre Bondi', serif; 
     font-size: clamp(16px, 1.1vw, 32px);
     margin-left: 8vw;
+    padding-right: 5vw;
     
 }
 .parrafos-contacto{

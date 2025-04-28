@@ -1,67 +1,56 @@
 .navbar {
-    background-color: #f6f5f2; /*fondo del nav*/
-    
+  background-color: #f6f5f2; /*fondo del nav*/   
 }
 .navbar-brand {
     color: #1c1c1c; /* caracteristicas del titulo*/
 }
 .navbar-nav .nav-link:hover{
-    background-color: #eae0d5;
-    border-radius: 5px; 
+  background-color: #eae0d5;
+  border-radius: 5px; 
 }  
 .navbar-nav .nav-link {
     color: #1c1c1c ; /* caracteristicas de las opciones*/
    
-}
-  
+} 
 .lupa:hover { /* resaltar al pasar el mouse*/
-    background-color: #eae0d5;
-    border-radius: 10px; 
+  background-color: #eae0d5;
+  border-radius: 10px; 
 }
-
 .boton-comprar{
-    background-color: #9da53a;
-    border: 1px solid #1c1c1c; 
+  background-color: #9da53a;
+  border: 1px solid #1c1c1c; 
 }
 
 .boton-comprar:hover{
-    background-color: #eae0d5;
-    border-color: #1c1c1c;
-    text-decoration: underline;   
+  background-color: #eae0d5;
+  border-color: #1c1c1c;
+  text-decoration: underline;   
 }
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0; /* por si el navegador agrega márgenes por defecto */
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0; /* por si el navegador agrega márgenes por defecto */
 }
-  
-main {
-    flex: 1; /* esto empuja el footer hacia abajo */
-    padding-top: 70px;
+main{
+  flex: 1; /* esto empuja el footer hacia abajo */
+  padding-top: 70px;
 }
-
 .footer-news{
   background-color: #bfc86a;
   border-radius: 10px;
   padding: 6px;
   width: 50%;
-  font-weight: bold;
-
 }
-
 .footer-hora{
-    background-color: #bfc86a;
-    border-radius: 10px;/*redondear*/
-    padding: 6px;/*margenes internos*/
-    width: 50%;/*tamaño del fondo*/
-    font-weight: bold;/*negrita*/
+  background-color: #bfc86a;
+  border-radius: 10px;/*redondear*/
+  padding: 6px;/*margenes internos*/
+  width: 50%;/*tamaño del fondo*/
 }
-
 .boton-ok{
   background-color: #eae0d5;
-  border-color: #bfc86a;
+  border: 1px solid #bfc86a;
   border-radius: 10px;
   padding: 3px 10px;
   font-size: 1rem;
@@ -86,137 +75,126 @@ main {
 }
 
 .container-p1{
-    background-color: #eae0d5;
-    /*empuja todo el contenido hacia abajo, desde el borde superior del fondo*/
-    padding-top: 20px;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    padding-left: 20px;
+  background-color: #eae0d5;
+  padding-top: 20px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
 }
 .container-p2{
-    background-color: #bfc86a;
-    margin-top: 0;     /* Elimina el margen superior */
-    margin-bottom: 0;  /* Elimina el margen inferior */
-    padding-top: 15px;  /* Podés ajustar si querés un poco de aire */
-    padding-bottom: 1px;
+  background-color: #bfc86a;
+  margin-top: 0;     
+  margin-bottom: 0;  
+  padding-top: 15px;  
+  padding-bottom: 1px;
 }
-
 .input-short{
-    width: 210px;
+  width: 210px;
 }
-  
    /* Ocultamos el checkbox (controlador del toggle) */
 .toggle-busqueda {
-    display: none;
-
-  }
-  
+  display: none;
+}
   /* Ocultamos el input por defecto */
-  .input-busqueda {
-    display: none;
-    position: absolute;
-    top: 40px; /* o como quieras posicionarlo */
-    right: 0;
-    width: 0px;
-    z-index: 1000;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px 10px;
-  }
-  
+.input-busqueda {
+  display: none;
+  position: absolute;
+  top: 4rem; /* o como quieras posicionarlo */
+  right: 0;
+  width: 25vw;
+  z-index: 1000;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
   /* Cuando el checkbox está chequeado, mostramos el input */
-  .toggle-busqueda:checked ~ .input-busqueda {
-    display: block;
-  }
-
+.toggle-busqueda:checked ~ .input-busqueda {
+  display: block;
+}
   /** {
     outline: 1px solid red;
   }*/
 
-  html, body {
-    overflow-x: hidden;
-  }
-  
-  .container-quienessomos{
-    background-color: #ffffff;
-    padding-top: 20px;
-    padding-right: 5px;
-    padding-bottom: 0px;
-    padding-left: 20px;
-  }
+html, body {
+  overflow-x: hidden;
+} 
+.container-quienessomos{
+  background-color: #ffffff;
+  padding-top: 20px;
+  padding-right: 5px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+}
 
-  .img-container{
-    position: relative;
-        height: auto;
-        width: 50%; 
-        height: auto;
-        
-  }
-  
-  .container-contacto{
-    background-color: #eae0d5;
-    padding-top: 2vw;
-    padding-right: 30px;
-    padding-bottom: 4vw;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    /*padding-left: 20px;*/
-  }
-  .letra-sub{
-    background-color: #f6f5f2;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    padding: 5px;
-    width: clamp(180px, 25vw, 25vw);
-    display: inline-block;
+.img-container{
+  position: relative;
+  height: auto;
+  width: 50%; 
+  height: auto;     
+}
+.container-contacto{
+  background-color: #eae0d5;
+  padding-top: 2vw;
+  padding-right: 30px;
+  padding-bottom: 4vw;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /*padding-left: 20px;*/
+}
+.letra-sub{
+  background-color: #f6f5f2;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 5px;
+  width: clamp(180px, 25vw, 25vw);
+  display: inline-block;
+}
+.letra-sub-nosotros{
+  background-color: #f6f5f2;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 5px;
+  width: clamp(250px, 36vw, 36vw);
+  display: inline-block;
+  margin-top: 20px;
+}
+.letra-sub-comercializacion{
+  background-color: #f6f5f2;
+  margin-top: 20px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 5px;
+  width: clamp(260px, 41vw, 41vw);
+  display: inline-block;
+}
+.letra-sub-preguntas{
+  background-color: #f6f5f2;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 5px;
+  width: clamp(180px, 48vw, 48vw);
+  display: inline-block;
+  margin-top: 20px;
+}
 
-  }
-  .letra-sub-nosotros{
-    background-color: #f6f5f2;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    padding: 5px;
-    width: clamp(250px, 36vw, 36vw);
-    display: inline-block;
-    margin-top: 20px;
-  }
-  .letra-sub-comercializacion{
-    background-color: #f6f5f2;
-    margin-top: 20px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    padding: 5px;
-    width: clamp(260px, 41vw, 41vw);
-    display: inline-block;
-  }
-  .letra-sub-preguntas{
-    background-color: #f6f5f2;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    padding: 5px;
-    width: clamp(180px, 48vw, 48vw);
-    display: inline-block;
-    margin-top: 20px;
-  }
+.icono-redes{
+  background-color: #f6f5f2;
+  padding: 10px;              
+  border-radius: 50%;        
+  display: inline-flex;       
+  align-items: center;
+  justify-content: center;
+  width: 50px;                /* ancho fijo */
+  height: 50px;               /* alto igual al ancho = círculo */
+}
 
-  .icono-redes{
-    background-color: #f6f5f2;
-    padding: 10px;              
-    border-radius: 50%;        
-    display: inline-flex;       
-    align-items: center;
-    justify-content: center;
-    width: 50px;                /* ancho fijo */
-    height: 50px;               /* alto igual al ancho = círculo */
-  }
-
-  .fila-contacto{
-    display: flex;
-    align-items: center; /* Alinea verticalmente al centro */
-    gap: 2vw;            /* Espacio entre ícono y número */
-    margin-top:2vw;  
-  }
+.fila-contacto{
+  display: flex;
+  align-items: center; /* Alinea verticalmente al centro */
+  gap: 2vw;            /* Espacio entre ícono y número */
+  margin-top:2vw;  
+}
 
 .container-formulario-consulta{
   display: flex;
@@ -291,8 +269,7 @@ main {
   position: relative;
   display: inline-block;
   padding-bottom: 5px; 
-}
-  
+} 
 .titulo-subrayado::after {
   content: "";
   position: absolute;    
@@ -301,34 +278,28 @@ main {
   width: 50vw;
   height: 2px; /* grosor de la línea */
   background-color: #eae0d5;
-  }
-  
-  .cuadro-mvv{
-    background-color: #f6f5f2; 
-    border-color: #f6f5f2;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    width: 33vw;     /* ancho fijo */
-    margin-top: 50px;
-    min-width: 200px;
-  }
-
+}
+.cuadro-mvv{
+  background-color: #f6f5f2; 
+  border-color: #f6f5f2;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 33vw;     /* ancho fijo */
+  margin-top: 50px;
+  min-width: 200px;
+}
 .contacto-horario{
-    display:inline-block;
-    border: 2px solid #bfc86a;
-    border-radius: 10px;/*redondear*/
-    padding: 6px;/*margenes internos*/
-    width: 40%;/*tamaño del fondo*/
-    
+  display:inline-block;
+  border: 2px solid #bfc86a;
+  border-radius: 10px;/*redondear*/
+  padding: 6px;/*margenes internos*/
+  width: 40%;/*tamaño del fondo*/ 
 }
-
 .container-horario{
-    text-align: center;
-    padding-top: 90px;
-
+  padding-top: 90px;
+  text-align: center;
 }
-  
 .quienessomos-mvv{
   width: 150px;
   background-color: #eae0d5;
@@ -338,26 +309,18 @@ main {
   display: flex;
   height: 30px;
   transform: translate(0px, -12px);
-  
 }  
-
 .container-mvv{
   display: flex;
   align-items: stretch;
 }
-  
 .cuadro-valores{
   background-color: #f6f5f2; 
   border-color: #f6f5f2;
   border-radius: 5px;
-   /* Para igualar altura si los textos son distintos */
   display: flex;
   flex-direction: column;
-  width: 17vw;     /* ancho fijo */
+  width: 17vw;   
   margin-top: 50px;
   min-width: 200px;
 } 
-  
-  
-  
-  

@@ -93,7 +93,9 @@
                 </div>
                         
                 <div class="d-block d-md-none">
-                    <a href="#"><i class="bi bi-heart fs-4 me-3" style="color: #bfc86a;"></i>Favoritos</a>
+                    <button type="button" class="btn p-0 text-decoration-none d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#favoritosBackdrop" style="color: #bfc86a;">
+                        <i class="bi bi-heart fs-4 me-2" style="color: #bfc86a;"></i>
+                        <span class="fs-6">Favoritos</span></button>
                 </div>
                         
             </div>        
@@ -149,7 +151,7 @@
                     <p class="card-text">$39.000</p>
 
                     <div class="d-flex justify-content-end">
-                        <button class="boton-fav bi bi-heart d-flex  " onclick="eliminarProducto(this)"></button>
+                        <button class="boton-fav bi bi-heart d-flex align-items-center " onclick="eliminarProducto(this)"></button>
                         <button class="boton-fav bi bi-basket d-flex  ms-1" onclick="agregarAlCarrito(this)"></button>
                     </div>
                 </div>
