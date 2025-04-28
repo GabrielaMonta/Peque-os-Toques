@@ -1,3 +1,5 @@
+<link href="assets/css/novedades.css" rel="stylesheet" > 
+<main>
     <section class="w-100 mb-5">
         <div id="carouselExampleDark" class="carousel carousel-dark slide">
             <div class="carousel-indicators">
@@ -49,8 +51,11 @@
       
 
     <div class="container-fluid mt-5 mb-5 ingresos">
-        <h2>¡NUEVOS INGRESOS!</h2>
-    </div> 
+        <h2>¡Descubrí nuestras últimas novedades!</h2>
+        <p>Productos exclusivos, promociones especiales y mucho más. ¡No te lo pierdas!</p>
+        <a href="<?php echo base_url('novedades');?>" class="btn-novedades">Ver más</a>
+    </div>
+
 
     <div class="container mt-5 mb-5">
     <div class="row g-4">
@@ -103,7 +108,7 @@
         <a href="<?php echo base_url('catalogo-todo');?>" class="btn boton-comprar letra-botones">Comprar</a>
     </div>
 
-    <div class="container-fluid mt-5 mb-5 d-flex justify-content-center gap-5">
+    <div class="container-fluid mt-5 mb-5 d-flex justify-content-center flex-wrap gap-5">
         <div class="card text-center extra-card">
             <i class="bi bi-truck iconos-extra mb-0"></i>
             <div class="card-body pt-0">
@@ -118,4 +123,4 @@
             </div>
         </div>
     </div>
-  
+</main>

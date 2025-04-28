@@ -45,7 +45,7 @@
       <div class="divisor-texto text-center">
             <span>o sino</span>
       </div>
-      <div class="modal-footer justify-content-center border-0 mb-3">
+      <div class="modal-footer justify-content-center border-0 mb-3 text-center">
         <div class="d-flex flex-column flex-md-row gap-2 w-100 justify-content-center">
           <button type="button" class="btn btn-primary btn-inicio-alternativo">
             <i class="bi bi-google me-2"></i> Ingresar con Google

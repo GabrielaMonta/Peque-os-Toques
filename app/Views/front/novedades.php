@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 <main>
     <div class="container mt-3">
         <nav aria-label="breadcrumb">
@@ -26,7 +28,12 @@
                 </div>
             </div>
         </div>
-
+        <script>
+            const choices = new Choices('#ordenar', {
+                searchEnabled: false,  // si querés desactivar el buscador
+                itemSelectText: '',    // saca el texto de "Presiona Enter para seleccionar"
+            });
+        </script>
         <div class="row">
             <!-- Filtros -->
             <div class="col-md-3 mb-4">
@@ -40,6 +47,12 @@
                         <option value="4">Marroquineria</option>
                     </select>
                 </div>
+                <script>
+                    const choicesFiltrar = new Choices('.cajita-filtro', {
+                        searchEnabled: false,  // Desactivar el buscador
+                        itemSelectText: '',    // Quitar el texto "Presiona Enter para seleccionar"
+                    });
+                </script>
                
                 <div class="accordion" id="accordionFiltros">
                     <!-- Filtro de Talle -->
@@ -167,7 +180,7 @@
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                     <!-- Producto 1 -->
                     <div class="col">
-                        <a href="#" class="card-link">
+                        <a href="<?php echo base_url('producto');?>" class="card-link">
                             <div class="card producto-card h-100 position-relative">
                                 <img src="assets/img/productos/zapato1.jpeg" class="card-img-top" alt="Producto 1">
                                 <div class="card-body">
@@ -181,41 +194,9 @@
                             </div>
                         </a>
                     </div>
-                    <!-- Producto 2 -->
-                    <div class="col">
-                        <a href="#" class="card-link">
-                            <div class="card h-100 producto-card position-relative">
-                                <img src="assets/img/productos/zapato2.jpeg" class="card-img-top" alt="Producto 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Zapatos Modare</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Producto 3 -->
-                    <div class="col">
-                        <a href="#" class="card-link">
-                            <div class="card h-100 producto-card">
-                                <img src="assets/img/productos/zapato3.jpeg" class="card-img-top" alt="Producto 3">
-                                    <div class="card-body">
-                                    <h5 class="card-title">Tacones Modare</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
                     <!-- Producto 1 -->
                     <div class="col">
-                        <a href="#" class="card-link">
+                        <a href="<?php echo base_url('producto');?>" class="card-link">
                             <div class="card producto-card h-100 position-relative">
                                 <img src="assets/img/productos/indu1.jpeg" class="card-img-top" alt="Producto 1">
                                 <div class="card-body">
@@ -231,7 +212,7 @@
                     </div>
                     <!-- Producto 2 -->
                     <div class="col">
-                        <a href="#" class="card-link">
+                        <a href="<?php echo base_url('producto');?>" class="card-link">
                             <div class="card h-100 producto-card position-relative">
                                 <img src="assets/img/productos/indu2.jpeg" class="card-img-top" alt="Producto 2">
                                 <div class="card-body">
@@ -245,25 +226,9 @@
                             </div>
                         </a>
                     </div>
-                    <!-- Producto 3 -->
-                    <div class="col">
-                        <a href="#" class="card-link">
-                            <div class="card h-100 producto-card">
-                                <img src="assets/img/productos/indu3.jpeg" class="card-img-top" alt="Producto 3">
-                                    <div class="card-body">
-                                    <h5 class="card-title">Vestido</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
                      <!-- Producto 1 -->
                      <div class="col">
-                        <a href="#" class="card-link">
+                        <a href="<?php echo base_url('producto');?>" class="card-link">
                             <div class="card producto-card h-100 position-relative">
                                 <img src="assets/img/productos/blanqueria1.jpeg" class="card-img-top" alt="Producto 1">
                                 <div class="card-body">
@@ -279,7 +244,7 @@
                     </div>
                     <!-- Producto 2 -->
                     <div class="col">
-                        <a href="#" class="card-link">
+                        <a href="<?php echo base_url('producto');?>" class="card-link">
                             <div class="card h-100 producto-card position-relative">
                                 <img src="assets/img/productos/blanqueria2.jpeg" class="card-img-top" alt="Producto 2">
                                 <div class="card-body">
@@ -295,43 +260,11 @@
                     </div>
                      <!-- Producto 1 -->
                      <div class="col">
-                        <a href="#" class="card-link">
+                        <a href="<?php echo base_url('producto');?>" class="card-link">
                             <div class="card producto-card h-100 position-relative">
                                 <img src="assets/img/productos/marro1.jpeg" class="card-img-top" alt="Producto 1">
                                 <div class="card-body">
                                     <h5 class="card-title">Cartera</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Producto 2 -->
-                    <div class="col">
-                        <a href="#" class="card-link">
-                            <div class="card h-100 producto-card position-relative">
-                                <img src="assets/img/productos/marro2.jpeg" class="card-img-top" alt="Producto 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Tarjetero</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Producto 3 -->
-                    <div class="col">
-                        <a href="#" class="card-link">
-                            <div class="card h-100 producto-card">
-                                <img src="assets/img/productos/marro3.jpeg" class="card-img-top" alt="Producto 3">
-                                    <div class="card-body">
-                                    <h5 class="card-title">Billetera</h5>
                                     <p class="card-precio">$1234,56</p>
                                     <p class="card-promo"><small>$1234,56 con transferencia</small></p>
                                 </div>

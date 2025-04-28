@@ -30,4 +30,5 @@ $routes->get('/inicio-sesion', 'Home::inicioSesion');
 $routes->get('/registro', 'Home::registro');
 
 $routes->get('/carrito', 'Home::carrito');
+$routes->get('/producto', 'Home::producto');
 

@@ -1,6 +1,6 @@
 # Ecommerce - Pequeños Toques
 
-## Trabajo de la materia Taller de Programacion I - UNNE-FaCENA
+## Trabajo de la materia Taller de Programacion I - UNNE - FaCENA
 
 Este proyecto consiste en el desarrollo de una tienda en línea (eCommerce) como parte del trabajo práctico de la materia Taller de programacion I de la Universidad Nacional del Nordeste. Tiene como objetivo la creacion una plataforma funcional que permita realizar compras, gestionar productos y ofrecer una experiencia de usuario intuitiva.
 

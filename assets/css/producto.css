@@ -1,0 +1,59 @@
+.product-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+    background-color: #f6f5f2;
+}
+.product-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+}
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+.product-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Libre Bondi';
+}
+.product-description {
+    font-size: 1rem;
+    color: black;
+    font-family: 'Inter';
+    text-align: justify;
+}
+.product-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #b38b6d;
+    font-family: 'Inter';
+}
+.product-category {
+    font-size: 0.9rem;
+    color: #888;
+}
+.add-to-cart-btn {
+    font-size: 1.1rem;
+    background-color: white;
+    color: #9da53a;
+    border: 1px solid #9da53a;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Inter';
+}
+.add-to-cart-btn:hover {
+    background-color: #9da53a;
+    color:white;
+}
+.card-img-top {
+    height: 300px; /* Establecer una altura fija para la imagen */
+    object-fit: cover; /* Para asegurarse de que la imagen se ajuste sin distorsionar */
+}

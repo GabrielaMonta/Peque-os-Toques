@@ -1,0 +1,36 @@
+.ingresos {
+    background-color: #eae0d5;
+    font-family: 'Libre Bondi', serif;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: 200px;
+    text-align: center;
+}
+
+.ingresos .btn-novedades {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d5bdaf;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 576px) {
+    .ingresos{
+        height: 250px;
+    }
+    .ingresos h2 {
+        font-size: 1.5rem;
+    }
+    .ingresos p {
+        font-size: 1rem;
+    }
+    .ingresos .btn-novedades {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}

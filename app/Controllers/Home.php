@@ -116,11 +116,19 @@ class Home extends BaseController
     }
 
     public function carrito()
-{
-    $data['titulo'] = 'Carrito';
-    echo view('front/head', $data);
-    echo view('front/navbar', $data);
-    echo view('front/carrito', $data);
-    echo view('front/footer', $data);
-}
+    {
+        $data['titulo'] = 'Carrito';
+        echo view('front/head', $data);
+        echo view('front/navbar', $data);
+        echo view('front/carrito', $data);
+        echo view('front/footer', $data);
+    }
+
+    public function producto(){
+        $data['titulo'] = 'Producto';
+        echo view('front/head', $data);
+        echo view('front/navbar', $data);
+        echo view('front/catalogo/producto-view', $data);
+        echo view('front/footer', $data);
+    }
 }

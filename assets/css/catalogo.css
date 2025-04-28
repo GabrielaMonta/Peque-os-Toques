@@ -1,3 +1,4 @@
+
 .section-title {
     position: relative;
     padding-bottom: 10px;
@@ -36,10 +37,6 @@
 .letra-migas:hover{
     color:#b38b6d;
     text-decoration: underline;
-}
-.cajita-filtro{
-    border: 1px solid #b38b6d80;
-    background-color:#f6f5f2;
 }
 .form-select:focus {
     box-shadow: none;
@@ -84,14 +81,7 @@ option:hover {
 .titulo-acordeon:hover{
     color:#9da53a;
 }
-#ordenar{
-    border: 1px solid #b38b6d80;
-    background-color:#f6f5f2;
-}
-#ordenar:focus {
-    box-shadow: none;
-    outline: none;
-}
+
 .accordion-button:not(.collapsed) {
     color:#9da53a ;
     background-color: #f6f5f2;
@@ -135,3 +125,16 @@ option:hover {
     box-shadow: 0 0 8px 2px #b38b6d80;;
 }
 
+.choices__inner {
+    width: 200px; /* fijo, no depende del contenido */
+    max-width: 200px;
+    min-width: 150px;
+    border: 1px solid #b38b6d80 !important;
+    background-color:#f6f5f2 !important;
+}
+
+.choices__list--dropdown {
+    width: 200px; /* fijo también */
+    max-width: 200px;
+    min-width: 150px;
+}

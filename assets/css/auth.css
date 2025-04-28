@@ -100,7 +100,14 @@
 .btn-inicio-alternativo i {
     font-size: 1rem;  /* ícono más grande */
     color: #9da53a;     /* ícono verde */
-  }
+}
+@media (max-width: 768px) {
+    .btn-inicio-alternativo {
+        width: 50%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
 .divisor-texto {
     justify-content: center;
     display: flex;

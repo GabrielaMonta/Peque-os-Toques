@@ -71,31 +71,40 @@
     font-family: 'Libre Bondi', serif;
 }
 
-.ingresos{
-    background-color:#eae0d5;
-    font-family: 'Libre Bondi';
-    padding-top: 30px;
-    padding-bottom: 30px;
-    height: 500px;
-}
+
 
 .extra{
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
-.extra-card{
+.extra-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Esto centra el texto adentro */
+    height: 12rem;
+    width: 18rem;
     background-color: rgba(246, 245, 242, 0.3);
-    width: 20rem; height: 15rem;
     font-family: 'Libre Bondi';
-    font-size: 25px;
+    font-size: 1.2rem;
     border-radius: 20px;
-    border: 5px solid #bfc86a; 
-
+    border: 2px solid #bfc86a;
+    padding: 1rem; /* Opcional para dar aire */
 }
-.iconos-extra{
-    color: #1c1c1c;
-    font-size: 120px;
+/* íconos */
+.iconos-extra {
+    font-size: 4rem; /* Hacemos los íconos grandes y visibles */
+    margin-bottom: 1rem; /* Separación del texto */
+    color: #bfc86a; /* Opcional: un gris elegante */
+}
+@media (max-width: 768px) {
+    .extra-card {
+        width: 100%;
+        max-width: 250px; 
+        max-height: 200px;
+    }
 }
 
 /*PRODUCTOS*/

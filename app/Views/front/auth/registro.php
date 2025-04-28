@@ -47,13 +47,15 @@
             </form>
       </div>
         
-        <div class="modal-footer justify-content-center border-1 mb-1">
-            <div class="text-center text-footer-modal mb-0">
-                    <span>¿Ya tenes cuenta?</span>
-            </div>
-            <div class="d-flex flex-column flex-md-row gap-2 w-100 justify-content-center">
-                <button type="button" class="btn btn-primary boton-registro" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Iniciar Sesion</button>
-            </div>
+      <div class="modal-footer justify-content-center border-1 mb-1 text-center">
+        <div class="text-center text-footer-modal mb-0 w-100">
+          <span>¿Ya tenés cuenta?</span>
+        </div>
+        <div class="d-flex flex-column flex-md-row gap-2 w-100 justify-content-center text-center mt-2">
+          <button type="button" class="btn btn-primary btn-inicio-alternativo" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">
+            Iniciar Sesión
+          </button>
+        </div>
       </div>
     </div>
   </div>

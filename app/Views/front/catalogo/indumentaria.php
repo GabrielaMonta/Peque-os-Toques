@@ -1,9 +1,11 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 <main>
     <div class="container mt-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#" class="letra-migas">Catalogo</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="#" class="letra-migas">Indumentaria</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo base_url('catalogo-todo');?>" class="letra-migas">Catalogo</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="<?php echo base_url('catalogo-indumentaria');?>" class="letra-migas">Indumentaria</a></li>
             </ol>
         </nav>
 
@@ -17,7 +19,7 @@
             <div class="col-12 d-flex justify-content-md-end">
                 <div class="d-flex align-items-center">
                     <label for="ordenar" class="me-2 mb-0 titulo-filtro">Ordenar por:</label>
-                    <select id="ordenar" class="form-select form-select-sm w-auto ">
+                    <select id="ordenar" class="form-select form-select-sm">
                         <option selected>Relevancia</option>
                         <option value="1">A-Z</option>
                         <option value="2">Precio: menor a mayor</option>
@@ -26,6 +28,12 @@
                 </div>
             </div>
         </div>
+        <script>
+            const choices = new Choices('#ordenar', {
+                searchEnabled: false,  // si querés desactivar el buscador
+                itemSelectText: '',    // saca el texto de "Presiona Enter para seleccionar"
+            });
+        </script>
 
         <div class="row">
             <!-- Filtros -->
@@ -40,7 +48,12 @@
                         <option value="4">Unisex</option>
                     </select>
                 </div>
-               
+                <script>
+                    const choicesFiltrar = new Choices('.cajita-filtro', {
+                        searchEnabled: false,  // Desactivar el buscador
+                        itemSelectText: '',    // Quitar el texto "Presiona Enter para seleccionar"
+                    });
+                </script>
                 <div class="accordion" id="accordionFiltros">
                     <!-- Filtro de Talle -->
                     <div class="accordion-item">
@@ -191,7 +204,7 @@
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                     <!-- Producto 1 -->
                     <div class="col">
-                        <a href="#" class="card-link">
+                        <a href="<?php echo base_url('producto');?>" class="card-link">
                             <div class="card producto-card h-100 position-relative">
                                 <img src="assets/img/productos/indu1.jpeg" class="card-img-top" alt="Producto 1">
                                 <div class="card-body">
@@ -207,7 +220,7 @@
                     </div>
                     <!-- Producto 2 -->
                     <div class="col">
-                        <a href="#" class="card-link">
+                        <a href="<?php echo base_url('producto');?>" class="card-link">
                             <div class="card h-100 producto-card position-relative">
                                 <img src="assets/img/productos/indu2.jpeg" class="card-img-top" alt="Producto 2">
                                 <div class="card-body">
@@ -223,7 +236,7 @@
                     </div>
                     <!-- Producto 3 -->
                     <div class="col">
-                        <a href="#" class="card-link">
+                        <a href="<?php echo base_url('producto');?>" class="card-link">
                             <div class="card h-100 producto-card">
                                 <img src="assets/img/productos/indu3.jpeg" class="card-img-top" alt="Producto 3">
                                     <div class="card-body">
