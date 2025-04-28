@@ -31,10 +31,10 @@ $routes->get('/registro', 'Home::registro');
 
 /*Carrito */
 $routes->get('/carrito', 'Home::carrito');
-<<<<<<< HEAD
+
 $routes->get('/producto', 'Home::producto');
-=======
+
 $routes->get('/iniciar-pago', 'Home::iniciarPago');
 
->>>>>>> origin/Bian
+
 
