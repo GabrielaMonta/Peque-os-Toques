@@ -31,9 +31,9 @@
                 <a href="<?= site_url('contacto'); ?>" class="resaltado"> Contactanos </a>
             </h4> 
             <div class="text-center mb-3">
-                <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#modalTerminos" style="font-size: 0.9rem;">
-                    Términos y condiciones
-                </a>
+            <button type="button" class="btn btn-link text-dark" data-bs-toggle="modal" data-bs-target="#terminosModal">
+                Términos y Condiciones
+            </button>
             </div>
         
         </div>
@@ -45,21 +45,51 @@
         </div>
     </footer>
         <!-- Modal de Términos y Condiciones -->
-        <div class="modal fade" id="modalTerminos" tabindex="-1" aria-labelledby="modalTerminosLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal fade" id="terminosModal" tabindex="-1" aria-labelledby="terminosModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg"> <!-- Responsivo y con scroll -->
             <div class="modal-content">
-            <div class="modal-header" style="background-color: #bfc86a; border-bottom: none;">
-                <h5 class="modal-title" id="modalTerminosLabel" style="color: #333; font-weight: bold;">Términos y Condiciones</h5>
+            <div class="modal-header">
+                <h5 class="modal-title" id="terminosModalLabel">Términos y Condiciones</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
-            <div class="modal-body" style="padding: 1.5rem; font-size: 0.95rem; color: #555;">
-                <p>Bienvenido a nuestra tienda online. Al utilizar nuestro sitio web, aceptás nuestros términos y condiciones. Nos reservamos el derecho de actualizar o modificar estos términos en cualquier momento sin previo aviso.</p>
-                <p>Todos los productos están sujetos a disponibilidad. Los precios pueden cambiar sin previo aviso.</p>
-                <p>El uso de este sitio implica la aceptación de nuestras políticas de compra, envío y devolución. Te recomendamos leerlas detenidamente antes de realizar una compra.</p>
-                <p>Para más detalles o consultas, podés contactarnos a través de nuestros canales de comunicación.</p>
+            <div class="modal-body" style="text-align: justify;">
+                <p>Bienvenido/a a nuestro sitio web. Al utilizar nuestros servicios y realizar compras en nuestra tienda online, aceptás los siguientes Términos y Condiciones. Te recomendamos leerlos detenidamente.</p>
+                
+                <h6>1. Aceptación de los términos</h6>
+                <p>El acceso y uso de este sitio web están sujetos a estos Términos y Condiciones, a nuestra Política de Privacidad y a todas las leyes aplicables. Al utilizar este sitio, aceptás estos términos en su totalidad.</p>
+
+                <h6>2. Modificaciones</h6>
+                <p>Nos reservamos el derecho de actualizar o modificar estos Términos y Condiciones en cualquier momento sin previo aviso. Es tu responsabilidad revisar esta sección regularmente.</p>
+
+                <h6>3. Productos y servicios</h6>
+                <p>Todos los productos ofrecidos están sujetos a disponibilidad. Las imágenes son ilustrativas y pueden diferir del producto real.</p>
+
+                <h6>4. Precios</h6>
+                <p>Los precios están expresados en [moneda local] e incluyen impuestos, salvo que se indique lo contrario. Nos reservamos el derecho de cambiar precios sin previo aviso.</p>
+
+                <h6>5. Compras</h6>
+                <p>Al realizar una compra, te comprometés a proporcionar información verdadera y actualizada. La aceptación de un pedido depende de la validación de stock y disponibilidad.</p>
+
+                <h6>6. Envíos</h6>
+                <p>Los envíos se realizan a la dirección proporcionada. No somos responsables de errores causados por datos incorrectos.</p>
+
+                <h6>7. Devoluciones y cambios</h6>
+                <p>Podés realizar cambios o devoluciones dentro de [10 días] desde la recepción, siempre que el producto esté en perfecto estado y en su empaque original.</p>
+
+                <h6>8. Propiedad intelectual</h6>
+                <p>Todo el contenido del sitio pertenece a [Nombre de tu tienda] o a sus proveedores y está protegido por leyes de propiedad intelectual.</p>
+
+                <h6>9. Protección de datos</h6>
+                <p>Respetamos tu privacidad. La información que nos brindes será tratada según nuestra Política de Privacidad.</p>
+
+                <h6>10. Responsabilidad</h6>
+                <p>No nos responsabilizamos por daños derivados del uso o imposibilidad de uso de este sitio web.</p>
+
+                <h6>11. Jurisdicción</h6>
+                <p>Estos términos se rigen por las leyes de [país o región]. Cualquier conflicto será resuelto ante los tribunales de [ciudad o región].</p>
             </div>
-            <div class="modal-footer" style="border-top: none; padding-bottom: 1rem;">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #bfc86a; border: none;">Cerrar</button>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
             </div>
         </div>
