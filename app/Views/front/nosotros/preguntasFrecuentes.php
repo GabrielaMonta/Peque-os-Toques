@@ -11,7 +11,7 @@
             
             <h6 class= "titulo-subrayado preguntas-frecuentes"> ¿Cuánto tardan en preparar/despachar mi pedido? </h6>
                 <p class="parrafos-preguntas me-5"> Desde el momento que realizas tu compra tenemos 24hs hábiles para enviarte la confirmación para retiro en tienda.
-                Para envíos, 24 a 48hs hábiles para despachar hasta la sucursal del correo/transporte seleccionado.</p> 
+                <br>Para envíos, 24 a 48hs hábiles para despachar hasta la sucursal del correo/transporte seleccionado.</p> 
             
             <h6 class= "titulo-subrayado preguntas-frecuentes"> ¿Cuánto tardan en preparar/despachar mi pedido? </h6>
                 <p class="parrafos-preguntas me-5"> Desde el momento que realizas tu compra tenemos 24hs hábiles para enviarte la confirmación para retiro en tienda.

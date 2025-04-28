@@ -5,13 +5,13 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#" class="letra-migas">Catalogo</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="#" class="letra-migas">Ver Todo</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="#" class="letra-migas">Novedades</a></li>
             </ol>
         </nav>
 
         <!-- Título -->
         <div class="section-title position-relative mb-2">
-            <h2 class="text-uppercase">Ver Todo</h2>
+            <h2 class="text-uppercase">Novedades</h2>
         </div>
 
         <!-- Ordenar por -->

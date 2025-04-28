@@ -9,9 +9,9 @@
             </button>
 
             <!-- Título centrado para mostrar en pantallas grandes-->
-            <a class="navbar-brand d-none d-lg-block position-absolute top-50 start-50 translate-middle titulo-central" href="#">Pequeños Toques</a>
+            <a class="navbar-brand d-none d-lg-block position-absolute top-50 start-50 translate-middle titulo-central" href="<?php echo base_url(' ');?>">Pequeños Toques</a>
             <!-- Logo solo visible en pantallas chicas -->
-            <a class="navbar-brand d-block d-lg-none position-absolute top-50 start-50 translate-middle" href="#">
+            <a class="navbar-brand d-block d-lg-none position-absolute top-50 start-50 translate-middle" href="<?php echo base_url(' ');?>">
                 <img src="assets\img\Pequeños toques logo.png" alt="Logo" height="40">
             </a>
 

@@ -71,8 +71,6 @@
     font-family: 'Libre Bondi', serif;
 }
 
-
-
 .extra{
     padding-top: 50px;
     padding-bottom: 50px;
@@ -83,19 +81,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center; /* Esto centra el texto adentro */
+    text-align: center; 
     height: 12rem;
     width: 18rem;
-    background-color: rgba(246, 245, 242, 0.3);
-    font-family: 'Libre Bondi';
-    font-size: 1.2rem;
+    background-color:#f6f5f2;
     border-radius: 20px;
     border: 2px solid #bfc86a;
     padding: 1rem; /* Opcional para dar aire */
 }
+.extra-card .card-text{
+    font-size: 1.2rem;
+    font-family: 'Libre Bondi';
+}
+
 /* íconos */
 .iconos-extra {
-    font-size: 4rem; /* Hacemos los íconos grandes y visibles */
+    font-size: 4rem; /* Iconos grandes y visibles */
     margin-bottom: 1rem; /* Separación del texto */
     color: #bfc86a; /* Opcional: un gris elegante */
 }
