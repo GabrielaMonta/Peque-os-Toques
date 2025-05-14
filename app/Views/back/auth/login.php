@@ -25,21 +25,28 @@
         </h4>
       </div>
 
+       <!-- Servicio de validación de codeigniter -->
+      <?php $validation = \Config\Services::validation();?>
       <div class="modal-body">
-        <form>
-          <div class="mt-1 mb-1">
-            <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
-            <input type="email" class="form-control input-auth" id="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
-          <div class="mb-1">
-            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-            <input type="password" class="form-control input-auth" id="exampleInputPassword1">
-            <div id="passwordHelp" class="fo-textrm">¿Olvidaste tu contraseña?</div>
-          </div>
-          <div class="d-flex flex-column align-items-center botones-modal">
-            <button type="submit" class="btn btn-primary boton-inicio">Iniciar sesion</button>
-            <button type="button" class="btn btn-primary boton-registro" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Registrarse</button>
-          </div>
+        <form method = "post" action = "<?php echo base_url('/enviar-form')?>">
+          <?=csrf_field();?>  <!-- genera un campo oculto o token de seguridad -->
+          <?php if(!empty (session() -> getFlashdata('fail'))):?>
+            <div class = "alert alert-danger"><?=session() -> getFlashdata('fail');?> </div>
+              <?php endif?>
+                <?php if(!empty (session() -> getFlashdata('succes'))):?>
+                  <div class="mt-1 mb-1">
+                    <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
+                    <input type="email" class="form-control input-auth" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-1">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control input-auth" id="exampleInputPassword1">
+                    <div id="passwordHelp" class="fo-textrm">¿Olvidaste tu contraseña?</div>
+                  </div>
+                  <div class="d-flex flex-column align-items-center botones-modal">
+                    <button type="submit" class="btn btn-primary boton-inicio">Iniciar sesion</button>
+                    <button type="button" class="btn btn-primary boton-registro" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Registrarse</button>
+                  </div>
         </form>
       </div>
       <div class="divisor-texto text-center">

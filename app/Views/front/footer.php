@@ -95,8 +95,8 @@
         </div>
         </div>
 
-    <?= view('front/auth/login') ?>
-    <?= view('front/auth/registro') ?>
+    <?= view('back/auth/login') ?>
+    <?= view('back/auth/registro') ?>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
    
