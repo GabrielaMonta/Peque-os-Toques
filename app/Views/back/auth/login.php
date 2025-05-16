@@ -28,12 +28,6 @@
        <!-- Servicio de validación de codeigniter -->
       <?php $validation = \Config\Services::validation();?>
       <div class="modal-body">
-        <form method = "post" action = "<?php echo base_url('/enviar-form')?>">
-          <?=csrf_field();?>  <!-- genera un campo oculto o token de seguridad -->
-          <?php if(!empty (session() -> getFlashdata('fail'))):?>
-            <div class = "alert alert-danger"><?=session() -> getFlashdata('fail');?> </div>
-              <?php endif?>
-                <?php if(!empty (session() -> getFlashdata('succes'))):?>
                   <div class="mt-1 mb-1">
                     <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
                     <input type="email" class="form-control input-auth" id="exampleInputEmail1" aria-describedby="emailHelp">

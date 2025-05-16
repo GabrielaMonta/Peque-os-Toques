@@ -24,28 +24,57 @@
         </h4>
       </div>
 
+       <!-- Servicio de validación de codeigniter -->
+       <?php $validation = \Config\Services::validation();?>
+        <form method = "post" action = "<?php echo base_url('/enviar-form')?>">
+          <?=csrf_field();?>  <!-- genera un campo oculto o token de seguridad -->
+
+          <?php if(!empty (session() -> getFlashdata('fail'))):?>
+          <div class = "alert alert-danger"><?=session() -> getFlashdata('fail');?> </div>
+          <?php endif ?>
+          <?php if(!empty (session() -> getFlashdata('success'))):?>
+          <div class = "alert alert-danger"><?=session() -> getFlashdata('success');?> </div>
+          <?php endif?>
+
       <div class="modal-body mb-0">
-            <form>
-                <div class="mt-1">
-                    <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
-                    <input type="email" class="form-control input-auth" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-1">
-                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control input-auth" id="exampleInputPassword1">
-                </div>
-                <div class="mb-1">
-                    <label for="exampleInputPassword1" class="form-label">Repetir Contraseña</label>
-                    <input type="password" class="form-control input-auth" id="exampleInputPassword1">
-                </div>
-                <div class="d-flex flex-column align-items-center botones-modal mt-3">
-                    <button type="submit" class="btn btn-primary boton-inicio">Registrarse</button>
-                    <button type="button" class="btn btn-primary boton-registro">
-                    <i class="bi bi-google mb-0"></i> Continuar con google
-                    </button>
-                </div>
-            </form>
-      </div>
+            <div class="mt-1">
+                <label for="email" class="form-label">Correo electronico</label>
+                <input type="email" name="email" class="form-control input-auth" id="email" aria-describedby="emailHelp">
+                <!-- Error -->
+                 <?php if($validation->getError('email')){?>
+                    <div class='alert alert-danger mt-2'>
+                      <?=$error = $validation->getError('email'); ?>
+                  </div>
+                  <?php } ?>
+              </div>
+            <div class="mb-1">
+                <label for="pass" class="form-label">Contraseña</label>
+                <input type="password"  name="pass" class="form-control input-auth" id="pass">
+                <!-- Error -->
+                <?php if($validation->getError('password')){?>
+                    <div class='alert alert-danger mt-2'>
+                      <?=$error = $validation->getError('pass'); ?>
+                  </div>
+                <?php } ?>
+            </div>
+            <div class="mb-1">
+                <label for="pass_confirm" class="form-label">Repetir Contraseña</label>
+                <input type="password" name="pass_confirm" class="form-control input-auth" id="pass_confirm">
+                <!-- Error -->
+                <?php if($validation->getError('pass_confirm')) { ?>
+                    <div class='alert alert-danger mt-2'>
+                      <?=$error = $validation->getError('pass_confirm'); ?>
+                  </div>
+                <?php } ?>
+            </div>
+            <div class="d-flex flex-column align-items-center botones-modal mt-3">
+              <button type="submit" class="btn btn-primary boton-inicio">Registrarse</button>
+              <button type="button" class="btn btn-primary boton-registro">
+                  <i class="bi bi-google mb-0"></i> Continuar con google
+              </button>
+            </div>
+        </div>
+      </form>
         
       <div class="modal-footer justify-content-center border-1 mb-1 text-center">
         <div class="text-center text-footer-modal mb-0 w-100">
@@ -60,3 +89,5 @@
     </div>
   </div>
 </div>
+
+
