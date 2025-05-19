@@ -28,6 +28,23 @@
        <!-- Servicio de validación de codeigniter -->
       <?php $validation = \Config\Services::validation();?>
       <div class="modal-body">
+        <?php if(session() ->getFlashdata('success')): ?>
+          <div class="alert alert-success mt-2 mx-3">
+              <?= session()->getFlashdata('success'); ?>
+          </div>
+         <?php endif; ?>
+
+         <?php if (session()->get('validation')): ?>
+            <div class="alert alert-danger">
+                Por favor, corrige los siguientes errores:
+                <ul>
+                    <?php foreach (session()->get('validation')->getErrors() as $error): ?>
+                        <li><?= esc($error) ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+
                   <div class="mt-1 mb-1">
                     <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
                     <input type="email" class="form-control input-auth" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -59,3 +76,4 @@
     </div>
   </div>
 </div>
+

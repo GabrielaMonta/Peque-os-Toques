@@ -4,8 +4,7 @@ namespace App\Controllers;
 use App\Models\Usuarios_model;
 use CodeIgniter\Controller;
 
-class UsuarioController extends Controller
-{
+class UsuarioController extends Controller {
     public function __construct()
     {
         helper(['form', 'url']);
@@ -19,19 +18,31 @@ class UsuarioController extends Controller
             'pass_confirm' => 'required|matches[pass]'
         ];
 
-        if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('validation', $this->validator);
+        if ($this->validate($rules)) {
+            $formModel = new Usuarios_model();
+            $data =[
+                'email' => $this->request->getVar('email'),
+                'pass'  => password_hash($this->request->getVar('pass'), PASSWORD_DEFAULT),
+            ];
+            // Respuesta JSON sin errores
+            if ($formModel->save($data)) {
+                return $this->response->setJSON([
+                    'status' => true,
+                    'message' => 'Usuario registrado con éxito. Ahora puedes iniciar sesión.'
+                ]);
+            } else {
+            // Respuesta JSON con errores
+                log_message('error', 'Error al guardar: ' . json_encode($formModel->errors()));
+                return $this->response->setJSON([
+                'status' => false,
+                'errors' => $formModel->errors()
+            ]);}
+        }else{
+            return $this->response->setJSON([
+                'status' => false,
+                'errors' => $this->validator->getErrors()
+            ]);
         }
-
-        $formModel = new Usuarios_model();
-
-        $formModel->save([
-            'email' => $this->request->getVar('email'),
-            'pass'  => password_hash($this->request->getVar('pass'), PASSWORD_DEFAULT),
-        ]);
-
-        session()->setFlashdata('success', 'Usuario registrado con éxito.');
-        return redirect()->to('/');
     }
 }
 

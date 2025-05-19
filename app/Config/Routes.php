@@ -25,9 +25,6 @@ $routes->get('/catalogo-blanqueria', 'Home::blanqueria');
 $routes->get('/catalogo-marroquineria', 'Home::marroquineria');
 $routes->get('/catalogo-todo', 'Home::verTodo');
 
-/*Boton Auth*/
-$routes->get('/inicio-sesion', 'Home::inicioSesion');
-$routes->get('/registro', 'Home::registro');
 
 /*Carrito */
 $routes->get('/carrito', 'Home::carrito');
