@@ -27,7 +27,7 @@
         
         <?php $validation = \Config\Services::validation();
          if (session('validation')) {
-          $validation = session('validation'); <!-- permite mostrar los errores-->
+          $validation = session('validation'); 
         }?>
           
         <form action="<?= site_url('enviar-form') ?>" method="post">
