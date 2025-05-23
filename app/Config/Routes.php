@@ -33,5 +33,5 @@ $routes->get('/producto', 'Home::producto');
 
 $routes->get('/iniciar-pago', 'Home::iniciarPago');
 
-$routes->post('/enviar-form', 'UsuarioController::formValidation');
+$routes->post('/enviar-form', 'UsuarioController::registrar');
 

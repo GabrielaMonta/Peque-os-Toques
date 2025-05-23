@@ -5,8 +5,18 @@ namespace App\Controllers;
 class Home extends BaseController
 {
     public function index()
-    {
-        $data['titulo'] = 'Pequeños Toques';
+    { 
+        $session = session();
+
+        $data = [
+            'titulo' => 'Pequeños Toques',
+            'showRegistroModal' => $session->get('showRegistroModal'),
+            'showLoginModal'    => $session->get('showLoginModal'),
+            'validation'        => $session->get('validation'),
+            'success'           => $session->get('success')
+        ];
+
+     
         echo view('front/head',$data);
         echo view('front/navbar',$data);
         echo view('front/plantilla',$data);

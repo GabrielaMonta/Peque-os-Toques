@@ -25,26 +25,30 @@
       </div>
 
         
-        <?php $validation = \Config\Services::validation();?>
-        <form method = " " id="registroForm" >
+        <?php $validation = \Config\Services::validation();
+         if (session('validation')) {
+          $validation = session('validation'); <!-- permite mostrar los errores-->
+        }?>
+          
+        <form action="<?= site_url('enviar-form') ?>" method="post">
            <?=csrf_field();?>  <!-- genera un campo oculto o token de seguridad -->
 
           <?php if(!empty (session() -> getFlashdata('fail'))):?>
           <div class = "alert alert-danger"><?=session() -> getFlashdata('fail');?> </div>
           <?php endif ?>
           <?php if(!empty (session() -> getFlashdata('success'))):?>
-          <div class = "alert alert-danger"><?=session() -> getFlashdata('success');?> </div>
+            <div class = "alert alert-danger"><?=session() -> getFlashdata('success');?> </div>
           <?php endif?>
 
           <div class="modal-body mb-0">
             <div class="mt-1">
                 <label for="email" class="form-label">Correo electronico</label>
-                <input type="email" name="email" class="form-control input-auth" id="email" aria-describedby="emailHelp">
+                <input type="email" name="email" class="form-control input-auth" id="email" aria-describedby="emailHelp" value="<?= old('email') ?>">
                 <div class="invalid-feedback" id="error-email"></div>
                    <!-- Error -->
-                <?php if($validation->getError('password')){?>
+                <?php if($validation->getError('email')){?>
                     <div class='alert alert-danger mt-2'>
-                      <?=$error = $validation->getError('pass'); ?>
+                      <?=$error = $validation->getError('email'); ?>
                   </div>
                 <?php } ?>
               </div>
@@ -53,7 +57,7 @@
                 <input type="password"  name="pass" class="form-control input-auth" id="pass">
                 <div class="invalid-feedback d-block" id="error-pass"></div>
                  <!-- Error -->
-                <?php if($validation->getError('password')){?>
+                <?php if($validation->getError('pass')){?>
                     <div class='alert alert-danger mt-2'>
                       <?=$error = $validation->getError('pass'); ?>
                   </div>
@@ -71,7 +75,7 @@
                 <?php } ?>
             </div>
             <div class="d-flex flex-column align-items-center botones-modal mt-3">
-              <button type="button" id="enviarRegistro"  class="btn btn-primary boton-inicio ">Registrarse</button>
+              <button type="submit" id="enviarRegistro"  class="btn btn-primary boton-inicio ">Registrarse</button>
               <button type="button" class="btn btn-primary boton-registro">
                   <i class="bi bi-google mb-0"></i> Continuar con google
               </button>

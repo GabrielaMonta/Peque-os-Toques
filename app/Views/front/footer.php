@@ -102,74 +102,23 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
-
+    <?php if (session('showRegistroModal')): ?>
     <script>
-        var baseUrl = "<?= base_url() ?>"; 
-
-      $('#enviarRegistro').click(function () {
-        // Limpiar errores
-        $('#error-email').text('');
-        $('#error-pass').text('');
-        $('#error-pass_confirm').text('');
-
-        // Obtener valores
-        var email = $('#email').val().trim();
-        var pass = $('#pass').val();
-        var passConfirm = $('#pass_confirm').val();
-
-        // Validación en el cliente
-        var errores = false;
-
-        if (email === '') {
-          $('#error-email').text('El correo es obligatorio');
-          errores = true;
-        }
-        if (pass === '') {
-          $('#error-pass').text('La contraseña es obligatoria');
-          errores = true;
-        }
-        if (passConfirm === '') {
-          $('#error-pass_confirm').text('Debes repetir la contraseña');
-          errores = true;
-        } else if (pass !== passConfirm) {
-          $('#error-pass_confirm').text('Las contraseñas no coinciden');
-          errores = true;
-        }
-
-        // Si hay errores, no se envía el formulario
-        if (errores) return;
-
-        // Enviar por AJAX si todo está bien
-        $.ajax({
-          url: baseUrl + "/enviar-form",
-          type: "POST",
-          data: $('#registroForm').serialize(),
-          dataType: "json",
-          success: function (response) {
-            if (response.status) {
-              alert(response.message);
-              $('#registroForm')[0].reset();
-              $('#registerModal').modal('hide');
-            } else {
-              if (response.errors.email) {
-                $('#error-email').text(response.errors.email);
-              }
-              if (response.errors.pass) {
-                $('#error-pass').text(response.errors.pass);
-              }
-              if (response.errors.pass_confirm) {
-                $('#error-pass_confirm').text(response.errors.pass_confirm);
-              }
-            }
-          },
-          error: function (xhr, status, error) {
-            console.error("Error en el servidor:", xhr.responseText);
-          }
+        var myModal = new bootstrap.Modal(document.getElementById('registerModal'));
+        window.addEventListener('load', function () {
+            myModal.show();
         });
-      });
     </script>
-
-
+    <?php endif; ?>
+    
+    <?php if (session('showLoginModal')): ?>
+      <script>
+        window.addEventListener('load', function () {
+          var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+          loginModal.show();
+        });
+      </script>
+    <?php endif; ?>
 
   </body>
 </html>
