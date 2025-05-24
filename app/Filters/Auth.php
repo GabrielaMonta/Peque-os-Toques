@@ -1,23 +1,26 @@
 <?php
-namespace App/Filters;
+
+namespace App\Filters;
+
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
-use CodeIgniter\HTTP\FilterInterface;
+use CodeIgniter\Filters\FilterInterface;
 
 class Auth implements FilterInterface 
 {
-
-    public function before (RequestInterface $request, $arguments = null){
-
-    //si el usuario no está logueado
-    if(!session() ->get('logged_in')){
-        //entonces redirecciona a la pagina de login page
-        return redirect() ->to('/login');
-
+    public function before(RequestInterface $request, $arguments = null)
+    {
+        // Si el usuario no está logueado
+        if (!session()->get('logged_in')) {
+            // Redirige a la página de inicio de sesión
+            return redirect()->to('/')
+                             ->with('msg', 'Debes iniciar sesión primero')
+                             ->with('showLoginModal', true);
+        }
     }
-}
 
-public function after (RequestInterface $request, ResponseInterface $response, $arguments = null){
-
-}
+    public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
+    {
+        // No hacemos nada aquí por ahora
+    }
 }

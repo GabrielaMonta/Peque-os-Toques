@@ -35,7 +35,7 @@ $routes->get('/iniciar-pago', 'Home::iniciarPago');
 
 $routes->post('/enviar-form', 'UsuarioController::registrar');
 
-$routes->get('/login', 'Home::login');
-$routes->post('/enviarlogin', 'Login_controller::auth');
+
+$routes->post('/enviar-login', 'LoginController::auth');
 $routes->get('/panel', 'Panel_controller::index', ['filter' => 'auth']);
-$routes->get('/logout', 'Login_controller::logout');
+$routes->get('/logout', 'LoginController::logout');

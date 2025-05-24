@@ -26,32 +26,35 @@
       </div>
 
        <!-- Servicio de validación de codeigniter -->
-      <?php $validation = \Config\Services::validation();?>
-      <div class="modal-body">
-        <?php if(session() ->getFlashdata('success')): ?>
-          <div class="alert alert-success mt-2 mx-3">
-              <?= session()->getFlashdata('success'); ?>
+      <?php if (session()->getFlashdata('success')): ?>
+          <div class="alert alert-success text-center mt-2 mx-3">
+              <?= session()->getFlashdata('success') ?>
           </div>
-         <?php endif; ?>
+      <?php endif; ?>
+      <form method="post" action="<?= base_url('/enviar-login') ?>">
+      <div class="modal-body">
+          <?php if (!empty($msg)): ?>
+            <div class="alert alert-danger mt-2 mx-3"><?= esc($msg) ?></div>
+          <?php endif; ?>
 
-         <?php if (session()->get('validation')): ?>
+          <?php if (!empty($validation)): ?>
             <div class="alert alert-danger">
-                Por favor, corrige los siguientes errores:
-                <ul>
-                    <?php foreach (session()->get('validation')->getErrors() as $error): ?>
-                        <li><?= esc($error) ?></li>
-                    <?php endforeach; ?>
-                </ul>
+              Por favor, corrige los siguientes errores:
+              <ul>
+                <?php foreach ($validation->getErrors() as $error): ?>
+                  <li><?= esc($error) ?></li>
+                <?php endforeach; ?>
+              </ul>
             </div>
-        <?php endif; ?>
+          <?php endif; ?>
 
-                  <div class="mt-1 mb-1">
+                <div class="mt-1 mb-1">
                     <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
-                    <input type="email" class="form-control input-auth" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" name="email"class="form-control input-auth" id="exampleInputEmail1" aria-describedby="emailHelp"value="<?= old('email') ?>">
                   </div>
                   <div class="mb-1">
                     <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control input-auth" id="exampleInputPassword1">
+                    <input type="password" name="pass" class="form-control input-auth" id="exampleInputPassword1">
                     <div id="passwordHelp" class="fo-textrm">¿Olvidaste tu contraseña?</div>
                   </div>
                   <div class="d-flex flex-column align-items-center botones-modal">

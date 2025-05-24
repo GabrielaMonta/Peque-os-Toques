@@ -13,7 +13,8 @@ class Home extends BaseController
             'showRegistroModal' => $session->get('showRegistroModal'),
             'showLoginModal'    => $session->get('showLoginModal'),
             'validation'        => $session->get('validation'),
-            'success'           => $session->get('success')
+            'success'           => $session->get('success'),
+            'msg'               => $session->getFlashdata('msg')
         ];
 
      
