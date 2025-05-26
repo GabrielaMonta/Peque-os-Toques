@@ -9,16 +9,16 @@
             </button>
 
             <!-- Título centrado para mostrar en pantallas grandes-->
-            <a class="navbar-brand d-none d-lg-block position-absolute top-50 start-50 translate-middle titulo-central" href="<?php echo base_url(' ');?>">Pequeños Toques</a>
+            <a class="navbar-brand d-none d-lg-block position-absolute top-50 start-50 translate-middle titulo-central" href="<?php echo base_url('admin');?>">Pequeños Toques</a>
             <!-- Logo solo visible en pantallas chicas -->
-            <a class="navbar-brand d-block d-lg-none position-absolute top-50 start-50 translate-middle" href="<?php echo base_url(' ');?>">
+            <a class="navbar-brand d-block d-lg-none position-absolute top-50 start-50 translate-middle" href="<?php echo base_url('admin');?>">
                 <img src="assets\img\Pequeños toques logo.png" alt="Logo" height="40">
             </a>
 
             <!-- Contenedor derecho iconos -->
             <div class="d-flex align-items-center order-lg-3">
 
-                <!-- Íconos lupa para buscador -->
+                <!-- Íconos lupa para consultas -->
                 <ul class="navbar-nav flex-row">
                     <li class="nav-item  ms-3">
                         <form class=" form-busqueda" role="search">
@@ -32,21 +32,12 @@
                         </form>
                     </li>
 
-                    <li class="nav-item ms-3">
-                        <button type="button" class="nav-link d-none d-md-block btn" data-bs-toggle="modal" data-bs-target="#loginModal" style="background: none; border: none; padding: 0;">
-                            <i class="bi bi-person-circle fs-4" style="color: #bfc86a; line-height: 2.1;"></i>
-                        </button>
+                    <li class="nav-item ms-3 mt-2">
+                        <a class="nav-link letra-nav d-none d-md-block" href="<?php echo base_url('logout');?>">Cerrar sesion</a>
                     </li>
                             
-                    <li class="nav-item ms-3">
-                        <button type="button" class="nav-link d-none d-md-block btn btn-primary " data-bs-toggle="offcanvas" data-bs-target="#favoritosBackdrop" aria-controls="staticBackdrop" >
-                            <i class="bi bi-heart fs-4" style="color: #bfc86a;"></i></button>
-                    </li>
-
-                    <li class="nav-item ms-3">
-                        <button type="button" class="nav-link btn btn-primary"  data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
-                            <i class="bi bi-basket3 fs-4" style="color: #bfc86a;"></i></button>
-                    </li>
+                    
+                    
                 </ul>
             </div>
             
@@ -56,47 +47,24 @@
                 <!-- Menú a la izquierda -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active letra-nav" aria-current="page" href="<?php echo base_url(' ');?>">Inicio</a>
+                        <a class="nav-link active letra-nav" aria-current="page" href="<?php echo base_url('admin');?>">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link letra-nav" href="<?php echo base_url('novedades');?>">Novedades</a>
+                        <a class="nav-link letra-nav" href="<?php echo base_url('crud-usuarios');?>">CRUD Usuarios</a>
                     </li>
                     
-                <!-- Dropdown Categorias -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle letra-nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo-indumentaria');?>">Indumentaria</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo-calzado');?>">Calzado</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo-blanqueria');?>">Blanqueria</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo-marroquineria');?>">Marroquineria</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo-todo');?>">Ver todo</a></li>
-                        </ul>
+                    <li class="nav-item ">
+                        <a class="nav-link letra-nav" href="<?php echo base_url('crud-productos');?>">CRUD Productos</a>
                     </li>
-                <!-- Dropdown Nosotros -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle letra-nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #bfc86a">Nosotros</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="<?php echo base_url('sobre-nosotros');?>">Quienes somos</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('comercializacion');?>">Comercializacion</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('contacto');?>">Contacto</a></li>
-                            <!--<li><hr class="dropdown-divider"></li>-->
-                            <li><a class="dropdown-item" href="<?php echo base_url('preguntas-frecuentes');?>">Preguntas frecuentes</a></li>
-                        </ul>
+                
+                    <li class="nav-item ">
+                        <a class="nav-link letra-nav" href="<?php echo base_url('ventas');?>">Ventas</a>
                     </li>
                 </ul>    
                 
-                <div class="d-block d-md-none">
-                    <button type="button" class="btn p-0 text-decoration-none d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginModal" style="color: #bfc86a;">
-                        <i class="bi bi-person-circle fs-4 me-2"></i>
-                        <span class="fs-6">Iniciar Sesión</span>
-                    </button>
-                </div>
-                        
-                <div class="d-block d-md-none">
-                    <button type="button" class="btn p-0 text-decoration-none d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#favoritosBackdrop" style="color: #bfc86a;">
-                        <i class="bi bi-heart fs-4 me-2" style="color: #bfc86a;"></i>
-                        <span class="fs-6">Favoritos</span></button>
+                <div class="d-block d-md-none ">
+                    <a class="nav-link letra-nav " href="<?php echo base_url('logout');?>">Cerrar sesión</a>
+
                 </div>
                         
             </div>        

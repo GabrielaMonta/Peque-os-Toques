@@ -152,5 +152,5 @@ class Home extends BaseController
     echo view('front/footer', $data);
     }
 
-
+    
 }

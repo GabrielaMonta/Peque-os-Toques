@@ -29,7 +29,8 @@ class UsuarioController extends Controller {
 
         $model->save([
             'email'  => $this->request->getPost('email'),
-            'pass'   => password_hash($this->request->getPost('pass'), PASSWORD_DEFAULT)
+            'pass'   => password_hash($this->request->getPost('pass'), PASSWORD_DEFAULT),
+            'perfil_id' => 2,
         ]);
 
         return redirect()->to('/')

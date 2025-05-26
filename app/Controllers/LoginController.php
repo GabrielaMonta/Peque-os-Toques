@@ -43,9 +43,13 @@ class LoginController extends BaseController
 
                 $session->set($ses_data);
 
-                // Mensaje de bienvenida opcional
-                $session->setFlashdata('msg', '¡Bienvenido!');
-                return redirect()->to('/'); // redirige al panel
+            
+                if ($session->get('perfil_id') != '1') {
+                    return redirect()->to('/'); // Redirige al home o login si no es admin
+                }else{
+                    return redirect()->to('admin'); // Carga la vista del panel admin.
+                }
+
             } else {
                 // Contraseña incorrecta
                 return redirect()->to('/')

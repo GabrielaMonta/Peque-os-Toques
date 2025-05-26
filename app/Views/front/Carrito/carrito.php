@@ -68,8 +68,16 @@
                     </div>
 
                     <div class="pie-carrito">
-                        <a href="<?php echo base_url('iniciar-pago');?>" class="btn boton-ver-carrito">Iniciar pago</a>
-                        <a href="<?php echo base_url('catalogo-todo');?>" class="btn boton-seguir-comprando">Seguir comprando</a>
+                        <?php if (session()->get('logged_in') && session()->get('perfil_id') == 2): ?>
+                        <!-- Cliente logueado -->
+                            <a href="<?= base_url('iniciar-pago'); ?>" class="btn boton-ver-carrito">Iniciar pago</a>
+                        <?php else: ?>
+                        <!-- No cliente o no logueado: mostrar botón para abrir login -->
+                        <button class="btn boton-ver-carrito" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            Iniciar pago
+                        </button>
+                    <?php endif; ?>
+                            <a href="<?php echo base_url('catalogo-todo');?>" class="btn boton-seguir-comprando">Seguir comprando</a>
                     </div>
                 </div>
             </div>

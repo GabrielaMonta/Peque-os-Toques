@@ -31,6 +31,7 @@
               <?= session()->getFlashdata('success') ?>
           </div>
       <?php endif; ?>
+      
       <form method="post" action="<?= base_url('/enviar-login') ?>">
       <div class="modal-body">
           <?php if (!empty($msg)): ?>

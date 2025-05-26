@@ -3,7 +3,7 @@
         <div class="row">
             <!-- Detalle productos-->
             <div class=" col-12 col-md-8 ">
-                <h4 class="titulo-micompra">Mi compra</h3>
+                <h3 class="titulo-micompra">Mi compra</h3>
                 <p class="titulo-pasos"><span style= "color:  #9da53a"> Paso 1</span>/ Completa tus datos</p>
                 <form >
                     <div class="row">

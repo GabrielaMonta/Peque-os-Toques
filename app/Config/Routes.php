@@ -37,5 +37,15 @@ $routes->post('/enviar-form', 'UsuarioController::registrar');
 
 
 $routes->post('/enviar-login', 'LoginController::auth');
-$routes->get('/panel', 'Panel_controller::index', ['filter' => 'auth']);
 $routes->get('/logout', 'LoginController::logout');
+
+
+$routes->get('setup-admin', 'AdminController::setup');//crear un admin
+$routes->get('/admin', 'AdminController::panelAdmin', ['filter' => 'auth:1']);
+$routes->get('/crud-usuarios', 'AdminController::crudUsuarios', ['filter' => 'auth:1']);
+$routes->get('/crud-productos', 'AdminController::crudProductos', ['filter' => 'auth:1']);
+$routes->get('/ventas', 'AdminController::ventas', ['filter' => 'auth:1']);
+
+
+$routes->get('setup', 'SetupController::index');
+$routes->match(['get', 'post'], 'setup/create', 'SetupController::create');
