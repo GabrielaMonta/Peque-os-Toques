@@ -8,18 +8,28 @@ use CodeIgniter\Controller;
 class SetupController extends Controller
 {
     public function index()
-{
-    $token = $this->request->getGet('token');
-    $setupKey = getenv('SETUP_KEY');
+    {
+        $token = $this->request->getGet('token');
+        $setupKey = getenv('SETUP_KEY');
 
+        // Si el token no coincide, denegar acceso
+        if ($token !== $setupKey) {
+            echo "Token inválido";
+            die();
+        }
 
-    if ($token !== $setupKey) {
-        echo "Token inválido";
-        die();
+        // Verificar si ya existe un administrador
+        $usuariosModel = new Usuarios_model();
+        $adminExists = $usuariosModel->where('perfil_id', 1)->first();
+
+        if ($adminExists) {
+            return redirect()->to('/')->with('message', 'Ya hay un administrador creado');
+        }
+
+        // Si no existe, mostrar el formulario
+        return redirect()->to('setup-admin');
     }
 
-    return redirect()->to('setup-admin');
-}
 
 
     public function create()
