@@ -151,6 +151,22 @@ class Home extends BaseController
     echo view('front/Carrito/iniciarPago', $data);
     echo view('front/footer', $data);
     }
-
     
+    public function editarPerfil()
+    {
+    $data['titulo'] = 'Editar perfil';
+    echo view('front/head', $data);
+    echo view('front/navbar', $data);
+    echo view('front/cliente/editarPerfil', $data);
+    echo view('front/footer', $data);
+    }
+    
+     public function misCompras()
+    {
+    $data['titulo'] = 'Compras';
+    echo view('front/head', $data);
+    echo view('front/navbar', $data);
+    echo view('front/cliente/misCompras', $data);
+    echo view('front/footer', $data);
+    }
 }

@@ -31,13 +31,30 @@
                             <input class="form-control input-busqueda" type="search" placeholder="Buscar" aria-label="Buscar">
                         </form>
                     </li>
-
+                    
+                    <!-- Si el usuario aun no esta logueado, o sea no es 2, mostrar el icono -->
+                    <?php if (session()->get('perfil_id') != 2): ?>
                     <li class="nav-item ms-3">
                         <button type="button" class="nav-link d-none d-md-block btn" data-bs-toggle="modal" data-bs-target="#loginModal" style="background: none; border: none; padding: 0;">
                             <i class="bi bi-person-circle fs-4" style="color: #bfc86a; line-height: 2.1;"></i>
                         </button>
                     </li>
-                            
+                    <?php endif; ?>
+
+                    <!-- Si esta logueado y es perfil 2, mostrar el icono de opciones  -->
+                    <?php if (session()->get('logged_in') && session()->get('perfil_id') == 2): ?>
+                        <li class="nav-item dropdown ms-3">
+                            <a class="nav-link dropdown-toggle d-none d-md-block" href="#" id="dropdownSesion" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background: none; border: none;">
+                                <i class="bi bi-person-circle fs-4" style="color: #bfc86a;"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownSesion">
+                                <li><a class="dropdown-item" href="<?= base_url('editar-perfil'); ?>">Editar perfil</a></li>
+                                <li><a class="dropdown-item" href="<?= base_url('mis-compras'); ?>">Mis compras</a></li>
+                                <li><a class="dropdown-item" href="<?= base_url('logout'); ?>">Cerrar sesión</a></li>
+                            </ul>
+                        </li>
+                    <?php endif; ?>
+
                     <li class="nav-item ms-3">
                         <button type="button" class="nav-link d-none d-md-block btn btn-primary " data-bs-toggle="offcanvas" data-bs-target="#favoritosBackdrop" aria-controls="staticBackdrop" >
                             <i class="bi bi-heart fs-4" style="color: #bfc86a;"></i></button>
@@ -86,17 +103,36 @@
                     </li>
                 </ul>    
                 
-                <div class="d-block d-md-none">
-                    <button type="button" class="btn p-0 text-decoration-none d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginModal" style="color: #bfc86a;">
-                        <i class="bi bi-person-circle fs-4 me-2"></i>
-                        <span class="fs-6">Iniciar Sesión</span>
-                    </button>
-                </div>
-                        
+                <!-- Si no es cliente, mostrar el icono -->
+                <?php if (session()->get('perfil_id') != 2): ?>
+                    <div class="d-block d-md-none">
+                        <button type="button" class="btn p-0 text-decoration-none d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginModal" style="color: #bfc86a;">
+                            <i class="bi bi-person-circle fs-4 me-2"></i>
+                            <span class="fs-6">Iniciar Sesión</span>
+                        </button>
+                    </div>
+                <?php endif; ?>
+
+                <!-- Si es cliente -->
+                <?php if (session()->get('logged_in') && session()->get('perfil_id') == 2): ?> 
+                    <li class="nav-item dropdown d-block d-md-none">
+                        <a class="nav-link dropdown-toggle letra-nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #bfc86a;">
+                            <i class="bi bi-person-circle fs-4 me-1"></i> Usuario
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="<?= base_url('editar-perfil'); ?>">Editar perfil</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('mis-compras'); ?>">Mis compras</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('logout'); ?>">Cerrar sesión</a></li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
+
+
                 <div class="d-block d-md-none">
                     <button type="button" class="btn p-0 text-decoration-none d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#favoritosBackdrop" style="color: #bfc86a;">
                         <i class="bi bi-heart fs-4 me-2" style="color: #bfc86a;"></i>
-                        <span class="fs-6">Favoritos</span></button>
+                        <span class="fs-6">Favoritos</span>
+                    </button>
                 </div>
                         
             </div>        

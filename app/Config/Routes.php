@@ -31,7 +31,7 @@ $routes->get('/carrito', 'Home::carrito');
 
 $routes->get('/producto', 'Home::producto');
 
-$routes->get('/iniciar-pago', 'Home::iniciarPago');
+$routes->get('/iniciar-pago', 'Home::iniciarPago', ['filter' => 'auth:2']);
 
 $routes->post('/enviar-form', 'UsuarioController::registrar');
 
@@ -49,3 +49,5 @@ $routes->get('/ventas', 'AdminController::ventas', ['filter' => 'auth:1']);
 
 $routes->get('setup', 'SetupController::index');
 $routes->match(['get', 'post'], 'setup/create', 'SetupController::create');
+$routes->get('/editar-perfil', 'Home::editarPerfil', ['filter' => 'auth:2']);
+$routes->get('/mis-compras', 'Home::misCompras', ['filter' => 'auth:2']);
