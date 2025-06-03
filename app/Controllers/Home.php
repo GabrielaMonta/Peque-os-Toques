@@ -113,19 +113,6 @@ class Home extends BaseController
     }
     
 
-    /*Auth*/
-    public function inicioSesion()
-    {
-        $data['titulo'] = 'Inicio Sesion';
-        echo view('front/auth/login', $data);
-        
-    }
-    public function registro()
-    {
-        $data['titulo'] = 'Registro';
-        echo view('front/auth/registro', $data);
-    }
-
     public function carrito()
     {
         $data['titulo'] = 'Carrito';

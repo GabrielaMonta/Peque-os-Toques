@@ -51,3 +51,6 @@ $routes->get('setup', 'SetupController::index');
 $routes->match(['get', 'post'], 'setup/create', 'SetupController::create');
 $routes->get('/editar-perfil', 'Home::editarPerfil', ['filter' => 'auth:2']);
 $routes->get('/mis-compras', 'Home::misCompras', ['filter' => 'auth:2']);
+
+$routes->get('/crear', 'ProductoController::crearProducto');
+$routes->post('/enviar-prod', 'ProductoController::store');
