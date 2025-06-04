@@ -6,9 +6,9 @@
         <a href="<?= site_url('crear'); ?>" class="btn btn-crud guardar mx-3 py-1 px-2">Agregar</a>
         <a href="<?= site_url('crear'); ?>" class="btn  btn-crud cancelar py-1 px-2">Eliminados</a>
     </div>
-    <?php if (session()->getFlashdata('succes')): ?>
+    <?php if (session()->getFlashdata('success')): ?>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <?= session()->getFlashdata('succes'); ?>
+        <?= session()->getFlashdata('success'); ?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
     </div>
     <?php endif; ?>
@@ -18,8 +18,8 @@
         </div>
     <?php endif; ?>
 
-    <table class="table table-bordered table-striped">
-        <thead class="table-dark">
+    <table class="table ">
+        <thead>
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
@@ -32,8 +32,8 @@
             </tr>
         </thead>
         <tbody>
-            <?php if (!empty($producto) && is_array($producto)): ?>
-                <?php foreach ($producto as $prod): ?>
+            <?php if (!empty($productos) ): ?>
+                <?php foreach ($productos as $prod): ?>
                     <tr>
                         <td><?= esc($prod['id']); ?></td>
                         <td><?= esc($prod['nombre_prod']); ?></td>

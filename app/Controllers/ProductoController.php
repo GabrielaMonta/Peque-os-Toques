@@ -12,6 +12,7 @@ class ProductoController extends Controller{
         $this->session = session();
     }
     //mostrar los productos en lista
+    /*
     public function index(){
         $productoModel = new Producto_model();
         //realizo la consulta para mostrar todos los productos
@@ -20,9 +21,9 @@ class ProductoController extends Controller{
         $dato['titulo'] = 'Crud_productos';
         echo view('front/head', $dato);
         echo view('front/admin/navbar_admin');
-        echo view('back/productos/producto_nuevo', $data);
-        echo view('front/footer');
-    }
+        echo view('back/productos/crud_productos', $data);
+        
+    }*/
 
     public function crearProducto(){
         $categoriasModel = new Categoria_model();

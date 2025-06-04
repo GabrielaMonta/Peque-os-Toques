@@ -34,10 +34,13 @@ class AdminController extends BaseController
     {
         $model = new \App\Models\Producto_model();
         $producto = $model->where('eliminado', 'NO')->findAll();
+
         $data['titulo'] = 'CRUD Productos';
+        $dato['productos'] = $producto;
+
         echo view('front/head', $data);
         echo view('front/admin/navbar_admin', $data);
-        echo view('front/admin/crud_productos', $data);
+        echo view('front/admin/crud_productos', $dato);
         echo view('front/admin/footer_admin', $data);
     }
 
