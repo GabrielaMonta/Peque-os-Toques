@@ -41,7 +41,7 @@ class ProductoController extends Controller{
         //construimos las reglas de validacion
         $input = $this->validate([
             'nombre_prod'=>'required|min_length[3]',
-            'categoria'=>'is_not_unique[categorias.id]',
+            'categoria'=>'is_not_unique[categoria.id]',
             'precio'=>'required|numeric',
             'precio_vta'=>'required|numeric',
             'stock'=>'required',
@@ -49,7 +49,8 @@ class ProductoController extends Controller{
             'imagen'=>'uploaded[imagen]',
             'talle'=>'required|min_length[1]|max_length[10]',
             'genero'=>'required|in_list[hombre,mujer,niños]',
-            'tipo'=>'required|min_length[3]|max_length[50]'
+            'tipo'=>'required|min_length[3]|max_length[50]',
+            
         ]);
 
         $productoModel = new Producto_model();//se instancia el modelo
@@ -80,12 +81,12 @@ class ProductoController extends Controller{
             'precio_vta'=>$this->request->getVar('precio_vta'),
             'stock'=>$this->request->getVar('stock'),
             'stock_min'=>$this->request->getVar('stock_min'),
-            //'eliminado'=>NO
+            'eliminado'=>'NO'
         ];
 
         $producto = new Producto_model();
         $producto->insert($data);
         session()->setFlashdata('succes', 'Producto creado exitosamente');
-        return $this->response->redirect(site_url('crear'));
+        return $this->response->redirect(site_url('crud-productos'));
     }
 }

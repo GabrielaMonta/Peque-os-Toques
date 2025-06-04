@@ -1,8 +1,8 @@
-<div class="container mt-1 mb-1 d-flex justify-content-center">
+<main>
+<div class="container mt-4 mb-4 d-flex justify-content-center">
     <div class="card" style="width:75%;">
         <div class="card-header text-center">
-
-        <h2>Alta de Productos</h2>
+        <h2 class="titulo-form-crud">ALTA DE PRODUCTO</h2>
     </div>
 
     <?php if(!empty(session()->getFlashdata('fail'))): ?>
@@ -18,8 +18,8 @@
         <div class="card-body" media="(max-width:568px)">
 
             <!-- NOMBRE -->
-            <div class="mb2">
-                <label for="nombre_prod" class="form-label">Producto</label>
+            <div class="mx-2 my-2">
+                <label for="nombre_prod" class="titulo-form ps-2 pb-1">Producto</label>
                 <input class="form-control" type="text" name="nombre_prod" id="nombre_prod" value="<?= set_value('nombre_prod'); ?>" placeholder="Nombre del producto" autofocus>
                 <!-- Error -->
                  <?php if($validation->getError('nombre_prod')): ?>
@@ -30,18 +30,21 @@
             </div>
 
             <!-- CATEGORIA -->
-            <select class="form-control" name="categoria" id="categoria">
-                <option value="0">Seleccionar Categoria</option>
-                <?php foreach ($categorias as $categoria): ?>
-                    <option value="<?= $categoria['id']; ?>" <?= set_select('categoria', $categoria['id']); ?>>
-                        <?= $categoria['id'], ". ", $categoria['descripcion']; ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
+            <div class="mx-2 my-2">
+                <label for="categoria" class="titulo-form ps-2 pb-1">Categoria</label>
+                <select class="form-control" name="categoria" id="categoria">
+                    <option value="0">Seleccionar Categoria</option>
+                    <?php foreach ($categorias as $categoria): ?>
+                        <option value="<?= $categoria['id']; ?>" <?= set_select('categoria', $categoria['id']); ?>>
+                            <?= $categoria['id'], ". ", $categoria['nombre']; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
 
             <!-- PRECIO -->
-            <div class="mb-3">
-                <label for="precio" class="form-label">Precio Compra</label>
+            <div class="mx-2 my-2">
+                <label for="precio" class="titulo-form ps-2 pb-1">Precio Compra</label>
                 <input type="number" step="0.01" class="form-control" name="precio" value="<?= set_value('precio'); ?>">
                 <!-- Error -->
                  <?php if($validation->getError('precio')): ?>
@@ -52,8 +55,8 @@
             </div>
 
             <!-- PRECIO VENTA -->
-            <div class="mb-3">
-                <label for="precio_vta" class="form-label">Precio Venta</label>
+            <div class="mx-2 my-2">
+                <label for="precio_vta" class="titulo-form ps-2 pb-1">Precio Venta</label>
                 <input type="number" step="0.01" class="form-control" name="precio_vta" value="<?= set_value('precio_vta'); ?>">
                  <!-- Error -->
                 <?php if($validation->getError('precio_vta')): ?>
@@ -64,8 +67,8 @@
             </div>
 
             <!-- STOCK -->
-            <div class="mb-3">
-                <label for="stock" class="form-label">Stock</label>
+            <div class="mx-2 my-2">
+                <label for="stock" class="titulo-form ps-2 pb-1">Stock</label>
                 <input type="number" class="form-control" name="stock" value="<?= set_value('stock'); ?>">
                 <!-- Error -->
                  <?php if($validation->getError('stock')): ?>
@@ -76,8 +79,8 @@
             </div>
 
             <!-- STOCK MÍNIMO -->
-            <div class="mb-3">
-                <label for="stock_min" class="form-label">Stock mínimo</label>
+            <div class="mx-2 my-2">
+                <label for="stock_min" class="titulo-form ps-2 pb-1">Stock mínimo</label>
                 <input type="number" class="form-control" name="stock_min" value="<?= set_value('stock_min'); ?>">
                 <!-- Error -->
                  <?php if($validation->getError('stock_min')): ?>
@@ -88,8 +91,8 @@
             </div>
 
             <!-- IMAGEN -->
-            <div class="mb-3">
-                <label for="imagen" class="form-label">Imagen</label>
+            <div class="mx-2 my-2">
+                <label for="imagen" class="titulo-form ps-2 pb-1">Imagen</label>
                 <input type="file" class="form-control" name="imagen">
                 <!-- Error -->
                  <?php if($validation->getError('imagen')): ?>
@@ -100,8 +103,8 @@
             </div>
 
             <!-- TALLE -->
-            <div class="mb-3">
-                <label for="talle" class="form-label">Talle</label>
+            <div class="mx-2 my-2">
+                <label for="talle" class="titulo-form ps-2 pb-1">Talle</label>
                 <input type="text" class="form-control" name="talle" value="<?= set_value('talle'); ?>">
                 <!-- Error -->
                  <?php if($validation->getError('talle')): ?>
@@ -112,8 +115,8 @@
             </div>
 
             <!-- GÉNERO -->
-            <div class="mb-3">
-                <label for="genero" class="form-label">Género</label>
+            <div class="mx-2 my-2">
+                <label for="genero" class="titulo-form ps-2 pb-1">Género</label>
                 <select class="form-control" name="genero">
                     <option value="">Seleccionar género</option>
                     <option value="hombre" <?= set_select('genero', 'hombre'); ?>>Hombre</option>
@@ -129,8 +132,8 @@
             </div>
 
             <!-- TIPO -->
-            <div class="mb-3">
-                <label for="tipo" class="form-label">Tipo</label>
+            <div class="mx-2 my-2">
+                <label for="tipo" class="titulo-form ps-2 pb-1">Tipo</label>
                 <input type="text" class="form-control" name="tipo" value="<?= set_value('tipo'); ?>">
                 <!-- Error -->
                  <?php if($validation->getError('tipo')): ?>
@@ -140,13 +143,13 @@
                 <?php endif; ?>
             </div>
 
-            <div class="form-group">
-                <button class="btn btn-success" id="send_form" type="submit">Guardar</button>
-                <button class="btn btn-danger" type="reset">Cancelar</button>
-                <a href="<?=base_url('crear'); ?>" class="btn btn-secondary">Volver</a>
+            <div class="d-flex  justify-content-end mb-3">
+                <button class="btn btn-crud guardar mx-3 mt-3 py-1 px-2 bg" id="send_form" type="submit">Guardar</button>
+                <button class="btn btn-crud cancelar mx-3 mt-3 py-1 px-2" type="reset">Cancelar</button>
+                <a href="<?=base_url('crud-productos'); ?>" class="btn btn-crud volver mx-3 mt-3 py-1 px-2">Volver</a>
             </div>
         </div>
     </form>
 </div>
-
+</main>
      

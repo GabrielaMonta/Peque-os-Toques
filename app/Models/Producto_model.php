@@ -11,6 +11,6 @@ class Producto_model extends Model
 
      public function getProductoAll()
     {
-        return $this->findAll();
+        return $this->where('eliminado', 'NO')->findAll();
     }
 }

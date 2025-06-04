@@ -1,0 +1,55 @@
+.btn-crud {
+    display: inline-block;
+    background-color: #d5bdaf;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-crud:hover {
+    color: white;
+}
+
+.titulo-crud{
+    font-family: 'Libre Bondi', serif; 
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.btn-crud.guardar {
+  background-color: #9da53a; /* verde */
+}
+
+.btn-crud.cancelar {
+  background-color: #a03d3d; /* azul */
+}
+
+.btn-crud.volver {
+  background-color: #6c757d; /* rojo */
+}
+
+/* Hover opcional */
+.btn-crud.guardar:hover {
+  background-color: #8a942f;
+}
+
+.btn-crud.cancelar:hover {
+  background-color: #892f2f;
+}
+
+.btn-crud.volver:hover {
+  background-color: #5a6268;
+}
+
+.titulo-form{
+    font-size: 1rem;
+    font-family: 'Inter';
+}
+
+.titulo-form-crud{
+    font-family: 'Libre Bondi'; 
+    font-size: 2rem;
+    font-weight: bold;
+}

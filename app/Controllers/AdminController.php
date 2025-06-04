@@ -25,6 +25,8 @@ class AdminController extends BaseController
 
     public function crudProductos()
     {
+        $model = new \App\Models\Producto_model();
+        $producto = $model->where('eliminado', 'NO')->findAll();
         $data['titulo'] = 'CRUD Productos';
         echo view('front/head', $data);
         echo view('front/admin/navbar_admin', $data);
