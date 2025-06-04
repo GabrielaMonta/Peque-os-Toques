@@ -38,5 +38,7 @@ class UsuarioController extends Controller {
             ->with('success', 'Usuario registrado correctamente.');
             ;  // indica abrir modal login
     }
+    
+
 }
 

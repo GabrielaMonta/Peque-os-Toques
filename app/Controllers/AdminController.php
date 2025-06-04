@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\Usuarios_model;
+use CodeIgniter\Controller;
 
 class AdminController extends BaseController
 {
@@ -16,7 +18,12 @@ class AdminController extends BaseController
 
     public function crudUsuarios()
     {
+        $model = new \App\Models\Usuarios_model();
+        $usuarios = $model->where('baja', 'NO')->findAll();
+
         $data['titulo'] = 'CRUD Usuarios';
+        $data['usuarios'] = $usuarios;
+
         echo view('front/head', $data);
         echo view('front/admin/navbar_admin', $data);
         echo view('front/admin/crud_usuarios', $data);
@@ -48,5 +55,47 @@ class AdminController extends BaseController
         echo view('front/admin/setup_admin', $data);
         echo view('front/admin/footer_admin', $data);
 
+    }
+    public function editarUsuario($id)
+    {
+        $model = new \App\Models\Usuarios_model();
+        $usuario = $model->find($id);
+
+        if (!$usuario) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Usuario no encontrado');
+        }
+
+        $data['titulo'] = 'Editar Usuario';
+        $data['usuario'] = $usuario;
+
+        echo view('front/head', $data);
+        echo view('front/admin/navbar_admin', $data);
+        echo view('front/admin/editar_usuario', $data); 
+        echo view('front/admin/footer_admin', $data);
+    }
+    
+    public function actualizarUsuario($id)
+    {
+        $model = new Usuarios_model();
+
+        $data = [
+            'nombre' => $this->request->getPost('nombre'),
+            'apellido' => $this->request->getPost('apellido'),
+            'usuario' => $this->request->getPost('usuario'),
+            'email' => $this->request->getPost('email'),
+            'perfil_id' => $this->request->getPost('perfil_id')
+        ];
+
+        $model->update($id, $data);
+
+        return redirect()->to('/crud-usuarios')->with('mensaje', 'Usuario actualizado correctamente');
+    }
+    
+    public function borrar($id)
+    {
+    $model = new Usuarios_model();
+    $model->update($id, ['baja' => 'SI']);
+
+    return redirect()->to('/crud-usuarios')->with('success', 'Usuario dado de baja.');
     }
 }
