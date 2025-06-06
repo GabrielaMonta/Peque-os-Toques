@@ -7,7 +7,6 @@
                 <ul class="flex-row">
                     <li ><a class="" href="<?php echo base_url('cuenta');?>">Perfil</a> </li>
                     <li ><a class="" href="<?php echo base_url('');?>">Direcciones</a></li>      
-                    <li ><a class="" href="<?php echo base_url('');?>">Direcciones</a></li>
                     <li ><a class="" href="<?php echo base_url('');?>">Pedidos</a></li>
                     <li ><a class="" href="<?php echo base_url('');?>">Tarjetas</a></li>
                     <li ><a class="" href="<?php echo base_url('logout');?>">Cerrar sesión</a></li>

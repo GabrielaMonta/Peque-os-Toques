@@ -7,6 +7,9 @@
                 <th class="titulos-resumen">ID</th>
                 <th class="titulos-resumen">Nombre</th>
                 <th class="titulos-resumen">Apellido</th>
+                <th class="titulos-resumen">DNI</th>
+                <th class="titulos-resumen">Teléfono</th>
+                <th class="titulos-resumen">Fecha de nacimiento</th>
                 <th class="titulos-resumen">Usuario</th>
                 <th class="titulos-resumen">Email</th>
                 <th class="titulos-resumen">Perfil</th>
