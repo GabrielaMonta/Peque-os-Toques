@@ -275,3 +275,41 @@
     height: 20px;
 
 }
+
+.boton-modificar{
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #eae0d5;
+    width: 20%;
+    height: auto;
+    text-align: center;
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1rem, 32px);
+    margin-top: 1rem;
+}
+
+.boton-modificar:hover{
+    background-color: #eae0d5;
+    border-radius: 15px;
+    border: #eae0d5;
+    width: 20%;
+    height: auto;
+    font-family: 'Libre Bondi', serif; 
+    font-size: clamp(12px, 1rem, 32px);
+    margin-top: 1rem;
+}
+.letra-perfil{
+    font-family:"Nunito Sans";
+    font-size: clamp(12px, 1rem, 32px);
+}
+
+.input-editar-perfil{
+    border: none;
+    width: 60%;
+    padding: 3px;
+    border-radius: 5px; 
+    background-color: #eae0d5;
+    border-color: #f2f2f2;
+    font-family: 'Inter';
+    font-size: clamp(14px, 0.9rem,32px);
+}

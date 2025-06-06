@@ -1,40 +1,57 @@
 <main>
-  <div class="container d-flex justify-content-center">
-    <div class="w-100 p-4" style="max-width: 40%; background-color: #fdfdfd; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-      <h5 class="titulo-micompra text-center">Editar Usuario</h5>
+  <div class="container mt-4 mb-4 d-flex justify-content-center">
+    <div class="card" style="width:75%;">
+      <div class="card-header text-center">
+            <h2 class="titulo-form-crud">Editar Usuario</h2>
+        </div>
 
       <form action="<?= site_url('actualizar/' . $usuario['id']) ?>" method="post">
-        
-        <div class="text-center">
-          <label class="form-label">Nombre <span class="text-danger">*</span></label>
-          <input type="text" name="nombre" class="input-facturacion" value="<?= esc($usuario['nombre']) ?>" required>
-        </div>
+         <div class="card-body">
+            <div class="mx-2 my-2">
+              <label class="titulo-form ps-2 pb-1">Nombre</label>
+              <input type="text" name="nombre" class="form-control" value="<?= esc($usuario['nombre']) ?>">
+            </div>
 
-        <div class="text-center">
-          <label class="form-label">Apellido <span class="text-danger">*</span></label>
-          <input type="text" name="apellido" class="input-facturacion" value="<?= esc($usuario['apellido']) ?>" required>
-        </div>
+            <div class="mx-2 my-2">
+              <label class="titulo-form ps-2 pb-1">Apellido</label>
+              <input type="text" name="apellido" class="form-control" value="<?= esc($usuario['apellido']) ?>" >
+            </div>
 
-        <div class="text-center">
-          <label class="form-label">Correo electrónico <span class="text-danger">*</span></label>
-          <input type="email" name="email" class="input-facturacion" value="<?= esc($usuario['email']) ?>" required>
-        </div>
+            <div class="mx-2 my-2">
+              <label class="titulo-form ps-2 pb-1">DNI</label>
+              <input type="text" name="dni" class="form-control" value="<?= esc($usuario['dni']) ?>" >
+            </div>
 
-        <div class="text-center">
-          <label class="form-label">Usuario <span class="text-danger">*</span></label>
-          <input type="text" name="usuario" class="input-facturacion" value="<?= esc($usuario['usuario']) ?>" required>
-        </div>
+            <div class="mx-2 my-2">
+              <label class="titulo-form ps-2 pb-1">Teléfono</label>
+              <input type="text" name="telefono" class="form-control" value="<?= esc($usuario['telefono']) ?>" >
+            </div>
 
-        <div class="text-center">
-          <label class="form-label">Perfil ID <span class="text-danger">*</span></label>
-          <input type="number" name="perfil_id" class="input-facturacion" value="<?= esc($usuario['perfil_id']) ?>" required>
-        </div>
+            <div class="mx-2 my-2">
+              <label class="titulo-form ps-2 pb-1">Fecha de nacimiento</label>
+              <input type="text" name="fecha_nacimiento" class="form-control" value="<?= esc($usuario['fecha_nacimiento']) ?>" >
+            </div>
 
-        <div class="text-center mt-3">
-          <button type="submit" class="boton-finalizarcompra">Actualizar Usuario</button>
-          <a href="<?= base_url('/crud-usuarios') ?>" class="btn btn-secondary mt-2">Cancelar</a>
-        </div>
+            <div class="mx-2 my-2">
+              <label class="titulo-form ps-2 pb-1">Correo electrónico </label>
+              <input type="email" name="email" class="form-control" value="<?= esc($usuario['email']) ?>" >
+            </div>
 
+            <div class="mx-2 my-2">
+              <label class="titulo-form ps-2 pb-1">Usuario </label>
+              <input type="text" name="usuario" class="form-control" value="<?= esc($usuario['usuario']) ?>" >
+            </div>
+
+            <div class="mx-2 my-2">
+              <label class="titulo-form ps-2 pb-1">Perfil ID </label>
+              <input type="number" name="perfil_id" class="form-control" value="<?= esc($usuario['perfil_id']) ?>" >
+            </div>
+
+            <div class="d-flex justify-content-end mb-3">
+              <button type="submit" class="btn btn-crud guardar mx-3 mt-3 py-1 px-2">Actualizar Usuario</button>
+              <a href="<?= base_url('/crud-usuarios') ?>" class="btn btn-crud volver mx-3 mt-3 py-1 px-2">Cancelar</a>
+            </div>
+          </div>
       </form>
     </div>
   </div>

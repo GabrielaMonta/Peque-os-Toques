@@ -49,17 +49,20 @@ $routes->get('/ventas', 'AdminController::ventas', ['filter' => 'auth:1']);
 
 $routes->get('setup', 'SetupController::index');
 $routes->match(['get', 'post'], 'setup/create', 'SetupController::create');
-$routes->get('/editar-perfil', 'Home::editarPerfil', ['filter' => 'auth:2']);
+$routes->get('/cuenta', 'Home::clientePerfil', ['filter' => 'auth:2']);
 $routes->get('/mis-compras', 'Home::misCompras', ['filter' => 'auth:2']);
 
 $routes->get('/crear', 'ProductoController::crearProducto');
 $routes->post('/enviar-prod', 'ProductoController::store');
 
 $routes->get('editar/(:num)', 'AdminController::editarUsuario/$1', ['filter' => 'auth:1']);
-$routes->post('actualizar/(:num)', 'AdminController::actualizarUsuario/$1', ['filter' => 'auth:1']);
-$routes->get('borrar/(:num)', 'AdminController::borrar/$1');
+$routes->post('actualizar/(:num)', 'UsuarioController::actualizarUsuario/$1', ['filter' => 'auth:1']);
+$routes->get('borrar/(:num)', 'UsuarioController::borrar/$1');
 
 
 $routes->get('/eliminarProducto/(:num)', 'ProductoController::eliminarProducto/$1');
 $routes->get('/editarProducto/(:num)', 'ProductoController::editarProducto/$1');
 $routes->post('/actualizarProducto/(:num)', 'ProductoController::actualizarProducto/$1');
+
+$routes->get('editarPerfil', 'Home::editarPerfil', ['filter' => 'auth:2']);
+$routes->post('cliente-actualizar-perfil', 'UsuarioController::clienteActualizarPerfil', ['filter' => 'auth:2']);

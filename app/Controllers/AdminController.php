@@ -79,28 +79,5 @@ class AdminController extends BaseController
         echo view('front/admin/footer_admin', $data);
     }
     
-    public function actualizarUsuario($id)
-    {
-        $model = new Usuarios_model();
-
-        $data = [
-            'nombre' => $this->request->getPost('nombre'),
-            'apellido' => $this->request->getPost('apellido'),
-            'usuario' => $this->request->getPost('usuario'),
-            'email' => $this->request->getPost('email'),
-            'perfil_id' => $this->request->getPost('perfil_id')
-        ];
-
-        $model->update($id, $data);
-
-        return redirect()->to('/crud-usuarios')->with('mensaje', 'Usuario actualizado correctamente');
-    }
     
-    public function borrar($id)
-    {
-    $model = new Usuarios_model();
-    $model->update($id, ['baja' => 'SI']);
-
-    return redirect()->to('/crud-usuarios')->with('success', 'Usuario dado de baja.');
-    }
 }

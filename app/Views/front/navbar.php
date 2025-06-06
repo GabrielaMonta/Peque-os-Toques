@@ -48,7 +48,7 @@
                                 <i class="bi bi-person-circle fs-4" style="color: #bfc86a;"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownSesion">
-                                <li><a class="dropdown-item" href="<?= base_url('editar-perfil'); ?>">Editar perfil</a></li>
+                                <li><a class="dropdown-item" href="<?= base_url('cuenta'); ?>">Cuenta</a></li>
                                 <li><a class="dropdown-item" href="<?= base_url('mis-compras'); ?>">Mis compras</a></li>
                                 <li><a class="dropdown-item" href="<?= base_url('logout'); ?>">Cerrar sesión</a></li>
                             </ul>
@@ -120,7 +120,7 @@
                             <i class="bi bi-person-circle fs-4 me-1"></i> Usuario
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="<?= base_url('editar-perfil'); ?>">Editar perfil</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('cuenta'); ?>">Cuenta</a></li>
                             <li><a class="dropdown-item" href="<?= base_url('mis-compras'); ?>">Mis compras</a></li>
                             <li><a class="dropdown-item" href="<?= base_url('logout'); ?>">Cerrar sesión</a></li>
                         </ul>

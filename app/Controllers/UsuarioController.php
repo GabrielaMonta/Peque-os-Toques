@@ -39,6 +39,123 @@ class UsuarioController extends Controller {
             ;  // indica abrir modal login
     }
     
+    public function actualizarUsuario($id)
+    {
+        $model = new Usuarios_model();
+
+        $data = [];
+
+        $nombre = $this->request->getPost('nombre');
+        if ($nombre !== null && $nombre !== '') {
+            $data['nombre'] = $nombre;
+        }
+
+        $apellido = $this->request->getPost('apellido');
+        if ($apellido !== null && $apellido !== '') {
+            $data['apellido'] = $apellido;
+        }
+
+        $dni = $this->request->getPost('dni');
+        if ($dni !== null && $dni !== '') {
+            $data['dni'] = $dni;
+        }
+
+        $telefono = $this->request->getPost('telefono');
+        if ($telefono !== null && $telefono !== '') {
+            $data['telefono'] = $telefono;
+        }
+
+        $fecha_nacimiento = $this->request->getPost('fecha_nacimiento');
+        if ($fecha_nacimiento !== null && $fecha_nacimiento !== '') {
+            $data['fecha_nacimiento'] = $fecha_nacimiento;
+        }
+
+        $usuario = $this->request->getPost('usuario');
+        if ($usuario !== null && $usuario !== '') {
+            $data['usuario'] = $usuario;
+        }
+
+        $email = $this->request->getPost('email');
+        if ($email !== null && $email !== '') {
+            $data['email'] = $email;
+        }
+
+        $perfil_id = $this->request->getPost('perfil_id');
+        if ($perfil_id !== null && $perfil_id !== '') {
+            $data['perfil_id'] = $perfil_id;
+        }
+
+        if (!empty($data)) {
+            $model->update($id, $data);
+            return redirect()->to('/crud-usuarios')->with('mensaje', 'Usuario actualizado correctamente');
+        } else {
+            return redirect()->to('/crud-usuarios')->with('mensaje', 'No se modificó ningún dato');
+        }
+    }
+
+    public function borrar($id)
+    {
+    $model = new Usuarios_model();
+    $model->update($id, ['baja' => 'SI']);
+
+    return redirect()->to('/crud-usuarios')->with('success', 'Usuario dado de baja.');
+    }
+
+    public function clienteActualizarPerfil()
+    {
+    $session = session();
+    $id = $session->get('id');
+
+    if (!$id) {
+        return redirect()->to('/cuenta')->with('mensaje', 'Sesión no válida. Por favor, iniciá sesión nuevamente.');
+    }
+
+    $model = new Usuarios_model();
+    $data = [];
+
+    $nombre = $this->request->getPost('nombre');
+    if ($nombre !== null && $nombre !== '') {
+        $data['nombre'] = $nombre;
+    }
+
+    $apellido = $this->request->getPost('apellido');
+    if ($apellido !== null && $apellido !== '') {
+        $data['apellido'] = $apellido;
+    }
+
+    $dni = $this->request->getPost('dni');
+    if ($dni !== null && $dni !== '') {
+        $data['dni'] = $dni;
+    }
+
+    $telefono = $this->request->getPost('telefono');
+    if ($telefono !== null && $telefono !== '') {
+        $data['telefono'] = $telefono;
+    }
+
+    $fecha_nacimiento = $this->request->getPost('fecha_nacimiento');
+    if ($fecha_nacimiento !== null && $fecha_nacimiento !== '') {
+        $data['fecha_nacimiento'] = $fecha_nacimiento;
+    }
+
+    $email = $this->request->getPost('email');
+    if ($email !== null && $email !== '') {
+        $data['email'] = $email;
+    }
+
+    $usuario = $this->request->getPost('usuario');
+    if ($usuario !== null && $usuario !== '') {
+        $data['usuario'] = $usuario;
+    }
+
+    if (!empty($data)) {
+        $model->update($id, $data);
+        return redirect()->to('/cuenta')->with('mensaje', 'Perfil actualizado con éxito');
+    } else {
+        return redirect()->to('/cuenta')->with('mensaje', 'No se modificó ningún dato');
+    }
+}
+
 
 }
 
