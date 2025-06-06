@@ -58,3 +58,8 @@ $routes->post('/enviar-prod', 'ProductoController::store');
 $routes->get('editar/(:num)', 'AdminController::editarUsuario/$1', ['filter' => 'auth:1']);
 $routes->post('actualizar/(:num)', 'AdminController::actualizarUsuario/$1', ['filter' => 'auth:1']);
 $routes->get('borrar/(:num)', 'AdminController::borrar/$1');
+
+
+$routes->get('/eliminarProducto/(:num)', 'ProductoController::eliminarProducto/$1');
+$routes->get('/editarProducto/(:num)', 'ProductoController::editarProducto/$1');
+$routes->post('/actualizarProducto/(:num)', 'ProductoController::actualizarProducto/$1');

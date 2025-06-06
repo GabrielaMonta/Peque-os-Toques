@@ -12,13 +12,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
     </div>
     <?php endif; ?>
-    <?php if (session()->getFlashdata('success')): ?>
-        <div class="alert alert-success">
-            <?= session()->getFlashdata('success'); ?>
-        </div>
-    <?php endif; ?>
 
-    <table class="table ">
+    <table class="tabla-admin ">
         <thead>
             <tr>
                 <th>ID</th>
@@ -28,6 +23,7 @@
                 <th>Precio Venta</th>
                 <th>Stock</th>
                 <th>Stock Mínimo</th>
+                <th>Colores</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -40,14 +36,20 @@
                         <td>
                             <img src="<?= base_url('assets/uploads/' . $prod['imagen']); ?>" width="60">
                         </td>
-                        <td><?= esc($prod['precio']); ?></td>
-                        <td><?= esc($prod['precio_vta']); ?></td>
+                        <td>$<?= number_format($prod['precio'], 2, ',', '.'); ?></td>
+                        <td>$<?= number_format($prod['precio_vta'], 2, ',', '.'); ?></td>
                         <td><?= esc($prod['stock']); ?></td>
                         <td><?= esc($prod['stock_min']); ?></td>
-                        <td>
-                            <a href="#" class="btn btn-warning btn-sm">Editar</a>
-                            <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
-                        </td>
+                        <td><?= esc($prod['color']); ?></td>
+                        
+                        <td class="acciones-columna">
+                            <a href="<?= base_url('editarProducto/' . $prod['id']); ?>"  class="btn btn-sm btn-crud-editar" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="<?= base_url('eliminarProducto/' . $prod['id']); ?>" class="btn btn-sm btn-crud-eliminar" title="Eliminar" onclick="return confirm('¿Estás seguro de eliminar este producto?');">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td> 
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>

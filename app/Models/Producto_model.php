@@ -7,7 +7,7 @@ class Producto_model extends Model
 {
     protected $table = 'productos';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['nombre_prod', 'imagen', 'categoria_id', 'precio', 'precio_vta', 'stock', 'stock_min','eliminado','genero','talle','tipo'];
+    protected $allowedFields = ['nombre_prod', 'imagen', 'categoria_id', 'precio', 'precio_vta', 'stock', 'stock_min','eliminado','genero','color','tipo','descripcion'];
 
      public function getProductoAll()
     {

@@ -1,21 +1,21 @@
 .btn-crud {
-    display: inline-block;
-    background-color: #d5bdaf;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  background-color: #d5bdaf;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .btn-crud:hover {
-    color: white;
+  color: white;
 }
 
 .titulo-crud{
-    font-family: 'Libre Bondi', serif; 
-    font-size: 2rem;
-    font-weight: bold;
+  font-family: 'Libre Bondi', serif; 
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .btn-crud.guardar {
@@ -28,6 +28,33 @@
 
 .btn-crud.volver {
   background-color: #6c757d; /* rojo */
+}
+
+/* Centrar los botones en la celda */
+.tabla-admin .acciones-columna {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tabla-admin .btn-crud-editar {
+    color: #D4AF37; 
+}
+.tabla-admin .btn-crud-editar:hover {
+    background-color: #D4AF37;
+    color: #fff;
+}
+
+.tabla-admin .btn-crud-eliminar {
+    color:  #dc3545; 
+}
+.tabla-admin .btn-crud-eliminar:hover {
+    background-color: #c82333;
+    color: #fff;
+}
+
+/* Opcional: Ajustar el margen entre los botones si lo necesitas */
+.tabla-admin .acciones-columna .btn {
+    margin: 0 0.25rem; /* Pequeño margen a la izquierda y derecha de cada botón */
 }
 
 /* Hover opcional */
@@ -44,23 +71,71 @@
 }
 
 .titulo-form{
-    font-size: 1rem;
-    font-family: 'Inter';
+  font-size: 1rem;
+  font-family: 'Inter';
 }
 
 .titulo-form-crud{
-    font-family: 'Libre Bondi'; 
-    font-size: 2rem;
-    font-weight: bold;
+  font-family: 'Libre Bondi'; 
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.tabla-admin{
-    border-radius: 1px;
+.tabla-admin {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  margin-bottom: 1rem; /* Margen inferior estándar de Bootstrap */
+  color: black; /* Color de texto general de la tabla */
+  font-family: 'Libre Bondi'; /* Tu fuente personalizada */
+  text-align: center; /* Centra el contenido general de la tabla (útil para caption si existiera) */
+
+  /* Borde externo para TODA LA TABLA */
+  border: 1px solid black; /* Borde completo para el contorno de la tabla */
+  border-radius: 0.25rem; /* Bordes ligeramente redondeados para la tabla completa */
+  border-collapse: collapse;
 }
 
+.tabla-admin > :not(caption) > * {
+  /* Estas reglas se aplican a las filas (tr) dentro de la tabla, no a las celdas */
+  padding: 0.5rem 0.5rem; /* Padding base para filas */
+  background-color: transparent; /* Fondo transparente por defecto */
+  box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg); /* Mantiene la sombra sutil de Bootstrap */
+   
+}
+
+/* Estilos para las celdas de encabezado (<th>) y datos (<td>) */
+.tabla-admin th,
+.tabla-admin td {
+  padding: 0.5rem 0.5rem; 
+  border: 1px solid #dee2e6; 
+  text-align: center; 
+  vertical-align: middle; 
+}
+
+/* Estilos específicos para el thead (cabecera de la tabla) */
 .tabla-admin thead {
-    background-color: #eae0d5; /* gris oscuro */
-    color:  #eae0d5;
-    text-align: center;
-    font-weight: bold;
+  background-color: #333333; /* Tu gris oscuro personalizado */
+  color: whitesmoke; /* Tu texto blanco personalizado */
+  font-weight: bold; /* Negrita para los encabezados */
+}
+
+/* Estilos para el thead > tr > th */
+.tabla-admin thead th {
+  vertical-align: middle; /* Alinea el texto del encabezado en el medio */
+  border: 1px solid #333333; /* Borde para cada TH, para que se vea la cuadrícula de la cabecera */
+}
+
+/* Elimina el borde inferior de las celdas en la última fila del cuerpo de la tabla
+  para que se vea el borde externo de la tabla */
+.tabla-admin tbody tr:last-child td {
+  border-bottom: none; /* Quita el borde inferior de la última celda para que el borde de la tabla sea visible */
+}
+
+/* Estilos para el efecto hover */
+.tabla-admin tbody tr:hover {
+  background-color: rgb(246, 245, 242); /* Un gris muy claro para el hover */
+}
+
+/* Para capitalizar la primera letra del nombre del producto */
+.tabla-admin tbody tr td:nth-child(2) { /* Ajusta este número si tu columna de nombre no es la primera */
+    text-transform: capitalize;
 }

@@ -8,9 +8,6 @@
     <?php if(!empty(session()->getFlashdata('fail'))): ?>
         <div class="alert alert-danger"><?= session()->getFlashdata('fail'); ?></div>
     <?php endif; ?>
-    <?php if (!empty(session()->getFlashdata('success'))): ?>
-        <div class="alert alert-danger"><?= session()->getFlashdata('success'); ?></div>
-    <?php endif; ?>
 
     <?php $validation = \Config\Services::validation(); ?>
 
@@ -28,6 +25,17 @@
                     </div>
                 <?php endif; ?>
             </div>
+            
+            <!-- DESCRIPCION -->
+            <div class="mx-2 my-2">
+                    <label for="descripcion_prod" class="titulo-form ps-2 pb-1">Descripción</label>
+                    <textarea class="form-control" id="descripcion_prod" name="descripcion_prod" rows="3" placeholder="Ingresa una descripción para el producto"><?= set_value('descripcion_prod'); ?></textarea>
+                    <?php if($validation->getError('descripcion_prod')): ?>
+                        <div class="alert alert-danger mt-2">
+                            <?= $validation->getError('descripcion_prod'); ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
 
             <!-- CATEGORIA -->
             <div class="mx-2 my-2">
@@ -102,14 +110,49 @@
                 <?php endif; ?>
             </div>
 
-            <!-- TALLE -->
+            <!-- COLORES -->
             <div class="mx-2 my-2">
-                <label for="talle" class="titulo-form ps-2 pb-1">Talle</label>
-                <input type="text" class="form-control" name="talle" value="<?= set_value('talle'); ?>">
+                <label class="titulo-form ps-2 pb-1">Colores disponibles</label>
+
+                <div class="accordion" id="accordionColor">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingColor">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseColor" aria-expanded="false" aria-controls="collapseColor">
+                            Seleccionar colores
+                        </button>
+                    </h2>
+                    <div id="collapseColor" class="accordion-collapse collapse" aria-labelledby="headingColor" data-bs-parent="#accordionColor">
+                        <div class="accordion-body">
+                            <?php
+                            $colores_disponibles = ['amarillo','azul','beige','blanco','bordo','celeste','gris','marron','negro','naranja','rosa','rojo','violeta'];
+
+                            // Asegúrate de que $colores_seleccionados sea siempre un array
+                            // old('color') devuelve un array de los valores seleccionados si la validación falla
+                            // Si no hay errores, old('color') podría ser null, por eso lo casteamos a array.
+                            $colores_seleccionados = (array) old('color');
+                            ?>
+
+                            <?php foreach ($colores_disponibles as $color): ?>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="color[]" value="<?= $color ?>"
+                                        <?php
+                                        // Verifica si el color actual está en los colores seleccionados (ya sea del old() o del default)
+                                        if (in_array($color, $colores_seleccionados)) {
+                                            echo 'checked';
+                                        }
+                                        ?>>
+                                    <label class="form-check-label"><?= $color ?></label>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
                 <!-- Error -->
-                 <?php if($validation->getError('talle')): ?>
+                <?php if (isset($validation) && $validation->getError('color')): ?>
                     <div class="alert alert-danger mt-2">
-                        <?= $validation->getError('talle'); ?>
+                        <?= $validation->getError('color'); ?>
                     </div>
                 <?php endif; ?>
             </div>
@@ -152,4 +195,6 @@
     </form>
 </div>
 </main>
-     
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
