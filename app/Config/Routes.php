@@ -19,12 +19,9 @@ $routes->get('/preguntas-frecuentes', 'Home::preguntasFrecuentes');
 $routes->get('/novedades', 'Home::novedades');
 
 /*Catalogo*/
-$routes->get('/catalogo-indumentaria', 'Home::indumentaria');
-$routes->get('/catalogo-calzado', 'Home::calzado');
-$routes->get('/catalogo-blanqueria', 'Home::blanqueria');
-$routes->get('/catalogo-marroquineria', 'Home::marroquineria');
-$routes->get('/catalogo-todo', 'Home::verTodo');
-
+$routes->get('/catalogo-todo', 'CatalogoController::index');
+$routes->get('catalogo/(:num)', 'CatalogoController::categoria/$1');
+$routes->get('catalogo/detalle/(:num)', 'CatalogoController::detalle/$1');
 
 /*Carrito */
 $routes->get('/carrito', 'Home::carrito');

@@ -1,98 +1,58 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
-<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 <main>
     <div class="container mt-3">
         <nav aria-label="breadcrumb">
+            <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo base_url('catalogo-todo');?>" class="letra-migas">Catalogo</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="<?php echo base_url('catalogo-todo');?>" class="letra-migas">Ver Todo</a></li>
+                <li class="breadcrumb-item"><a href="<?= base_url('catalogo-todo');?>" class="letra-migas">Catálogo</a></li>
+                <?php if (isset($categoria_nombre) && $categoria_nombre != 'Desconocida'): ?>
+                    <li class="breadcrumb-item active" aria-current="page"><?= esc($categoria_nombre); ?></li>
+                <?php else: ?>
+                    <li class="breadcrumb-item active" aria-current="page">Todo</li>
+                <?php endif; ?>
             </ol>
         </nav>
+        </nav>
 
-        <!-- Título -->
         <div class="section-title position-relative mb-2">
-            <h2 class="text-uppercase">Ver Todo</h2>
+            <h2 class="text-uppercase">
+                <?php if (isset($categoria_actual)): ?>
+                    <?= esc($categoria_actual['nombre']); ?>
+                <?php else: ?>
+                    Productos
+                <?php endif; ?>
+            </h2>
         </div>
 
-        <!-- Ordenar por -->
         <div class="row mb-3">
             <div class="col-12 d-flex justify-content-md-end">
                 <div class="d-flex align-items-center">
                     <label for="ordenar" class="me-2 mb-0 titulo-filtro">Ordenar por:</label>
                     <select id="ordenar" class="form-select form-select-sm">
-                        <option selected>Relevancia</option>
-                        <option value="1">A-Z</option>
-                        <option value="2">Precio: menor a mayor</option>
-                        <option value="3">Precio: mayor a menor</option>
+                        <option value="relevancia" selected>Relevancia</option>
+                        <option value="az">A-Z</option>
+                        <option value="precio_menor_mayor">Precio: menor a mayor</option>
+                        <option value="precio_mayor_menor">Precio: mayor a menor</option>
                     </select>
                 </div>
             </div>
         </div>
-        <script>
-            const choices = new Choices('#ordenar', {
-                searchEnabled: false,  // si querés desactivar el buscador
-                itemSelectText: '',    // saca el texto de "Presiona Enter para seleccionar"
-            });
-        </script>
+        
 
         <div class="row">
-            <!-- Filtros -->
             <div class="col-md-3 mb-4">
                 <div class="d-flex align-items-center mb-3">
                     <h5 class="titulo-filtro mb-0 me-2">Filtrar por:</h5>
                     <select class="form-select cajita-filtro form-select-sm w-auto">
-                        <option selected>Todo</option>
-                        <option value="1">Calzado</option>
-                        <option value="2">Indumentaria</option>
-                        <option value="3">Blanqueria</option>
-                        <option value="4">Marroquineria</option>
+                        <option value="todo" selected>Todo</option>
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                        <option value="niños">Niños</option>
+                        <option value="unisex">Unisex</option>
                     </select>
                 </div>
-                <script>
-                    const choicesFiltrar = new Choices('.cajita-filtro', {
-                        searchEnabled: false,  // Desactivar el buscador
-                        itemSelectText: '',    // Quitar el texto "Presiona Enter para seleccionar"
-                    });
-                </script>  
+    
                 <div class="accordion" id="accordionFiltros">
-                    <!-- Filtro de Talle -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingGenero">
-                            <button class="accordion-button collapsed titulo-acordeon" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGenero" aria-expanded="false" aria-controls="collapseGenero">
-                                Genero
-                            </button>
-                        </h2>
-                        <div id="collapseGenero" class="accordion-collapse collapse" aria-labelledby="headingGenero" data-bs-parent="#accordionFiltros">
-                            <div class="accordion-body">
-                                <!-- Opciones-->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="hombre">
-                                    <label class="form-check-label" for="hombre">
-                                        Hombre
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="mujer">
-                                    <label class="form-check-label" for="mujer">
-                                        Mujer
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="niños">
-                                    <label class="form-check-label" for="niños">
-                                        Niños
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="unisex">
-                                    <label class="form-check-label" for="unisex">
-                                        Unisex
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Filtro de Color -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingColor">
                             <button class="accordion-button collapsed titulo-acordeon" type="button" data-bs-toggle="collapse" data-bs-target="#collapseColor" aria-expanded="false" aria-controls="collapseColor">
@@ -101,262 +61,70 @@
                         </h2>
                         <div id="collapseColor" class="accordion-collapse collapse" aria-labelledby="headingColor" data-bs-parent="#accordionFiltros">
                             <div class="accordion-body">
-                                <!-- Opciones -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="colorRojo">
-                                    <label class="form-check-label" for="colorRojo">
-                                        Rojo
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="colorAzul">
-                                    <label class="form-check-label" for="colorAzul">
-                                        Azul
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="colorNegro">
-                                    <label class="form-check-label" for="colorNegro">
-                                        Negro
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="colorRosa">
-                                    <label class="form-check-label" for="colorRosa">
-                                        Rosa
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="colorBlanco">
-                                    <label class="form-check-label" for="colorBlanco">
-                                        Blanco
-                                    </label>
-                                </div>
+                                <?php
+                                $colores_disponibles = ['amarillo', 'azul', 'beige', 'blanco', 'bordo', 'celeste', 'gris', 'marron', 'naranja', 'negro', 'rosa', 'rojo', 'violeta']; // Reordené para que coincida con tu SET y puse los que faltaban
+                                foreach ($colores_disponibles as $color):
+                                ?>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="<?= esc($color) ?>" id="color<?= ucfirst(esc($color)) ?>" name="color[]">
+                                        <label class="form-check-label" for="color<?= ucfirst(esc($color)) ?>">
+                                            <?= ucfirst(esc($color)) ?>
+                                        </label>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
-                    <!-- Filtro de Tipo -->
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTemporada">
-                            <button class="accordion-button collapsed titulo-acordeon" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTemporada" aria-expanded="false" aria-controls="collapseTemporada">
-                                Temporada
+                        <h2 class="accordion-header" id="headingTipo">
+                            <button class="accordion-button collapsed titulo-acordeon" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTipo" aria-expanded="false" aria-controls="collapseTipo">
+                                Tipo
                             </button>
                         </h2>
-                        <div id="collapseTemporada" class="accordion-collapse collapse" aria-labelledby="headingTemporada" data-bs-parent="#accordionFiltros">
+                        <div id="collapseTipo" class="accordion-collapse collapse" aria-labelledby="headingTipo" data-bs-parent="#accordionFiltros">
                             <div class="accordion-body">
-                                <!-- Opciones -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="verano">
-                                    <label class="form-check-label" for="verano">
-                                        Verano
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="primavera">
-                                    <label class="form-check-label" for="primavera">
-                                        Primavera
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="otoño">
-                                    <label class="form-check-label" for="otoño">
-                                        Otoño
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="invierno">
-                                    <label class="form-check-label" for="invierno">
-                                        Invierno
-                                    </label>
-                                </div>
+                                <?php
+                                $tipos_disponibles = ['remeras', 'pantalones', 'camisas', 'ropa-interior', 'shorts-bermudas', 'vestidos']; // Ajusta según tus tipos reales
+                                foreach ($tipos_disponibles as $tipo):
+                                ?>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="<?= esc($tipo) ?>" id="<?= esc($tipo) ?>" name="tipo[]">
+                                        <label class="form-check-label" for="<?= esc($tipo) ?>">
+                                            <?= ucfirst(str_replace('-', ' ', esc($tipo))) ?>
+                                        </label>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Productos -->
+
             <div class="col-md-9">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-                    <!-- Producto 1 -->
-                    <div class="col">
-                        <a href="<?php echo base_url('producto');?>" class="card-link">
-                            <div class="card producto-card h-100 position-relative">
-                                <img src="assets/img/productos/zapato1.jpeg" class="card-img-top" alt="Producto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Stilettos Vizzano</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
+                    <?php if (!empty($productos) && is_array($productos)): ?>
+                        <?php foreach ($productos as $producto): ?>
+                            <div class="col">
+                                <a href="<?= base_url('catalogo/detalle/' . $producto['id']); ?>" class="card-link"> <div class="card producto-card h-100 position-relative">
+                                        <img src="<?= base_url('assets/uploads/' . $producto['imagen']); ?>" class="card-img-top" alt="<?= esc($producto['nombre_prod']); ?>">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?= esc($producto['nombre_prod']); ?></h5>
+                                            <p class="card-precio">$<?= number_format($producto['precio_vta'], 2, ',', '.'); ?></p>
+                                        </div>
+                                        <button class="btn-carrito">
+                                            <i class="bi bi-basket3"></i> 
+                                        </button>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                    <!-- Producto 2 -->
-                    <div class="col">
-                        <a href="<?php echo base_url('producto');?>" class="card-link">
-                            <div class="card h-100 producto-card position-relative">
-                                <img src="assets/img/productos/zapato2.jpeg" class="card-img-top" alt="Producto 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Zapatos Modare</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Producto 3 -->
-                    <div class="col">
-                        <a href="<?php echo base_url('producto');?>" class="card-link">
-                            <div class="card h-100 producto-card">
-                                <img src="assets/img/productos/zapato3.jpeg" class="card-img-top" alt="Producto 3">
-                                    <div class="card-body">
-                                    <h5 class="card-title">Tacones Modare</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Producto 1 -->
-                    <div class="col">
-                        <a href="<?php echo base_url('producto');?>" class="card-link">
-                            <div class="card producto-card h-100 position-relative">
-                                <img src="assets/img/productos/indu1.jpeg" class="card-img-top" alt="Producto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Blazer</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Producto 2 -->
-                    <div class="col">
-                        <a href="<?php echo base_url('producto');?>" class="card-link">
-                            <div class="card h-100 producto-card position-relative">
-                                <img src="assets/img/productos/indu2.jpeg" class="card-img-top" alt="Producto 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Short Sastrero</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Producto 3 -->
-                    <div class="col">
-                        <a href="<?php echo base_url('producto');?>" class="card-link">
-                            <div class="card h-100 producto-card">
-                                <img src="assets/img/productos/indu3.jpeg" class="card-img-top" alt="Producto 3">
-                                    <div class="card-body">
-                                    <h5 class="card-title">Vestido</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                     <!-- Producto 1 -->
-                     <div class="col">
-                        <a href="<?php echo base_url('producto');?>" class="card-link">
-                            <div class="card producto-card h-100 position-relative">
-                                <img src="assets/img/productos/blanqueria1.jpeg" class="card-img-top" alt="Producto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Toalla Manos</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Producto 2 -->
-                    <div class="col">
-                        <a href="<?php echo base_url('producto');?>" class="card-link">
-                            <div class="card h-100 producto-card position-relative">
-                                <img src="assets/img/productos/blanqueria2.jpeg" class="card-img-top" alt="Producto 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Toallon</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                     <!-- Producto 1 -->
-                     <div class="col">
-                        <a href="<?php echo base_url('producto');?>" class="card-link">
-                            <div class="card producto-card h-100 position-relative">
-                                <img src="assets/img/productos/marro1.jpeg" class="card-img-top" alt="Producto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Cartera</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Producto 2 -->
-                    <div class="col">
-                        <a href="<?php echo base_url('producto');?>" class="card-link">
-                            <div class="card h-100 producto-card position-relative">
-                                <img src="assets/img/productos/marro2.jpeg" class="card-img-top" alt="Producto 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Tarjetero</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Producto 3 -->
-                    <div class="col">
-                        <a href="<?php echo base_url('producto');?>" class="card-link">
-                            <div class="card h-100 producto-card">
-                                <img src="assets/img/productos/marro3.jpeg" class="card-img-top" alt="Producto 3">
-                                    <div class="card-body">
-                                    <h5 class="card-title">Billetera</h5>
-                                    <p class="card-precio">$1234,56</p>
-                                    <p class="card-promo"><small>$1234,56 con transferencia</small></p>
-                                </div>
-                                <button class="btn-carrito">
-                                    <i class="bi bi-basket3"></i>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <div class="col-12 text-center">
+                            <p>No hay productos disponibles.</p> </div>
+                    <?php endif; ?>
                 </div>
             </div>
-        
+
             <div class="col-12  mt-4 d-flex justify-content-center">
                 <nav aria-label="Page navigation example" class="mi-paginacion">
                     <ul class="pagination">
@@ -379,3 +147,5 @@
         </div>
     </div>
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
