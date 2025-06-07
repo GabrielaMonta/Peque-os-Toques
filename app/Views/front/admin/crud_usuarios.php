@@ -8,11 +8,7 @@
                 <th class="titulos-resumen">Nombre</th>
                 <th class="titulos-resumen">Apellido</th>
                 <th class="titulos-resumen">DNI</th>
-<<<<<<< HEAD
                 <th class="titulos-resumen">Teléfono</th>
-=======
-                <th class="titulos-resumen">Telefono</th>
->>>>>>> Bian
                 <th class="titulos-resumen">Fecha de nacimiento</th>
                 <th class="titulos-resumen">Usuario</th>
                 <th class="titulos-resumen">Email</th>
