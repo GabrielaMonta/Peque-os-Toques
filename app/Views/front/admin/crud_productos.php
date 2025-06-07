@@ -64,12 +64,3 @@
 </main>
 
 
-<!-- 
-<td class="text-end">
-    <a href="" class="btn btn-sm btn-warning" title="Editar">
-        <i class="fas fa-edit"></i>
-    </a>
-    <a href="" class="btn btn-sm btn-danger" title="Eliminar" onclick="return confirm('¿Estás seguro de eliminar este producto?');">
-        <i class="fas fa-trash-alt"></i>
-    </a>
-</td> -->
