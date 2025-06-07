@@ -101,60 +101,78 @@ class UsuarioController extends Controller {
     return redirect()->to('/crud-usuarios')->with('success', 'Usuario dado de baja.');
     }
 
-    public function clienteActualizarPerfil()
+
+    public function clienteActualizarPerfil($id_a_modificar)
     {
-    $session = session();
-    $id = $session->get('id');
+        $session = session();
+        $id = $session->get('id');
 
-    if (!$id) {
-        return redirect()->to('/cuenta')->with('mensaje', 'Sesión no válida. Por favor, iniciá sesión nuevamente.');
+        // ** DEBUG: Verificar el ID de la sesión **
+        log_message('debug', 'ID de sesión: ' . $id);
+
+        if (!$id) {
+            return redirect()->to('/cuenta')->with('mensaje', 'Sesión no válida. Por favor, iniciá sesión nuevamente.');
+        }
+
+        // DOBLE CHECK: Aunque el filtro 'ownerAuth' ya lo hizo, es una buena práctica
+            // volver a verificar en el controlador por si acaso.
+            if ($loggedInUserId != $id_a_modificar) {
+                return redirect()->to('/cuenta')->with('mensaje', 'Intento de acceso no autorizado al perfil.');
+            }
+        $model = new Usuarios_model();
+        $data = [];
+
+        $nombre = $this->request->getPost('nombre');
+        if ($nombre !== null && $nombre !== '') {
+            $data['nombre'] = $nombre;
+        }
+
+        $apellido = $this->request->getPost('apellido');
+        if ($apellido !== null && $apellido !== '') {
+            $data['apellido'] = $apellido;
+        }
+
+        $dni = $this->request->getPost('dni');
+        if ($dni !== null && $dni !== '') {
+            $data['dni'] = $dni;
+        }
+
+        $telefono = $this->request->getPost('telefono');
+        if ($telefono !== null && $telefono !== '') {
+            $data['telefono'] = $telefono;
+        }
+
+        $fecha_nacimiento = $this->request->getPost('fecha_nacimiento');
+        if ($fecha_nacimiento !== null && $fecha_nacimiento !== '') {
+            $data['fecha_nacimiento'] = $fecha_nacimiento;
+        }
+
+        $email = $this->request->getPost('email');
+        if ($email !== null && $email !== '') {
+            $data['email'] = $email;
+        }
+
+        $usuario = $this->request->getPost('usuario');
+        if ($usuario !== null && $usuario !== '') {
+            $data['usuario'] = $usuario;
+        }
+        // ** DEBUG: Verificar los datos que se intentan actualizar **
+        log_message('debug', 'Datos a actualizar: ' . json_encode($data));
+
+        if (!empty($data)) {
+                // Asegurate de que el update se haga con el ID del usuario logueado
+                // (que ya se verificó que coincide con el ID de la URL por el filtro)
+                $updateResult = $model->update($loggedInUserId, $data);
+
+                if ($updateResult) {
+                    return redirect()->to('/cuenta')->with('mensaje', 'Perfil actualizado con éxito');
+                } else {
+                    return redirect()->to('/cuenta')->with('mensaje', 'Hubo un problema al actualizar el perfil. Por favor, intentá de nuevo.');
+                }
+            } else {
+                return redirect()->to('/cuenta')->with('mensaje', 'No se modificó ningún dato');
+            }
     }
-
-    $model = new Usuarios_model();
-    $data = [];
-
-    $nombre = $this->request->getPost('nombre');
-    if ($nombre !== null && $nombre !== '') {
-        $data['nombre'] = $nombre;
-    }
-
-    $apellido = $this->request->getPost('apellido');
-    if ($apellido !== null && $apellido !== '') {
-        $data['apellido'] = $apellido;
-    }
-
-    $dni = $this->request->getPost('dni');
-    if ($dni !== null && $dni !== '') {
-        $data['dni'] = $dni;
-    }
-
-    $telefono = $this->request->getPost('telefono');
-    if ($telefono !== null && $telefono !== '') {
-        $data['telefono'] = $telefono;
-    }
-
-    $fecha_nacimiento = $this->request->getPost('fecha_nacimiento');
-    if ($fecha_nacimiento !== null && $fecha_nacimiento !== '') {
-        $data['fecha_nacimiento'] = $fecha_nacimiento;
-    }
-
-    $email = $this->request->getPost('email');
-    if ($email !== null && $email !== '') {
-        $data['email'] = $email;
-    }
-
-    $usuario = $this->request->getPost('usuario');
-    if ($usuario !== null && $usuario !== '') {
-        $data['usuario'] = $usuario;
-    }
-
-    if (!empty($data)) {
-        $model->update($id, $data);
-        return redirect()->to('/cuenta')->with('mensaje', 'Perfil actualizado con éxito');
-    } else {
-        return redirect()->to('/cuenta')->with('mensaje', 'No se modificó ningún dato');
-    }
-}
 
 
 }

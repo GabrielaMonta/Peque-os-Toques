@@ -35,6 +35,8 @@ class Filters extends BaseFilters
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
         'auth' => \App\Filters\Auth:: class,
+        'ownerAuth'     => \App\Filters\OwnerAuthFilter::class, // 
+
     ];
 
     /**
@@ -104,5 +106,11 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [];
+
+    // Agregá tu filtro 'ownerAuth' a las rutas específicas
+    public array $filters = [
+        'ownerAuth' => ['before' => [
+            'cliente-actualizar-perfil/*', // Aplica este filtro a todas las rutas que comiencen con 'cliente-actualizar-perfil/'
+        ]],
+    ];
 }

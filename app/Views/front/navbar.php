@@ -83,10 +83,10 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle letra-nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo-indumentaria');?>">Indumentaria</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo-calzado');?>">Calzado</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo-blanqueria');?>">Blanqueria</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo-marroquineria');?>">Marroquineria</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo/1');?>">Indumentaria</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo/2');?>">Calzado</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo/3');?>">Blanqueria</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo/4');?>">Marroquineria</a></li>
                             <li><a class="dropdown-item" href="<?php echo base_url('catalogo-todo');?>">Ver todo</a></li>
                         </ul>
                     </li>

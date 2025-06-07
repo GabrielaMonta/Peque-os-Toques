@@ -69,50 +69,6 @@ class Home extends BaseController
         echo view('front/footer', $data);
     }
 
-
-    /*Catalogo*/
-    public function indumentaria()
-    {
-        $data['titulo'] = 'Indumentaria';
-        echo view('front/head', $data);
-        echo view('front/navbar', $data);
-        echo view('front/catalogo/indumentaria',$data);
-        echo view('front/footer', $data);
-    }
-    public function calzado()
-    {
-        $data['titulo'] = 'Calzado';
-        echo view('front/head', $data);
-        echo view('front/navbar', $data);
-        echo view('front/catalogo/calzado', $data);
-        echo view('front/footer', $data);
-    }
-    public function blanqueria()
-    {
-        $data['titulo'] = 'Blanqueria';
-        echo view('front/head', $data);
-        echo view('front/navbar', $data);
-        echo view('front/catalogo/blanqueria', $data);
-        echo view('front/footer', $data);
-    }
-    public function marroquineria()
-    {
-        $data['titulo'] = 'Marroquineria';
-        echo view('front/head', $data);
-        echo view('front/navbar', $data);
-        echo view('front/catalogo/marroquineria', $data);
-        echo view('front/footer', $data);
-    }
-    public function verTodo()
-    {
-        $data['titulo'] = 'Ver Todo';
-        echo view('front/head', $data);
-        echo view('front/navbar', $data);
-        echo view('front/catalogo/verTodo', $data);
-        echo view('front/footer', $data);
-    }
-    
-
     public function carrito()
     {
         $data['titulo'] = 'Carrito';

@@ -19,9 +19,9 @@
 
                 <div class="card card-resumen p-3 ms-0">
                     <div class="card-body">
-                        <form action="<?= site_url('cliente-actualizar-perfil') ?>" method="post">
+                        <form action="<?= site_url('cliente-actualizar-perfil/' . esc($usuario['id'])) ?>" method="post">
 
-                            <div class="card-body">
+
                                 <div>
                                     <label class="letra-perfil" for="nombre">Nombre</label>
                                     <input class="input-editar-perfil" name="nombre" type="text" value="<?= esc($usuario['nombre']) ?>">
@@ -62,7 +62,7 @@
                                     <button type="submit" class="btn btn-crud guardar mx-3 mt-3 py-1 px-2">Actualizar Usuario</button>
                                     <a href="<?= base_url('/cuenta') ?>" class="btn btn-crud volver mx-3 mt-3 py-1 px-2">Cancelar</a>
                                 </div>
-                            </div>
+                            
                         </form>
 
                     </div>

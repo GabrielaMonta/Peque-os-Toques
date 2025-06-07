@@ -98,9 +98,8 @@
     <?= view('back/auth/login') ?>
     <?= view('back/auth/registro') ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <?php if (session('showRegistroModal')): ?>
     <script>
@@ -120,5 +119,35 @@
       </script>
     <?php endif; ?>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Script para "Ordenar por:"
+            const choicesOrdenar = new Choices('#ordenar', {
+                searchEnabled: false,
+                itemSelectText: '',
+            });
+            choicesOrdenar.passedElement.element.addEventListener('change', function() {
+                const selectedValue = choicesOrdenar.getValue(true);
+                console.log('Ordenar por:', selectedValue);
+                // Aquí podrías redirigir o hacer una llamada AJAX para reordenar los productos
+                // window.location.href = `<?= base_url('catalogo') ?>?ordenar=${selectedValue}`;
+            });
+
+            // Script para "Filtrar por:"
+            const choicesFiltrar = new Choices('.cajita-filtro', {
+                searchEnabled: false,
+                itemSelectText: '',
+            });
+            choicesFiltrar.passedElement.element.addEventListener('change', function() {
+                const selectedValue = choicesFiltrar.getValue(true);
+                console.log('Filtrar por género:', selectedValue);
+                // Lógica similar para filtrar por género (requeriría JS/Ajax o recarga de página)
+                // window.location.href = `<?= base_url('catalogo') ?>?genero=${selectedValue}`;
+            });
+
+            // NOTA: No es necesario inicializar el acordeón manualmente si usas Bootstrap 5.
+            // Bootstrap 5 inicializa sus componentes automáticamente a través de los atributos data-bs-*.
+        });
+    </script>
   </body>
 </html>

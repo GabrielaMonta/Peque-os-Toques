@@ -8,7 +8,11 @@
                 <th class="titulos-resumen">Nombre</th>
                 <th class="titulos-resumen">Apellido</th>
                 <th class="titulos-resumen">DNI</th>
+<<<<<<< HEAD
                 <th class="titulos-resumen">Teléfono</th>
+=======
+                <th class="titulos-resumen">Telefono</th>
+>>>>>>> Bian
                 <th class="titulos-resumen">Fecha de nacimiento</th>
                 <th class="titulos-resumen">Usuario</th>
                 <th class="titulos-resumen">Email</th>
@@ -31,8 +35,13 @@
                     <td><?= esc($usuario['email']) ?></td>
                     <td><?= esc($usuario['perfil_id']) ?></td>
                     <td class="acciones-columna">
-                        <a href="<?= base_url('editar/' . $usuario['id']) ?>" class="btn btn-sm btn-crud-editar">Editar</a>
-                        <a href="<?= base_url('borrar/' . $usuario['id']) ?>" class="btn btn-sm btn-crud-eliminar" onclick="return confirm('¿Seguro que querés dar de baja este usuario?')">Baja</a>
+                        <a href="<?= base_url('editar/' . $usuario['id']) ?>" class="btn btn-sm btn-crud-editar">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        
+                        <a href="<?= base_url('borrar/' . $usuario['id']) ?>" class="btn btn-sm btn-crud-eliminar" onclick="return confirm('¿Seguro que querés dar de baja este usuario?')">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
                     </td>
                     </tr>
                     <?php endforeach; ?>
