@@ -1,16 +1,17 @@
+<?php $seccion = 'cuenta'; ?>
+
 <main>
     <div class="container my-4">
         <div class="row">
             <!-- Detalle cuenta-->
             <div class="col-12 col-md-3 ">
                 <h4 class="titulo-micompra">Hola!</h3>
-                <ul class="flex-row">
-                    <li ><a class="" href="<?php echo base_url('cuenta');?>">Perfil</a> </li>
-                    <li ><a class="" href="<?php echo base_url('');?>">Direcciones</a></li>      
-                    <li ><a class="" href="<?php echo base_url('');?>">Direcciones</a></li>
-                    <li ><a class="" href="<?php echo base_url('');?>">Pedidos</a></li>
-                    <li ><a class="" href="<?php echo base_url('');?>">Tarjetas</a></li>
-                    <li ><a class="" href="<?php echo base_url('logout');?>">Cerrar sesión</a></li>
+                <ul class="vertical-menu">
+                    <li><a class="<?= $seccion == 'cuenta' ? 'activo' : '' ?>" href="<?php echo base_url('cuenta'); ?>">Perfil</a></li>
+                    <li><a class="<?= $seccion == 'direcciones' ? 'activo' : '' ?>" href="<?php echo base_url('direcciones'); ?>">Direcciones</a></li>
+                    <li><a class="<?= $seccion == 'pedidos' ? 'activo' : '' ?>" href="<?php echo base_url('pedidos'); ?>">Pedidos</a></li>
+                    <li><a class="<?= $seccion == 'tarjetas' ? 'activo' : '' ?>" href="<?php echo base_url('tarjetas'); ?>">Tarjetas</a></li>
+                    <li><a href="<?php echo base_url('logout'); ?>">Cerrar sesión</a></li>
                 </ul>
             </div>
 
@@ -19,8 +20,8 @@
 
                 <div class="card card-resumen p-3 ms-0">
                     <div class="card-body">
-                        <form action="<?= site_url('cliente-actualizar-perfil/' . esc($usuario['id'])) ?>" method="post">
-
+                        <form method="post" action="<?= base_url('cliente-actualizar-perfil') ?>">
+                            <input type="hidden" name="id" value="<?= esc($usuario['id']) ?>">
 
                                 <div>
                                     <label class="letra-perfil" for="nombre">Nombre</label>
@@ -48,8 +49,10 @@
                                 </div>
                                 <br>
                                 <div>
-                                    <label class="letra-perfil" for="email">Email</label>
-                                    <input class="input-editar-perfil"  name="email" type="text" value="<?= esc($usuario['email']) ?>">
+                                    <label class="letra-perfil" for="email" >Email <span class="obligatorio">*</span></label>
+                                    <input class="input-editar-perfil"  type="email" name="email"  value="<?= esc($usuario['email']) ?>">
+                                
+
                                 </div>
                                 <br>
                                 <div>

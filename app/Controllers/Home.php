@@ -69,14 +69,6 @@ class Home extends BaseController
         echo view('front/footer', $data);
     }
 
-    public function carrito()
-    {
-        $data['titulo'] = 'Carrito';
-        echo view('front/head', $data);
-        echo view('front/navbar', $data);
-        echo view('front/Carrito/carrito', $data);
-        echo view('front/footer', $data);
-    }
 
     public function producto(){
         $data['titulo'] = 'Producto';
@@ -86,69 +78,15 @@ class Home extends BaseController
         echo view('front/footer', $data);
     }
 
-    public function iniciarPago()
-    {
-    $data['titulo'] = 'Pequeños Toques';
-    echo view('front/head', $data);
-    echo view('front/navbar', $data);
-    echo view('front/Carrito/iniciarPago', $data);
-    echo view('front/footer', $data);
-    }
     
-    public function clientePerfil()
+     public function carrito()
     {
-        $session = session();
-
-        $data = [
-            'titulo'   => 'Mi cuenta',
-            'usuario'  => [
-                'id'       => $session->get('id'),
-                'nombre'   => $session->get('nombre'),
-                'apellido' => $session->get('apellido'),
-                'dni' => $session->get('dni'),
-                'telefono' => $session->get('telefono'),
-                'fecha_nacimiento' => $session->get('fecha_nacimiento'),
-                'email'    => $session->get('email'),
-                'usuario'  => $session->get('usuario'),
-            ]
-        ];
-        $data['titulo'] = 'Editar perfil';
+        $data['titulo'] = 'Carrito';
         echo view('front/head', $data);
         echo view('front/navbar', $data);
-        echo view('front/cliente/perfil', $data);
-        echo view('front/footer', $data);
-    }
-
-    public function editarPerfil()
-    {
-        $session = session();
-
-        $data = [
-            'titulo'   => 'Editar perfil',
-            'usuario'  => [
-                'id'       => $session->get('id'),
-                'nombre'   => $session->get('nombre'),
-                'apellido' => $session->get('apellido'),
-                'dni' => $session->get('dni'),
-                'telefono' => $session->get('telefono'),
-                'fecha_nacimiento' => $session->get('fecha_nacimiento'),
-                'email'    => $session->get('email'),
-                'usuario'  => $session->get('usuario'),
-            ]
-        ];
-        $data['titulo'] = 'Editar perfil';
-        echo view('front/head', $data);
-        echo view('front/navbar', $data);
-        echo view('back/cliente/editarPerfil', $data);
+        echo view('front/Carrito/carrito', $data);
         echo view('front/footer', $data);
     }
     
-     public function misCompras()
-    {
-    $data['titulo'] = 'Compras';
-    echo view('front/head', $data);
-    echo view('front/navbar', $data);
-    echo view('front/cliente/misCompras', $data);
-    echo view('front/footer', $data);
-    }
+    
 }
