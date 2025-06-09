@@ -5,7 +5,7 @@ use App\Models\Usuarios_model;
 use App\Models\Direcciones_model;
 use CodeIgniter\Controller;
 
-class ClienteController extends Controller {
+class ClienteController extends  BaseController {
 public function clienteActualizarPerfil()
     {
         
@@ -70,7 +70,8 @@ public function clienteActualizarPerfil()
 
         $data = [
             'titulo' => 'Mi cuenta',
-            'usuario' => $usuario
+            'usuario' => $usuario,
+            'cart'   => $this->cart,
         ];
 
         echo view('front/head', $data);
@@ -92,6 +93,7 @@ public function clienteActualizarPerfil()
         $data = [
             'titulo' => 'Editar perfil',
             'usuario' => $usuario,
+            'cart'   => $this->cart,
         ];
         
         echo view('front/head', $data);
@@ -112,6 +114,7 @@ public function clienteActualizarPerfil()
         $data = [
             'titulo' => 'Mis direcciones',
             'direcciones' => $direcciones,
+            'cart'   => $this->cart,
         ];
 
         echo view('front/head', $data);
@@ -122,7 +125,10 @@ public function clienteActualizarPerfil()
 
     public function nuevaDireccion(){
         
-        $data['titulo'] = 'Nueva dirección';
+        $data = [
+            'titulo' => 'Nueva dirección',
+            'cart'   => $this->cart,
+        ];
 
         echo view('front/head', $data);
         echo view('front/navbar', $data);
@@ -150,6 +156,7 @@ public function clienteActualizarPerfil()
         'pais'          => $this->request->getPost('pais'),
         'cp'            => $this->request->getPost('cp'),
         'observaciones' => $this->request->getPost('observaciones'),
+        
     ];
 
     if (!empty($id) && !empty($data)) {
@@ -167,6 +174,7 @@ public function clienteActualizarPerfil()
         $data = [
             'titulo' => 'Editar dirección',
             'direccion' => $direccion,
+            'cart'   => $this->cart,
         ] ;
 
         echo view('front/head', $data);
@@ -210,7 +218,10 @@ public function clienteActualizarPerfil()
 
     public function misCompras()
     {
-    $data['titulo'] = 'Compras';
+    $data = [
+        'titulo'    => 'Compras',
+        'cart'   => $this->cart,
+    ];
     echo view('front/head', $data);
     echo view('front/navbar', $data);
     echo view('front/cliente/misCompras', $data);
@@ -233,6 +244,7 @@ public function clienteActualizarPerfil()
         'titulo' => 'Pequeños Toques',
         'direccion' => $direccion,
         'usuario' => $usuario,
+        'cart'   => $this->cart,
     ];
 
     echo view('front/head', $data);

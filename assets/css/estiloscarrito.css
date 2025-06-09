@@ -18,7 +18,7 @@
     background-color: #ffffff;
     
     flex-direction: row;
-    width: 90%;
+    width: 100%;
     max-width: auto;
 }
 
@@ -36,7 +36,8 @@
     background-color: #ffffff;
     border: #ffffff;
     color: black;
-    height: 1rem;
+    height: 2rem;
+    width: 1rem;
 }
 
 .card-title{
@@ -131,9 +132,9 @@
     text-align: center;
 }
 .bi-trash{
-    background-color: #ffffff;
     border-color: #ffffff;
     border: 0;
+    text-decoration: none !important;
 }
 
 .bi-trash:hover{
@@ -143,8 +144,32 @@
     background-color: #eae0d5;
     border-radius: 15px;
     border: #eae0d5;
+    text-decoration: none;
+
+
 }
 
+.btn-trash {
+    background-color: transparent;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-trash:hover {
+    background-color: #eae0d5;
+    border-radius: 15px;
+        text-decoration: none;
+
+}
+
+.btn-trash:focus {
+    outline: none;
+    box-shadow: none;
+        text-decoration: none;
+
+}
 .card-resumen{
     background-color: #f6f5f2;
     border:  #f6f5f2;

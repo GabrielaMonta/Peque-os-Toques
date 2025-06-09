@@ -18,7 +18,7 @@ class ProductoController extends Controller{
 
         $productoModel = new Producto_model();
         $data['producto'] = $productoModel->getProductoAll();
-
+        $data['cart']   = $this->cart;
         $dato['titulo'] = 'Alta producto';
         echo view('front/head', $dato);
         echo view('front/admin/navbar_admin');
@@ -46,7 +46,7 @@ class ProductoController extends Controller{
             $categoria_model = new Categoria_model();
             $data['categorias'] = $categoria_model->getCategorias();
             $data['validation'] = $this->validator;
-
+            $data['cart']   = $this->cart;  
             $dato['titulo'] = 'Alta';
             echo view('front/head', $dato);
             echo view('front/admin/navbar_admin');
@@ -95,7 +95,7 @@ class ProductoController extends Controller{
         $data['categorias'] = $categoria_model->getCategorias();
         $data['producto'] = $producto;
         $data['titulo'] = 'Editar Producto';
-
+        $data['cart']   = $this->cart;
         echo view('front/head', $data);
         echo view('front/admin/navbar_admin', $data);
         echo view('back/productos/editar_producto', $data); // tu nueva vista

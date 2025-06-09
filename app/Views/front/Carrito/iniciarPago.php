@@ -81,43 +81,29 @@
                     <h5 class="card-title titulo-resumen">Resumen de compra</h5>
                     <hr style= "border: 1px solid #bfc86a; margin: 0">
                     
-                    <div class= "card container-card-producto row g-0">
-                        <div class="card-body card-body-producto col-sm-5 d-flex flex-column ">
-                            <h6 class="card-title ">Stiletto Vizzano</h6>
-                            <div class="row d-flex  p-0 ">
-                                <div class="col-12 col-sm-6  card-text justify-content-start  mb-0">Color:</div>
-                                <div class="col-12 col-sm-6 card-text mb-0">Talle:</div>
+                        <?php if (!empty($cart->contents())): ?>
+                        <?php foreach ($cart->contents() as $item): ?>    
+                            <div class= "card container-card-producto row g-0">
+                                <div class="card-body card-body-producto col-sm-5 d-flex flex-column ">
+                                    <h6 class="card-title "><?= esc(ucfirst ($item['name'])) ?></h6>
+                                    <div class="row d-flex  p-0 ">
+                                        <div class="col-12 col-sm-7  card-text justify-content-start  mb-0">Color: <?= esc(ucfirst ($item['options']['color'])) ?></div>
+                                        <div class="col-12 col-sm-7 card-text mb-0">Talle: <?= esc(ucfirst ($item['options']['nota'])) ?></div>
+                                    </div>
+                                </div> 
+
+                                <div class="card-body card-body-precio col-12 col-sm-2">
+                                    <p class="card-text ">$<?= number_format($item['price'], 2, ',', '.') ?></p>
+                                </div>
                             </div>
-                        </div> 
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                            <p class="text-center">El carrito está vacío.</p>
+                        <?php endif; ?>
 
-                        <div class="card-body card-body-precio col-12 col-sm-2">
-                            <p class="card-text ">$1234,56</p>
-                        </div>
-                    </div>
-
-                    <div class= "card container-card-producto row g-0">
-                        <div class="card-body card-body-producto col-sm-5 d-flex flex-column ">
-                            <h6 class="card-title ">Blazer</h6>
-                            <div class="row d-flex  p-0 ">
-                                <div class="col-12 col-sm-6  card-text justify-content-start  mb-0">Color:</div>
-                                <div class="col-12 col-sm-6 card-text mb-0">Talle:</div>
-                            </div>
-                        </div> 
-
-                        <div class="card-body card-body-precio col-12 col-sm-2">
-                            <p class="card-text ">$1234,56</p>
-                        </div>
-                    </div>
-                
-                    <div class="d-flex justify-content-between mt-3">
-                        <span>Subtotal</span>
-                        <span>$1234,56</span>
-                    </div>
-                
-
-                    <div class="d-flex justify-content-between ">
+                    <div class="d-flex justify-content-between mt-2 ">
                         <strong>Total</strong>
-                        <strong>$1234,56</strong>
+                        <strong>$<?= number_format($cart->total(), 2, ',', '.') ?></strong>
                     </div>
 
                 </div>

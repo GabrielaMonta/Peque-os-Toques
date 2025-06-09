@@ -68,4 +68,7 @@ $routes->post('/agregar-direccion', 'ClienteController::agregarDireccion', ['fil
 $routes->get('/editar-direccion/(:num)', 'ClienteController::editarDireccion/$1', ['filter' => 'auth:2']);
 $routes->post('/actualizar-direccion/(:num)', 'ClienteController::actualizarDireccion/$1', ['filter' => 'auth:2']);
 $routes->get('/eliminar-direccion/(:num)', 'ClienteController::eliminarDireccion/$1', ['filter' => 'auth:2']);
+$routes->post('carrito-add', 'CarritoController::add');
+
+$routes->post('carrito-eliminar', 'CarritoController::eliminar');
 
