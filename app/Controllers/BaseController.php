@@ -27,6 +27,7 @@ abstract class BaseController extends Controller
      * @var CLIRequest|IncomingRequest
      */
     protected $request;
+    protected $cart;
 
     /**
      * An array of helpers to be loaded automatically upon
@@ -50,7 +51,7 @@ abstract class BaseController extends Controller
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
-
+        $this->cart = \Config\Services::cart();
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = service('session');

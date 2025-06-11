@@ -25,13 +25,13 @@ class CatalogoController extends BaseController
 
         // Puedes agregar una variable para indicar que no hay categoría_actual si usas la misma vista 'catalogo'
         // $data['categoria_actual'] = null; 
-
+        $data['cart']   = $this->cart;
         // 3. Preparar los datos para la vista
         $dato['titulo'] = 'Nuestro Catálogo';
 
         // 4. Cargar las vistas
         echo view('front/head', $dato);
-        echo view('front/navbar');
+        echo view('front/navbar', $data);
         echo view('front/catalogo/verTodo', $data); // Asumo que catalogo-todo es tu vista principal
         echo view('front/footer');
     }
@@ -58,9 +58,10 @@ class CatalogoController extends BaseController
         }
         
         $data['categoria_id'] = $id; 
+        $data['cart']   = $this->cart;
 
         echo view('front/head', $dato);
-        echo view('front/navbar');
+        echo view('front/navbar', $data);
         echo view('front/catalogo/verTodo', $data); 
         echo view('front/footer');
     }
@@ -82,9 +83,10 @@ class CatalogoController extends BaseController
 
         $categoria = $categoriaModel->find($producto['categoria_id']);
         $data['categoria_nombre'] = $categoria['nombre']; 
+        $data['cart']   = $this->cart;
 
         echo view('front/head', $dato);
-        echo view('front/navbar');
+        echo view('front/navbar', $data);
         echo view('front/catalogo/detalleProducto', $data);
         echo view('front/footer');
     }

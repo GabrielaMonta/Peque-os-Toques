@@ -1,16 +1,20 @@
+<?php $seccion = 'cuenta'; ?>
+
 <main>
     <div class="container my-4">
         <div class="row">
             <!-- Detalle cuenta-->
             <div class="col-12 col-md-3 ">
                 <h4 class="titulo-micompra">Hola!</h3>
-                <ul class="flex-row">
-                    <li ><a class="" href="<?php echo base_url('cuenta');?>">Perfil</a> </li>
-                    <li ><a class="" href="<?php echo base_url('');?>">Direcciones</a></li>      
-                    <li ><a class="" href="<?php echo base_url('');?>">Pedidos</a></li>
-                    <li ><a class="" href="<?php echo base_url('');?>">Tarjetas</a></li>
-                    <li ><a class="" href="<?php echo base_url('logout');?>">Cerrar sesión</a></li>
+
+                <ul class="vertical-menu">
+                    <li><a class="<?= $seccion == 'cuenta' ? 'activo' : '' ?>" href="<?php echo base_url('cuenta'); ?>">Perfil</a></li>
+                    <li><a class="<?= $seccion == 'direcciones' ? 'activo' : '' ?>" href="<?php echo base_url('direcciones'); ?>">Direcciones</a></li>
+                    <li><a class="<?= $seccion == 'pedidos' ? 'activo' : '' ?>" href="<?php echo base_url('pedidos'); ?>">Pedidos</a></li>
+                    <li><a class="<?= $seccion == 'tarjetas' ? 'activo' : '' ?>" href="<?php echo base_url('tarjetas'); ?>">Tarjetas</a></li>
+                    <li><a href="<?php echo base_url('logout'); ?>">Cerrar sesión</a></li>
                 </ul>
+
             </div>
 
             <div class="col-12 col-md-9 ">

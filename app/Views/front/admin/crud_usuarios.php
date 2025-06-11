@@ -4,16 +4,17 @@
         <table class="tabla-admin">
             <thead >
             <tr>
-                <th class="titulos-resumen">ID</th>
-                <th class="titulos-resumen">Nombre</th>
-                <th class="titulos-resumen">Apellido</th>
-                <th class="titulos-resumen">DNI</th>
-                <th class="titulos-resumen">Teléfono</th>
-                <th class="titulos-resumen">Fecha de nacimiento</th>
-                <th class="titulos-resumen">Usuario</th>
-                <th class="titulos-resumen">Email</th>
-                <th class="titulos-resumen">Perfil</th>
-                <th class="titulos-resumen">Acciones</th>
+
+                <th >ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+                <th>Telefono</th>
+                <th>Fecha de nacimiento</th>
+                <th>Usuario</th>
+                <th>Email</th>
+                <th>Perfil</th>
+                <th>Acciones</th>
                 
             </tr>
             </thead>

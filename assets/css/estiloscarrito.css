@@ -18,7 +18,7 @@
     background-color: #ffffff;
     
     flex-direction: row;
-    width: 90%;
+    width: 100%;
     max-width: auto;
 }
 
@@ -36,7 +36,8 @@
     background-color: #ffffff;
     border: #ffffff;
     color: black;
-    height: 1rem;
+    height: 2rem;
+    width: 1rem;
 }
 
 .card-title{
@@ -131,9 +132,9 @@
     text-align: center;
 }
 .bi-trash{
-    background-color: #ffffff;
     border-color: #ffffff;
     border: 0;
+    text-decoration: none !important;
 }
 
 .bi-trash:hover{
@@ -143,8 +144,32 @@
     background-color: #eae0d5;
     border-radius: 15px;
     border: #eae0d5;
+    text-decoration: none;
+
+
 }
 
+.btn-trash {
+    background-color: transparent;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-trash:hover {
+    background-color: #eae0d5;
+    border-radius: 15px;
+        text-decoration: none;
+
+}
+
+.btn-trash:focus {
+    outline: none;
+    box-shadow: none;
+        text-decoration: none;
+
+}
 .card-resumen{
     background-color: #f6f5f2;
     border:  #f6f5f2;
@@ -299,7 +324,7 @@
     margin-top: 1rem;
 }
 .letra-perfil{
-    font-family:"Nunito Sans";
+    font-family: 'Nunito Sans ';
     font-size: clamp(12px, 1rem, 32px);
 }
 
@@ -312,4 +337,38 @@
     border-color: #f2f2f2;
     font-family: 'Inter';
     font-size: clamp(14px, 0.9rem,32px);
+}
+
+.input-direccion{
+    border: none;
+    width: 80%;
+    padding: 3px;
+    border-radius: 5px; 
+    background-color: #eae0d5;
+    border-color: #f2f2f2;
+    font-family: 'Inter';
+    font-size: clamp(14px, 0.9rem,32px);
+}
+
+.vertical-menu {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-menu li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border-left: 4px solid transparent;
+  font-weight: normal;
+}
+
+.vertical-menu li a.activo {
+  font-weight: bold;
+  border-left: 4px solid #9da53a; /* Violeta */
+  background-color: #f4f4f4;
+  color: #000;
 }

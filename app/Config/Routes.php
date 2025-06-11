@@ -25,11 +25,8 @@ $routes->get('catalogo/detalle/(:num)', 'CatalogoController::detalle/$1');
 
 /*Carrito */
 $routes->get('/carrito', 'Home::carrito');
-
 $routes->get('/producto', 'Home::producto');
-
-$routes->get('/iniciar-pago', 'Home::iniciarPago', ['filter' => 'auth:2']);
-
+$routes->get('/iniciar-pago', 'ClienteController::iniciarPago', ['filter' => 'auth:2']);
 $routes->post('/enviar-form', 'UsuarioController::registrar');
 
 
@@ -46,8 +43,6 @@ $routes->get('/ventas', 'AdminController::ventas', ['filter' => 'auth:1']);
 
 $routes->get('setup', 'SetupController::index');
 $routes->match(['get', 'post'], 'setup/create', 'SetupController::create');
-$routes->get('/cuenta', 'Home::clientePerfil', ['filter' => 'auth:2']);
-$routes->get('/mis-compras', 'Home::misCompras', ['filter' => 'auth:2']);
 
 $routes->get('/crear', 'ProductoController::crearProducto');
 $routes->post('/enviar-prod', 'ProductoController::store');
@@ -61,5 +56,19 @@ $routes->get('/eliminarProducto/(:num)', 'ProductoController::eliminarProducto/$
 $routes->get('/editarProducto/(:num)', 'ProductoController::editarProducto/$1');
 $routes->post('/actualizarProducto/(:num)', 'ProductoController::actualizarProducto/$1');
 
-$routes->get('editarPerfil', 'Home::editarPerfil', ['filter' => 'auth:2']);
-$routes->post('cliente-actualizar-perfil', 'UsuarioController::clienteActualizarPerfil', ['filter' => ['auth:2', 'ownerAuth']]);
+$routes->get('/cuenta', 'ClienteController::clientePerfil', ['filter' => 'auth:2']);
+$routes->get('/mis-compras', 'ClienteController::misCompras', ['filter' => 'auth:2']);
+$routes->get('editarPerfil', 'ClienteController::editarPerfil', ['filter' => 'auth:2']);
+$routes->post('cliente-actualizar-perfil', 'ClienteController::clienteActualizarPerfil', ['filter' => 'auth:2']);
+
+$routes->get('/direcciones', 'ClienteController::misDirecciones', ['filter' => 'auth:2']);
+$routes->get('/nuevaDireccion', 'ClienteController::nuevaDireccion', ['filter' => 'auth:2']);
+$routes->post('/agregar-direccion', 'ClienteController::agregarDireccion', ['filter' => 'auth:2']);
+
+$routes->get('/editar-direccion/(:num)', 'ClienteController::editarDireccion/$1', ['filter' => 'auth:2']);
+$routes->post('/actualizar-direccion/(:num)', 'ClienteController::actualizarDireccion/$1', ['filter' => 'auth:2']);
+$routes->get('/eliminar-direccion/(:num)', 'ClienteController::eliminarDireccion/$1', ['filter' => 'auth:2']);
+$routes->post('carrito-add', 'CarritoController::add');
+
+$routes->post('carrito-eliminar', 'CarritoController::eliminar');
+

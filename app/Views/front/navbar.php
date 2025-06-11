@@ -147,31 +147,37 @@
         </div>
         
         <div class="offcanvas-body ">
-            <div class= "card container-card row g-0">
-                <div class="foto-producto col-4 d-flex align-items-center">
-                    <img src="assets/img/productos/zapato1.jpeg" style="width: 200px; height: 100px;" class="img-fluid rounded-start" alt="Imagen">
-                </div>
-                <div class="card-body  col-5">
-                    <h5 class="card-title">Stiletto Vizzano</h5>
-                    <p class="card-text">$1234,56</p>
-                </div>
-                <button class="col-1 btn btn-danger d-flex align-items-center justify-content-center" onclick="eliminarProducto(this)">X</button>
-            </div>   
-            <div class= "card container-card row g-0">
-                <div class="foto-producto col-4 d-flex align-items-center">
-                    <img src="assets/img/productos/indu1.jpeg" style="width: 200px; height: 100px;" class="img-fluid rounded-start" alt="Imagen">
-                </div>
-                <div class="card-body  col-5">
-                    <h5 class="card-title">Blazer</h5>
-                    <p class="card-text">$1234,56</p>
-                </div>
-                <button class="col-1 btn btn-danger d-flex align-items-center justify-content-center" onclick="eliminarProducto(this)">X</button>
-            </div>  
+            <?php if (!empty($cart->contents())): ?>
+                <?php foreach ($cart->contents() as $item): ?>
+                    <div class= "card container-card row g-0">
+                        <div class="foto-producto col-4 d-flex align-items-center">
+                            <img src="<?= base_url($item['options']['img']) ?>" style="width: 200px; height: 100px;" class="img-fluid rounded-start" alt="Imagen">
+                        </div>
+                        <div class="card-body  col-5">
+                            <h5 class="card-title"><?= esc(ucfirst ($item['name'])) ?></h5>
+                            <div class="card-text p-0">Color: <?= esc(ucfirst ($item['options']['color'])) ?></div>
+                            <div class="card-text p-0">Talle: <?= esc(ucfirst ($item['options']['nota'])) ?></div>
+                            <div class="card-text p-0">$ <?= number_format($item['price'], 2, ',', '.') ?></div>
+                        </div>
+                        <div class="col-1 d-flex align-items-start justify-content-center pt-2">
+                            <form method="post" action="<?= base_url('carrito-eliminar') ?>" >
+                                <input type="hidden" name="rowid" value="<?= esc($item['rowid']) ?>">
+                                <button type="submit" class="btn-trash">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </form> 
+                         </div>           
+                    </div>   
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p class="text-center">El carrito está vacío.</p>
+            <?php endif; ?>
         </div>
+
 
         <div class="d-flex justify-content-between p-3">
                 <strong class="letra-total" >Subotal</strong>
-                <strong class="letra-total" >$1234,56</strong>
+                <strong class="letra-total">$<?= number_format($cart->total(), 2, ',', '.') ?></strong>
         </div>
         <div class="pie-carrito">
                     

@@ -8,38 +8,57 @@
                 <form >
                     <div class="row">
                         <div class="col-12 col-md-6">
-                            <label for="nombre">Nombre <span class="obligatorio">*</span></label>
-                            <br><input class="input-facturacion" id="nombre" type="text" placeholder="" required>
-                            <br>
-                            <label for="provincia">Provincia <span class="obligatorio">*</span></label>
-                            <br><input class="input-facturacion" id="provincia" type="text" placeholder="" required>
-                            <br>
-                            <label for="dirección">Calle <span class="obligatorio">*</span></label>
-                            <br><input class="input-facturacion" id="dirección" type="text" placeholder="" required>
-                            <br>
-                            <label for="correo-electrónico">Correo Electrónico <span class="obligatorio">*</span></label>
-                            <br><input class="input-facturacion" id="correo-electrónico" type="email" placeholder="" required>
-                            <br>
-                            <label for="piso-dpto">Piso/Departamento</label>
-                            <br><input class="input-facturacion" id="piso-dpto" type="text" placeholder="" >
-
+                            <div>
+                                <label for="nombre">Nombre <span class="obligatorio">*</span></label><br>
+                                <input class="input-facturacion" name="nombre" type="text"  required value="<?= esc($usuario['nombre']) ?>"> 
+                            </div><br>
+                            <div>
+                                <label for="dni">DNI <span class="obligatorio">*</span></label>
+                                <br><input class="input-facturacion" name="dni" type="text" required value="<?= esc($usuario['dni']) ?>">
+                            </div><br>
+                            <div>
+                                <label for="calle">Calle <span class="obligatorio">*</span></label>
+                                <br><input class="input-facturacion" name="calle" type="text" required value="<?= esc($direccion['calle']) ?>">
+                            </div><br>
+                            <div> 
+                                <label for="provincia">Provincia <span class="obligatorio">*</span></label>
+                                <br><input class="input-facturacion" name="provincia" type="text" required value="<?= esc($direccion['provincia']) ?>">
+                            </div><br>
+                            <div>
+                                <label for="email">Correo Electrónico <span class="obligatorio">*</span></label>
+                                <br><input class="input-facturacion" name="email" type="email" required value="<?= esc($usuario['email']) ?>">
+                            </div><br>
+                            <div>
+                                <label for="piso/dpto">Piso/Departamento</label>
+                                <br><input class="input-facturacion" name="piso/dpto" type="text" value="<?= esc($direccion['piso/dpto']) ?>" >
+                            </div><br>
+                            
                         </div>
                         <div class="col-12 col-md-6">
-                        <label for="nombre">Apellido <span class="obligatorio">*</span></label>
-                            <br><input class="input-facturacion" id="apellido" type="text" placeholder="" required>
-                            <br>
-                            <label for="localidad">Provincia <span class="obligatorio">*</span></label>
-                            <br><input class="input-facturacion" id="localidad" type="text" placeholder="" required>
-                            <br>
-                            <label for="número">Calle <span class="obligatorio">*</span></label>
-                            <br><input class="input-facturacion" id="número" type="text" placeholder="" required>
-                            <br>
-                            <label for="código-postal">Código Postal <span class="obligatorio">*</span></label>
-                            <br><input class="input-facturacion" id="código-postal" type="email" placeholder="" required>
-                            <br>
-                            <label for="teléfono">Teléfono <span class="obligatorio">*</span></label>
-                            <br><input class="input-facturacion" id="teléfono" type="text" placeholder="" required>
-                            
+                            <div> 
+                                <label for="nombre">Apellido <span class="obligatorio">*</span></label>
+                                <br><input class="input-facturacion" name="apellido" type="text" required value="<?= esc($usuario['apellido']) ?>">
+                            </div><br>
+                            <div>
+                                <label for="localidad">Localidad <span class="obligatorio">*</span></label>
+                                <br><input class="input-facturacion" name="localidad" type="text" required value="<?= esc($direccion['localidad']) ?>">
+                            </div><br>
+                            <div> 
+                                <label for="altura">Altura <span class="obligatorio">*</span></label>
+                                <br><input class="input-facturacion" name="altura" type="text" required value="<?= esc($direccion['altura']) ?>">
+                            </div><br>
+                            <div> 
+                                <label for="cp">Código Postal <span class="obligatorio">*</span></label>
+                                <br><input class="input-facturacion" name="cp" type="text" required value="<?= esc($direccion['cp']) ?>">
+                            </div><br>
+                            <div> 
+                                <label for="teléfono">Teléfono <span class="obligatorio">*</span></label>
+                                <br><input class="input-facturacion" id="teléfono" type="text" required value="<?= esc($usuario['telefono']) ?>">
+                            </div><br>
+                            <div>
+                                <label for="observaciones">Información adicional</label>
+                                <br><input class="input-facturacion" name="observaciones" type="text" value="<?= esc($direccion['observaciones']) ?>" >
+                            </div><br>
                         
                         </div>
                     </div>
@@ -62,43 +81,29 @@
                     <h5 class="card-title titulo-resumen">Resumen de compra</h5>
                     <hr style= "border: 1px solid #bfc86a; margin: 0">
                     
-                    <div class= "card container-card-producto row g-0">
-                        <div class="card-body card-body-producto col-sm-5 d-flex flex-column ">
-                            <h6 class="card-title ">Stiletto Vizzano</h6>
-                            <div class="row d-flex  p-0 ">
-                                <div class="col-12 col-sm-6  card-text justify-content-start  mb-0">Color:</div>
-                                <div class="col-12 col-sm-6 card-text mb-0">Talle:</div>
+                        <?php if (!empty($cart->contents())): ?>
+                        <?php foreach ($cart->contents() as $item): ?>    
+                            <div class= "card container-card-producto row g-0">
+                                <div class="card-body card-body-producto col-sm-5 d-flex flex-column ">
+                                    <h6 class="card-title "><?= esc(ucfirst ($item['name'])) ?></h6>
+                                    <div class="row d-flex  p-0 ">
+                                        <div class="col-12 col-sm-7  card-text justify-content-start  mb-0">Color: <?= esc(ucfirst ($item['options']['color'])) ?></div>
+                                        <div class="col-12 col-sm-7 card-text mb-0">Talle: <?= esc(ucfirst ($item['options']['nota'])) ?></div>
+                                    </div>
+                                </div> 
+
+                                <div class="card-body card-body-precio col-12 col-sm-2">
+                                    <p class="card-text ">$<?= number_format($item['price'], 2, ',', '.') ?></p>
+                                </div>
                             </div>
-                        </div> 
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                            <p class="text-center">El carrito está vacío.</p>
+                        <?php endif; ?>
 
-                        <div class="card-body card-body-precio col-12 col-sm-2">
-                            <p class="card-text ">$1234,56</p>
-                        </div>
-                    </div>
-
-                    <div class= "card container-card-producto row g-0">
-                        <div class="card-body card-body-producto col-sm-5 d-flex flex-column ">
-                            <h6 class="card-title ">Blazer</h6>
-                            <div class="row d-flex  p-0 ">
-                                <div class="col-12 col-sm-6  card-text justify-content-start  mb-0">Color:</div>
-                                <div class="col-12 col-sm-6 card-text mb-0">Talle:</div>
-                            </div>
-                        </div> 
-
-                        <div class="card-body card-body-precio col-12 col-sm-2">
-                            <p class="card-text ">$1234,56</p>
-                        </div>
-                    </div>
-                
-                    <div class="d-flex justify-content-between mt-3">
-                        <span>Subtotal</span>
-                        <span>$1234,56</span>
-                    </div>
-                
-
-                    <div class="d-flex justify-content-between ">
+                    <div class="d-flex justify-content-between mt-2 ">
                         <strong>Total</strong>
-                        <strong>$1234,56</strong>
+                        <strong>$<?= number_format($cart->total(), 2, ',', '.') ?></strong>
                     </div>
 
                 </div>
