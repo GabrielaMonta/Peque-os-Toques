@@ -33,6 +33,7 @@
     font-size: 0.9rem;
     text-decoration: none;
     font-family: 'Inter';
+    text-transform: capitalize;
 }
 .letra-migas:hover{
     color:#b38b6d;

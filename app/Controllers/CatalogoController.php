@@ -17,24 +17,38 @@ class CatalogoController extends BaseController
         $productoModel = new Producto_model();
         $categoriaModel = new Categoria_model();
 
-        // 1. Obtener productos activos (no eliminados)
-        $data['productos'] = $productoModel->where('eliminado', 'NO')->findAll(); // <-- ¡Filtro agregado aquí!
+        $ordenar_por = $this->request->getVar('ordenar') ?? 'relevancia';
+        $query = $productoModel->where('eliminado', 'NO');
 
-        // 2. Obtener categorías
+        switch ($ordenar_por) {
+            case 'az':
+                $query->orderBy('nombre_prod', 'ASC');
+                break;
+            case 'precio_menor_mayor':
+                $query->orderBy('precio_vta', 'ASC');
+                break;
+            case 'precio_mayor_menor':
+                $query->orderBy('precio_vta', 'DESC');
+                break;
+            case 'relevancia':
+            default:
+                $query->orderBy('id', 'DESC');
+                break;
+        }
+
+        $data['productos'] = $query->findAll();
         $data['categorias'] = $categoriaModel->getCategorias();
+        $data['ordenar_por'] = $ordenar_por;
+        $data['cart'] = $this->cart;
 
-        // Puedes agregar una variable para indicar que no hay categoría_actual si usas la misma vista 'catalogo'
-        // $data['categoria_actual'] = null; 
-        $data['cart']   = $this->cart;
-        // 3. Preparar los datos para la vista
         $dato['titulo'] = 'Nuestro Catálogo';
 
-        // 4. Cargar las vistas
         echo view('front/head', $dato);
         echo view('front/navbar', $data);
-        echo view('front/catalogo/verTodo', $data); // Asumo que catalogo-todo es tu vista principal
+        echo view('front/catalogo/verTodo', $data);
         echo view('front/footer');
     }
+    
 
    
     public function categoria($id)

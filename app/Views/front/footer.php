@@ -149,5 +149,10 @@
             // Bootstrap 5 inicializa sus componentes automáticamente a través de los atributos data-bs-*.
         });
     </script>
+    <script>
+        document.getElementById('ordenar').addEventListener('change', function () {
+            document.getElementById('form-filtros').submit();
+        });
+    </script>
   </body>
 </html>

@@ -19,7 +19,7 @@
                 <li class="breadcrumb-item"><a href="<?= base_url('catalogo-todo'); ?>" class="letra-migas">Catálogo</a></li>
                 <li class="breadcrumb-item">
                     <?php if (isset($producto['categoria_id'])): ?>
-                        <a href="<?= base_url('catalogo/categoria/' . esc($producto['categoria_id'])); ?>" class="letra-migas">Categoría</a>
+                        <a href="<?= base_url('catalogo/' . esc($producto['categoria_id'])); ?>" class="letra-migas"><?= esc($categoria_nombre); ?></a>
                     <?php else: ?>
                         <span class="letra-migas">Categoría</span>
                     <?php endif; ?>

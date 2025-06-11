@@ -2,22 +2,21 @@
 <main>
     <div class="container mt-3">
         <nav aria-label="breadcrumb">
-            <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?= base_url('catalogo-todo');?>" class="letra-migas">Catálogo</a></li>
                 <?php if (isset($categoria_nombre) && $categoria_nombre != 'Desconocida'): ?>
-                    <li class="breadcrumb-item active" aria-current="page"><?= esc($categoria_nombre); ?></li>
+                    <li class="breadcrumb-item active" aria-current="page"><?= esc(ucfirst($categoria_nombre)); ?></li>
                 <?php else: ?>
                     <li class="breadcrumb-item active" aria-current="page">Todo</li>
                 <?php endif; ?>
             </ol>
         </nav>
-        </nav>
+   
 
         <div class="section-title position-relative mb-2">
             <h2 class="text-uppercase">
-                <?php if (isset($categoria_actual)): ?>
-                    <?= esc($categoria_actual['nombre']); ?>
+                <?php if (isset($categoria_nombre) && $categoria_nombre != 'Desconocida'): ?>
+                <?= esc($categoria_nombre); ?>
                 <?php else: ?>
                     Productos
                 <?php endif; ?>
@@ -27,13 +26,16 @@
         <div class="row mb-3">
             <div class="col-12 d-flex justify-content-md-end">
                 <div class="d-flex align-items-center">
-                    <label for="ordenar" class="me-2 mb-0 titulo-filtro">Ordenar por:</label>
-                    <select id="ordenar" class="form-select form-select-sm">
-                        <option value="relevancia" selected>Relevancia</option>
-                        <option value="az">A-Z</option>
-                        <option value="precio_menor_mayor">Precio: menor a mayor</option>
-                        <option value="precio_mayor_menor">Precio: mayor a menor</option>
+                    <form method="get" id="form-filtros" action="<?= base_url('catalogo-todo'); ?>">
+                    <!-- Ordenar por -->
+                    <label for="ordenar">Ordenar por:</label>
+                    <select name="ordenar" id="ordenar">
+                        <option value="">-- Seleccionar --</option>
+                        <option value="az" <?= ($ordenar_por ?? '') === 'az' ? 'selected' : '' ?>>A-Z</option>
+                        <option value="precio_menor_mayor" <?= ($ordenar_por ?? '') === 'precio_menor_mayor' ? 'selected' : '' ?>>Precio menor a mayor</option>
+                        <option value="precio_mayor_menor" <?= ($ordenar_por ?? '') === 'precio_mayor_menor' ? 'selected' : '' ?>>Precio mayor a menor</option>
                     </select>
+                    </form>
                 </div>
             </div>
         </div>
