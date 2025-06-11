@@ -37,7 +37,7 @@ class ProductoController extends Controller{
             'stock_min'=>'required',
             'imagen'=>'uploaded[imagen]',
             'color' => 'required|is_array',
-            'genero'=>'required|in_list[hombre,mujer,niños]',
+            'genero'=>'required|in_list[hombre,mujer,niños,unisex]',
             'tipo'=>'required|min_length[3]|max_length[50]',
             
         ]);
@@ -95,7 +95,6 @@ class ProductoController extends Controller{
         $data['categorias'] = $categoria_model->getCategorias();
         $data['producto'] = $producto;
         $data['titulo'] = 'Editar Producto';
-        $data['cart']   = $this->cart;
         echo view('front/head', $data);
         echo view('front/admin/navbar_admin', $data);
         echo view('back/productos/editar_producto', $data); // tu nueva vista

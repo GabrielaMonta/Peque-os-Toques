@@ -165,6 +165,7 @@
                     <option value="hombre" <?= set_select('genero', 'hombre'); ?>>Hombre</option>
                     <option value="mujer" <?= set_select('genero', 'mujer'); ?>>Mujer</option>
                     <option value="niños" <?= set_select('genero', 'niños'); ?>>Niños</option>
+                    <option value="unisex" <?= set_select('genero', 'unisex'); ?>>Unisex</option>
                 </select>
                 <!-- Error -->
                  <?php if($validation->getError('genero')): ?>

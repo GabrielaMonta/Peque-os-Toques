@@ -26,10 +26,13 @@
         <div class="row mb-3">
             <div class="col-12 d-flex justify-content-md-end">
                 <div class="d-flex align-items-center">
-                    <form method="get" id="form-filtros" action="<?= base_url('catalogo-todo'); ?>">
+                    <?php
+                        $form_action = isset($categoria_id) ? site_url('catalogo/' . $categoria_id) : site_url('catalogo-todo');
+                    ?>
+                    <form method="get" id="form-filtros" action="<?= $form_action ?>">
                     <!-- Ordenar por -->
                     <label for="ordenar">Ordenar por:</label>
-                    <select name="ordenar" id="ordenar">
+                    <select name="ordenar" id="ordenar" onchange="document.getElementById('form-filtros').submit();">
                         <option value="">-- Seleccionar --</option>
                         <option value="az" <?= ($ordenar_por ?? '') === 'az' ? 'selected' : '' ?>>A-Z</option>
                         <option value="precio_menor_mayor" <?= ($ordenar_por ?? '') === 'precio_menor_mayor' ? 'selected' : '' ?>>Precio menor a mayor</option>
@@ -110,7 +113,7 @@
                                 <a href="<?= base_url('catalogo/detalle/' . $producto['id']); ?>" class="card-link"> <div class="card producto-card h-100 position-relative">
                                         <img src="<?= base_url('assets/uploads/' . $producto['imagen']); ?>" class="card-img-top" alt="<?= esc($producto['nombre_prod']); ?>">
                                         <div class="card-body">
-                                            <h5 class="card-title"><?= esc($producto['nombre_prod']); ?></h5>
+                                            <h5 class="card-title"> <?=  ucfirst(esc($producto['nombre_prod'])); ?></h5>
                                             <p class="card-precio">$<?= number_format($producto['precio_vta'], 2, ',', '.'); ?></p>
                                         </div>
                                         <button class="btn-carrito">

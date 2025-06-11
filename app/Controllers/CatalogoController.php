@@ -56,10 +56,28 @@ class CatalogoController extends BaseController
         $productoModel = new Producto_model();
         $categoriaModel = new Categoria_model(); 
 
-        // Filtra por categoria_id y también asegura que no estén eliminados
-        $data['productos'] = $productoModel->where('categoria_id', $id)
-                                          ->where('eliminado', 'NO')
-                                          ->findAll();
+        $ordenar_por = $this->request->getVar('ordenar') ?? 'relevancia';
+
+        $query = $productoModel->where('categoria_id', $id)
+                            ->where('eliminado', 'NO');
+
+        switch ($ordenar_por) {
+            case 'az':
+                $query->orderBy('nombre_prod', 'ASC');
+                break;
+            case 'precio_menor_mayor':
+                $query->orderBy('precio_vta', 'ASC');
+                break;
+            case 'precio_mayor_menor':
+                $query->orderBy('precio_vta', 'DESC');
+                break;
+            case 'relevancia':
+            default:
+                $query->orderBy('id', 'DESC');
+                break;
+        }
+
+        $data['productos'] = $query->findAll();
 
         $categoria_info = $categoriaModel->find($id);
 
@@ -70,15 +88,18 @@ class CatalogoController extends BaseController
             $dato['titulo'] = 'Categoría no encontrada';
             $data['categoria_nombre'] = 'Desconocida';
         }
-        
+
         $data['categoria_id'] = $id; 
-        $data['cart']   = $this->cart;
+        $data['ordenar_por'] = $ordenar_por;
+        $data['cart'] = $this->cart;
 
         echo view('front/head', $dato);
         echo view('front/navbar', $data);
         echo view('front/catalogo/verTodo', $data); 
         echo view('front/footer');
     }
+
+    
 
     public function detalle($id)
     {
