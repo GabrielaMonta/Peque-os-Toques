@@ -21,14 +21,14 @@
                 <!-- Íconos lupa para buscador -->
                 <ul class="navbar-nav flex-row">
                     <li class="nav-item  ms-3">
-                        <form class=" form-busqueda" role="search">
+                        <form class=" form-busqueda" role="search" action="<?= site_url('catalogo-todo'); ?>" method="get">
                             <input type="checkbox" id="toggleBusqueda" class="toggle-busqueda">
                                     
                             <label for ="toggleBusqueda" class="btn lupa-busqueda p-0">
                             <a class="nav-link"><i class="bi bi-search fs-4" style="color: #bfc86a;"></i></a>
                             </label>
                                 
-                            <input class="form-control input-busqueda" type="search" placeholder="Buscar" aria-label="Buscar">
+                            <input class="form-control input-busqueda" type="search" name="buscar" placeholder="Buscar" aria-label="Buscar" value="<?= esc($buscar ?? '') ?>">
                         </form>
                     </li>
                     
@@ -83,11 +83,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle letra-nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo/1');?>">Indumentaria</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo/2');?>">Calzado</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo/3');?>">Blanqueria</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo/4');?>">Marroquineria</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('catalogo-todo');?>">Ver todo</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('catalogo?categoria=1'); ?>">Indumentaria</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('catalogo?categoria=2'); ?>">Calzado</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('catalogo?categoria=3'); ?>">Blanqueria</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('catalogo?categoria=4'); ?>">Marroquineria</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('catalogo'); ?>">Ver todo</a></li>
                         </ul>
                     </li>
                 <!-- Dropdown Nosotros -->

@@ -17,9 +17,55 @@ class CatalogoController extends BaseController
         $productoModel = new Producto_model();
         $categoriaModel = new Categoria_model();
 
+        $categoria_id = null;
+
+        //Filtro del formulario
+        $categoria_id = $this->request->getVar('categoria') ?? null;
         $ordenar_por = $this->request->getVar('ordenar') ?? 'relevancia';
+        $genero_filtros = $this->request->getVar('genero') ?? []; //porque son checkboxes multiples
+        $color_filtros = $this->request->getVar('color') ?? [];
+        $tipo_filtros = $this->request->getVar('tipo') ?? [];
+        $buscar = $this->request->getVar('buscar');
+
         $query = $productoModel->where('eliminado', 'NO');
 
+        // Aplicar filtro categoría si hay
+        if ($categoria_id && $categoria_id !== 'todo') {
+            $query->where('categoria_id', $categoria_id);
+        }
+
+        // Buscar por texto
+        if ($buscar) {
+            $query->groupStart()
+                ->like('nombre_prod', $buscar)
+                ->orLike('descripcion', $buscar)
+                ->groupEnd();
+        }
+
+        // Filtrar por género
+        if (!empty($genero_filtros)) {
+            $query->groupStart();
+            foreach ($genero_filtros as $g) {
+                $query->orLike('genero', $g);
+            }
+            $query->groupEnd();
+        }
+
+        // Filtrar por color 
+        if (!empty($color_filtros)) {
+            $query->groupStart();
+            foreach ($color_filtros as $color) {
+                $query->orLike('color', $color); 
+            }
+            $query->groupEnd();
+        }
+
+        // Filtrar por tipo
+        if (!empty($tipo_filtros)) {
+            $query->whereIn('tipo', $tipo_filtros); // Mejor que orLike
+        }
+
+        // Ordenado
         switch ($ordenar_por) {
             case 'az':
                 $query->orderBy('nombre_prod', 'ASC');
@@ -36,69 +82,49 @@ class CatalogoController extends BaseController
                 break;
         }
 
-        $data['productos'] = $query->findAll();
+        // Paginacion
+        $data['productos'] = $query->paginate(15); // 15 por página
+        $data['pager'] = $productoModel->pager;
+
+        // Obtener los tipos disponibles según la categoría
+        $tipo_disponibles = [];
+        $tipoQuery = $productoModel
+            ->distinct()               // Aquí indicás DISTINCT
+            ->select('tipo')           // Solo el nombre de la columna sin 'DISTINCT'
+            ->where('eliminado', 'NO');
+
+        if ($categoria_id && $categoria_id !== 'todo') {
+            $tipoQuery->where('categoria_id', $categoria_id);
+        }
+
+        $tipo_disponibles = $tipoQuery->orderBy('tipo', 'ASC')->findColumn('tipo');
+        $data['tipo_disponibles'] = $tipo_disponibles;
+
+        // Datos de la vista
         $data['categorias'] = $categoriaModel->getCategorias();
         $data['ordenar_por'] = $ordenar_por;
+        $data['buscar'] = $buscar;
         $data['cart'] = $this->cart;
 
-        $dato['titulo'] = 'Nuestro Catálogo';
+        // Para mantener seleccionados los filtros en la vista
+        $data ['genero_filtros'] = $genero_filtros;
+        $data ['color_filtros'] = $color_filtros;
+        $data ['tipo_filtros'] = $tipo_filtros;
+        $data['categoria_id'] = $categoria_id;
 
-        echo view('front/head', $dato);
+        // Título dinámico según categoría
+        if ($categoria_id && $categoria_id !== 'todo') {
+            $categoria_info = $categoriaModel->find($categoria_id);
+            $data['titulo'] = $categoria_info ? 'Categoría: ' . $categoria_info['nombre'] : 'Categoría desconocida';
+        } else {
+            $data['titulo'] = 'Nuestro Catálogo';
+        }
+
+        echo view('front/head', $data);
         echo view('front/navbar', $data);
         echo view('front/catalogo/verTodo', $data);
         echo view('front/footer');
     }
-    
-
-   
-    public function categoria($id)
-    {
-        $productoModel = new Producto_model();
-        $categoriaModel = new Categoria_model(); 
-
-        $ordenar_por = $this->request->getVar('ordenar') ?? 'relevancia';
-
-        $query = $productoModel->where('categoria_id', $id)
-                            ->where('eliminado', 'NO');
-
-        switch ($ordenar_por) {
-            case 'az':
-                $query->orderBy('nombre_prod', 'ASC');
-                break;
-            case 'precio_menor_mayor':
-                $query->orderBy('precio_vta', 'ASC');
-                break;
-            case 'precio_mayor_menor':
-                $query->orderBy('precio_vta', 'DESC');
-                break;
-            case 'relevancia':
-            default:
-                $query->orderBy('id', 'DESC');
-                break;
-        }
-
-        $data['productos'] = $query->findAll();
-
-        $categoria_info = $categoriaModel->find($id);
-
-        if ($categoria_info) {
-            $dato['titulo'] = 'Categoría: ' . $categoria_info['nombre']; 
-            $data['categoria_nombre'] = $categoria_info['nombre']; 
-        } else {
-            $dato['titulo'] = 'Categoría no encontrada';
-            $data['categoria_nombre'] = 'Desconocida';
-        }
-
-        $data['categoria_id'] = $id; 
-        $data['ordenar_por'] = $ordenar_por;
-        $data['cart'] = $this->cart;
-
-        echo view('front/head', $dato);
-        echo view('front/navbar', $data);
-        echo view('front/catalogo/verTodo', $data); 
-        echo view('front/footer');
-    }
-
     
 
     public function detalle($id)
@@ -123,6 +149,40 @@ class CatalogoController extends BaseController
         echo view('front/head', $dato);
         echo view('front/navbar', $data);
         echo view('front/catalogo/detalleProducto', $data);
+        echo view('front/footer');
+    }
+
+    public function novedades()
+    {
+        $productoModel = new Producto_model();
+        $categoriaModel = new Categoria_model();
+
+        $categorias = $categoriaModel->findAll();
+        $productos = [];
+        $categoria_id = null;
+
+        foreach ($categorias as $categoria) {
+            $ultimos = $productoModel
+                ->where('categoria_id', $categoria['id'])
+                ->where('eliminado', 'NO')
+                ->orderBy('id', 'DESC')
+                ->findAll(5);
+
+            $productos = array_merge($productos, $ultimos);
+        }
+
+        $data['productos'] = $productos;
+        $data['categorias'] = $categoriaModel->getCategorias();
+        $data['ordenar_por'] = 'relevancia';
+        $data['cart'] = $this->cart;
+        $data['categoria_nombre'] = 'Novedades';
+        $data['categoria_id'] = $categoria_id;
+
+        $dato['titulo'] = 'Novedades';
+
+        echo view('front/head', $dato);
+        echo view('front/navbar', $data);
+        echo view('front/catalogo/verTodo', $data); 
         echo view('front/footer');
     }
 }

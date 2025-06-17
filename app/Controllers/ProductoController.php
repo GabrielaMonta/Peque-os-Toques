@@ -97,7 +97,7 @@ class ProductoController extends Controller{
         $data['titulo'] = 'Editar Producto';
         echo view('front/head', $data);
         echo view('front/admin/navbar_admin', $data);
-        echo view('back/productos/editar_producto', $data); // tu nueva vista
+        echo view('back/productos/editar_producto', $data); 
         echo view('front/admin/footer_admin', $data);
     }
 

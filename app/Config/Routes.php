@@ -16,11 +16,10 @@ $routes->get('/comercializacion', 'Home::comercializacion');
 $routes->get('/preguntas-frecuentes', 'Home::preguntasFrecuentes');
 
 /*Opcion Novedades*/
-$routes->get('/novedades', 'Home::novedades');
+$routes->get('novedades', 'CatalogoController::novedades');
 
 /*Catalogo*/
-$routes->get('/catalogo-todo', 'CatalogoController::index');
-$routes->get('catalogo/(:num)', 'CatalogoController::categoria/$1');
+$routes->get('catalogo', 'CatalogoController::index');
 $routes->get('catalogo/detalle/(:num)', 'CatalogoController::detalle/$1');
 
 /*Carrito */
