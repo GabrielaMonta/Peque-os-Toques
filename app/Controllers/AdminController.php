@@ -3,6 +3,8 @@
 namespace App\Controllers;
 use App\Models\Usuarios_model;
 use CodeIgniter\Controller;
+use App\Models\Ventas_cabecera_model;
+use App\Models\Ventas_detalle_model;
 
 class AdminController extends BaseController
 {
@@ -44,14 +46,7 @@ class AdminController extends BaseController
         echo view('front/admin/footer_admin', $data);
     }
 
-    public function ventas()
-    {
-        $data['titulo'] = 'Ventas';
-        echo view('front/head', $data);
-        echo view('front/admin/navbar_admin', $data);
-        echo view('front/admin/ventas', $data);
-        echo view('front/admin/footer_admin', $data);
-    }
+    
 
     public function setup()
     {
@@ -78,6 +73,75 @@ class AdminController extends BaseController
         echo view('front/admin/editar_usuario', $data); 
         echo view('front/admin/footer_admin', $data);
     }
+    
+    public function ventas()
+    {
+        
+        $cabeceraModel = new Ventas_cabecera_model();
+        $usuario_id = $this->request->getVar('usuario_id');
+        
+        
+        $estado_venta = $this->request->getVar('estado_venta');
+        $fecha_desde = $this->request->getVar('fecha_desde');   
+        $fecha_hasta = $this->request->getVar('fecha_hasta');  
+        $medio_entrega = $this->request->getVar('medio_entrega'); 
+        
+        $ventas = $cabeceraModel->getVentas($usuario_id, $estado_venta, $fecha_desde, $fecha_hasta, $medio_entrega);
+
+       
+        $data = []; 
+        $data['titulo'] = 'Ventas'; 
+
+        $data['ventas'] = $ventas;
+        $data['usuario_id_seleccion'] = $usuario_id;
+        $data['estado_venta_seleccion'] = $estado_venta;
+        $data['fecha_desde_seleccion'] = $fecha_desde;
+        $data['fecha_hasta_seleccion'] = $fecha_hasta;
+        $data['medio_entrega_seleccion'] = $medio_entrega;
+        
+        $data['estados_disponibles'] = [
+            'Pendiente',
+            'Procesando',
+            'En camino',
+            'Entregado',
+            'Cancelado',
+        ];
+        $data['medios_entrega_disponibles'] = [
+            'Correo',
+            'Retiro',
+        ];
+
+        echo view('front/head', $data);
+        echo view('front/admin/navbar_admin', $data);
+        echo view('front/admin/ventas', $data);
+        echo view('front/admin/footer_admin', $data);
+    }
+
+    public function editarVentas($venta_id)
+    {
+        
+        $detalleModel = new Ventas_detalle_model();
+        $cabeceraModel = new Ventas_cabecera_model();
+
+        $detalle= $detalleModel->getDetalles($venta_id);
+        $cabecera = $cabeceraModel->getCabecera($venta_id);
+        
+
+
+        $data = [
+            'titulo' => 'Detalle venta',
+            
+            'detalle' => $detalle,
+            'cabecera' => $cabecera,
+            
+        ];
+
+        echo view('front/head', $data);
+        echo view('front/admin/navbar_admin', $data);
+        echo view('front/admin/ventas-editar', $data);
+        echo view('front/admin/footer_admin', $data);
+    }
+
     
     
 }

@@ -63,8 +63,6 @@
                             <!-- Estos dos se actualizan con JS antes de enviar -->
                             <input type="hidden" name="options[color]" value="">
                             <input type="hidden" name="options[nota]" value="">
-                            <input type="hidden" name="options[uid]" id="uid_input" value="">
-
 
                             <!-- Selector de color -->
                             <div class="mb-3">
@@ -98,14 +96,11 @@
         document.getElementById('form-agregar-carrito').addEventListener('submit', function () {
             const colorSelect = document.getElementById('color_seleccionado');
             const notaTextarea = document.getElementById('nota_pedido');
-            const uidInput = document.getElementById('uid_input');
 
 
             this.querySelector('input[name="options[color]"]').value = colorSelect.value;
             this.querySelector('input[name="options[nota]"]').value = notaTextarea.value;
 
-            // Generar UID único por tiempo (milisegundos)
-            uidInput.value = 'uid-' + Date.now();
         });
     </script>
 

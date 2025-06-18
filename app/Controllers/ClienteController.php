@@ -67,7 +67,8 @@ public function clienteActualizarPerfil()
         // Traer el usuario actualizado desde la base
         $model = new \App\Models\Usuarios_model();
         $usuario = $model->find($id);
-
+        $cart = \Config\Services::Cart();
+        
         $data = [
             'titulo' => 'Mi cuenta',
             'usuario' => $usuario,
@@ -216,19 +217,10 @@ public function clienteActualizarPerfil()
         }
     }
 
-    public function misCompras()
-    {
-    $data = [
-        'titulo'    => 'Compras',
-        'cart'   => $this->cart,
-    ];
-    echo view('front/head', $data);
-    echo view('front/navbar', $data);
-    echo view('front/cliente/misCompras', $data);
-    echo view('front/footer', $data);
-    }
+    
 
-   public function iniciarPago()
+
+   public function iniciarCompra()
     {
     $modelDir = new Direcciones_model(); // 
     $modelUsu = new Usuarios_model(); // 
@@ -249,7 +241,7 @@ public function clienteActualizarPerfil()
 
     echo view('front/head', $data);
     echo view('front/navbar', $data);
-    echo view('front/Carrito/iniciarPago', $data);
+    echo view('front/Carrito/iniciarCompra', $data);
     echo view('front/footer', $data);
     }
 }

@@ -13,4 +13,10 @@ class Producto_model extends Model
     {
         return $this->where('eliminado', 'NO')->findAll();
     }
+
+    public function getProducto($id)
+    {
+    return $this->where('id', $id)->first();
+    }
+
 }

@@ -23,11 +23,29 @@ class CarritoController extends BaseController
                 'color' => $request->getPost('options[color]'),
                 'img'   => $request->getPost('options[img]'),
                 'nota'  => $request->getPost('options[nota]'),
-                'uid'   => $request->getPost('options[uid]'),
             ]
         ));
 
     return redirect()->back()->with('success', 'Producto agregado al carrito.');
+    }
+
+    public function actualiza_carrito(){      
+        $cart = \Config\Services::Cart();
+        $request = \Config\Services::request();
+
+        $cart -> insert(array(
+            'id' => $request->getPost('id'),
+            'qty' => 1,
+            'name' => $request->getPost('nombre_prod'),
+            'price' => $request->getPost('precio_vta'),
+            'options' => [
+                'color' => $request->getPost('options[color]'),
+                'img'   => $request->getPost('options[img]'),
+                'nota'  => $request->getPost('options[nota]'),
+            ]
+        ));
+
+    return redirect()->back()->withInput();
     }
 
     public function eliminar()
@@ -36,6 +54,30 @@ class CarritoController extends BaseController
         $cart = \Config\Services::cart();
         $cart->remove($rowid);
         return redirect()->back();
+    }
+
+    public function verCarrito()
+    {
+        $cart = \Config\Services::cart();
+        $data = [
+            'titulo' => 'Carrito',
+            'cart'   => $this->cart,
+        ] ;
+        echo view('front/head', $data);
+        echo view('front/navbar', $data);
+        echo view('back/carrito/verCarrito', $data);
+        echo view('front/footer', $data);
+    }
+
+    public function devolver_carrito(){
+        $cart = \Config\Services::cart();
+        return $cart->contents();
+    }
+
+    public function eliminar_item($rowid){
+        $cart = \Config\Services::Cart();
+        $cart->remove($rowid);
+       
     }
 
 }
