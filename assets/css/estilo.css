@@ -16,16 +16,21 @@
   background-color: #eae0d5;
   border-radius: 10px; 
 }
-.boton-comprar{
+
+.boton-comprar {
   background-color: #9da53a;
-  border: 1px solid #1c1c1c; 
+  border: none;
+  color: #ffffff;
+  padding: 0.6em 1.2em;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.boton-comprar:hover{
-  background-color: #eae0d5;
-  border-color: #1c1c1c;
-  text-decoration: underline;   
+.boton-comprar:hover {
+  background-color: #8b9333;
 }
+
 body{
   display: flex;
   flex-direction: column;

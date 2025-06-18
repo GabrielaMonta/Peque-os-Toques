@@ -116,8 +116,10 @@ class CatalogoController extends BaseController
         if ($categoria_id && $categoria_id !== 'todo') {
             $categoria_info = $categoriaModel->find($categoria_id);
             $data['titulo'] = $categoria_info ? 'Categoría: ' . $categoria_info['nombre'] : 'Categoría desconocida';
+            $data['categoria_nombre'] = $categoria_info['nombre'] ?? 'Desconocida';
         } else {
             $data['titulo'] = 'Nuestro Catálogo';
+            $data['categoria_nombre'] = 'Todo';
         }
 
         echo view('front/head', $data);

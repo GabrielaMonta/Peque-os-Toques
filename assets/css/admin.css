@@ -139,3 +139,14 @@
 .tabla-admin tbody tr td:nth-child(2) { /* Ajusta este número si tu columna de nombre no es la primera */
     text-transform: capitalize;
 }
+
+.barra-busqueda {
+  text-align: right; /* <- esto la alinea a la izquierda */
+  margin-bottom: 10px;
+}
+.barra-busqueda input {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}

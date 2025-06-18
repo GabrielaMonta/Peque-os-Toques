@@ -10,28 +10,28 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img src="assets/img/carrusel/zapateria.png" class="d-block w-100" alt="...">
+                <img src="assets/img/carrusel/calza.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                     <h5 class="display-4 titulo-categorias">ZAPATERIA</h5>
                     <a href="<?= base_url('catalogo?categoria=2'); ?>" class="btn boton-comprar letra-botones">Comprar</a>
                 </div>
                 </div>
                 <div class="carousel-item">
-                <img src="assets/img/carrusel/indumentaria.png" class="d-block w-100" alt="...">
+                <img src="assets/img/carrusel/indu.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                     <h5 class="display-4 titulo-categorias">INDUMENTARIA</h5>
                     <a href="<?= base_url('catalogo?categoria=1'); ?>"class="btn boton-comprar letra-botones">Comprar</a>
                 </div>
                 </div>
                 <div class="carousel-item">
-                <img src="assets/img/carrusel/marroquineria.png" class="d-block w-100" alt="...">
+                <img src="assets/img/carrusel/marro1.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                     <h5 class="display-4 titulo-categorias">MARROQUINERIA</h5>
                     <a href="<?= base_url('catalogo?categoria=4'); ?>"class="btn boton-comprar letra-botones">Comprar</a>
                 </div>
                 </div>
                 <div class="carousel-item">
-                <img src="assets/img/carrusel/blanqueria.png" class="d-block w-100" alt="...">
+                <img src="assets/img/carrusel/blan.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                     <h5 class="display-4 titulo-categorias">BLANQUERIA</h5>
                     <a href="<?= base_url('catalogo?categoria=3'); ?>"class="btn boton-comprar letra-botones">Comprar</a>

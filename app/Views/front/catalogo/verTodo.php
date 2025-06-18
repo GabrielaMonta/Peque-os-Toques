@@ -3,7 +3,7 @@
     <div class="container mt-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?= base_url('catalogo-todo');?>" class="letra-migas">Catálogo</a></li>
+                <li class="breadcrumb-item"><a href="<?= base_url('catalogo');?>" class="letra-migas">Catálogo</a></li>
                 <?php if (isset($categoria_nombre) && $categoria_nombre != 'Desconocida'): ?>
                     <li class="breadcrumb-item active" aria-current="page"><?= esc(ucfirst($categoria_nombre)); ?></li>
                 <?php else: ?>
@@ -25,10 +25,11 @@
 
         <div class="row mb-3">
             <div class="col-12 d-flex justify-content-md-end">
-                <?php
-                        $form_action = isset($categoria_id) ? site_url('catalogo/' . $categoria_id) : site_url('catalogo-todo');
-                    ?>
-                <form method="get" id="form-filtros" action="<?= $form_action ?>" class="d-flex align-items-center gap-2">
+                <?php $form_action = site_url('catalogo'); ?>
+                <form method="get" id="form-filtros" action="<?= $form_action ?>" class="d-flex align-items-center gap-2" >
+                    <?php if ($categoria_id): ?>
+                        <input type="hidden" name="categoria" value="<?= esc($categoria_id) ?>">
+                    <?php endif; ?>
                     <label for="ordenar" class="mb-0 me-2">Ordenar por:</label>
                     <select name="ordenar" id="ordenar" class="form-select" onchange="document.getElementById('form-filtros').submit();">
                         <option value="">-- Seleccionar --</option>
@@ -39,11 +40,11 @@
                 </form>
             </div>
         </div>
+
         
 
         <div class="row">
             <div class="col-md-3 mb-4">
-                
                 <div class="d-flex align-items-center mb-3">
                     <h5 class="titulo-filtro mb-0 me-2">Filtrar por:</h5>
                     <select class="form-select cajita-filtro form-select-sm w-auto" onchange="window.location.href = this.value;">

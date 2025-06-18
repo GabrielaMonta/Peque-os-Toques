@@ -12,7 +12,7 @@
             <a class="navbar-brand d-none d-lg-block position-absolute top-50 start-50 translate-middle titulo-central" href="<?php echo base_url(' ');?>">Pequeños Toques</a>
             <!-- Logo solo visible en pantallas chicas -->
             <a class="navbar-brand d-block d-lg-none position-absolute top-50 start-50 translate-middle" href="<?php echo base_url(' ');?>">
-                <img src="assets\img\Pequeños toques logo.png" alt="Logo" height="40">
+                <img src="assets/img/logo.png" alt="Logo" height="35">
             </a>
 
             <!-- Contenedor derecho iconos -->
@@ -20,11 +20,11 @@
 
                 <!-- Íconos lupa para buscador -->
                 <ul class="navbar-nav flex-row">
-                    <li class="nav-item  ms-3">
+                    <li class="nav-item  mx-2 ms-3">
                         <form class=" form-busqueda" role="search" action="<?= site_url('catalogo-todo'); ?>" method="get">
                             <input type="checkbox" id="toggleBusqueda" class="toggle-busqueda">
                                     
-                            <label for ="toggleBusqueda" class="btn lupa-busqueda p-0">
+                            <label for ="toggleBusqueda" class="btn lupa-busqueda p-0 ">
                             <a class="nav-link"><i class="bi bi-search fs-4" style="color: #bfc86a;"></i></a>
                             </label>
                                 
@@ -34,7 +34,7 @@
                     
                     <!-- Si el usuario aun no esta logueado, o sea no es 2, mostrar el icono -->
                     <?php if (session()->get('perfil_id') != 2): ?>
-                    <li class="nav-item ms-3">
+                    <li class="nav-item ms-3 mx-2">
                         <button type="button" class="nav-link d-none d-md-block btn" data-bs-toggle="modal" data-bs-target="#loginModal" style="background: none; border: none; padding: 0;">
                             <i class="bi bi-person-circle fs-4" style="color: #bfc86a; line-height: 2.1;"></i>
                         </button>
@@ -55,12 +55,7 @@
                         </li>
                     <?php endif; ?>
 
-                    <li class="nav-item ms-3">
-                        <button type="button" class="nav-link d-none d-md-block btn btn-primary " data-bs-toggle="offcanvas" data-bs-target="#favoritosBackdrop" aria-controls="staticBackdrop" >
-                            <i class="bi bi-heart fs-4" style="color: #bfc86a;"></i></button>
-                    </li>
-
-                    <li class="nav-item ms-3">
+                    <li class="nav-item ms-3 mx-2">
                         <button type="button" class="nav-link btn btn-primary"  data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
                             <i class="bi bi-basket3 fs-4" style="color: #bfc86a;"></i></button>
                     </li>
@@ -97,7 +92,6 @@
                             <li><a class="dropdown-item" href="<?php echo base_url('sobre-nosotros');?>">Quienes somos</a></li>
                             <li><a class="dropdown-item" href="<?php echo base_url('comercializacion');?>">Comercializacion</a></li>
                             <li><a class="dropdown-item" href="<?php echo base_url('contacto');?>">Contacto</a></li>
-                            <!--<li><hr class="dropdown-divider"></li>-->
                             <li><a class="dropdown-item" href="<?php echo base_url('preguntas-frecuentes');?>">Preguntas frecuentes</a></li>
                         </ul>
                     </li>
@@ -106,6 +100,7 @@
                 <!-- Si no es cliente, mostrar el icono -->
                 <?php if (session()->get('perfil_id') != 2): ?>
                     <div class="d-block d-md-none">
+                        <hr class="my-2">
                         <button type="button" class="btn p-0 text-decoration-none d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginModal" style="color: #bfc86a;">
                             <i class="bi bi-person-circle fs-4 me-2"></i>
                             <span class="fs-6">Iniciar Sesión</span>
@@ -116,6 +111,7 @@
                 <!-- Si es cliente -->
                 <?php if (session()->get('logged_in') && session()->get('perfil_id') == 2): ?> 
                     <li class="nav-item dropdown d-block d-md-none">
+                        <hr class="my-2">
                         <a class="nav-link dropdown-toggle letra-nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #bfc86a;">
                             <i class="bi bi-person-circle fs-4 me-1"></i> Usuario
                         </a>
@@ -128,12 +124,7 @@
                 <?php endif; ?>
 
 
-                <div class="d-block d-md-none">
-                    <button type="button" class="btn p-0 text-decoration-none d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#favoritosBackdrop" style="color: #bfc86a;">
-                        <i class="bi bi-heart fs-4 me-2" style="color: #bfc86a;"></i>
-                        <span class="fs-6">Favoritos</span>
-                    </button>
-                </div>
+               
                         
             </div>        
 
@@ -187,33 +178,4 @@
         
         </div>
     </div>
-    <!-- Offcanvas favoritos -->
-    <div class="offcanvas offcanvas-end"  data-bs-backdrop="static" tabindex="-1" id="favoritosBackdrop" aria-labelledby="staticBackdropLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title canvas-titulo" id="staticBackdropLabel">Favoritos</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        
-        <div class="offcanvas-body ">
-            <div class= "card container-card row g-0">
-                <div class="foto-producto col-4 d-flex align-items-center">
-                    <img src="assets/img/productos/marro2.jpeg" style="width: 200px; height: 100px;" class="img-fluid rounded-start" alt="Imagen">
-                </div>
-                <div class="card-body  col-5">
-                    <h5 class="card-title">Billetera</h5>
-                    <p class="card-text">$1234,56</p>
-
-                    <div class="d-flex justify-content-end">
-                        <button class="boton-fav bi bi-heart d-flex align-items-center " onclick="eliminarProducto(this)"></button>
-                        <button class="boton-fav bi bi-basket d-flex  ms-1" onclick="agregarAlCarrito(this)"></button>
-                    </div>
-                </div>
-                
-            </div>   
-        </div>
-
-        <div class="pie-carrito">
-            <img src="assets/img/logo.png" class="img-fluid rounded-start mb-2" alt="Imagen" style="width: 50px; height: 50px;">
-        
-        </div>
-    </div>
+   
