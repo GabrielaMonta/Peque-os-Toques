@@ -9,7 +9,41 @@ class AdminController extends BaseController
     /*Panel admin*/
     public function panelAdmin()
     {
-        $data['titulo'] = 'Aministrador';
+         // Últimos usuarios registrados
+        $usuarioModel = new \App\Models\Usuarios_model();
+        $ultimosUsuarios = $usuarioModel
+            ->where('baja', 'NO')
+            ->orderBy('id', 'DESC')
+            ->limit(5)
+            ->get()
+            ->getResultArray();
+
+        // Productos con stock bajo
+        $productoModel = new \App\Models\Producto_model();
+        $productosBajoStock = $productoModel
+            ->where('eliminado', 'NO')
+            ->where('stock <=', 1)
+            ->orderBy('stock', 'ASC')
+            ->limit(5)
+            ->get()
+            ->getResultArray();
+
+        // Últimas consultas (suponiendo tabla 'consultas' con campos: nombre, asunto, fecha)
+        //$consultaModel = new Consulta_model();
+        //$ultimasConsultas = $consultaModel
+            //->orderBy('id', 'DESC')
+            //->limit(5)
+            //->get()
+            //->getResultArray();
+
+        // Enviar los datos a la vista
+        $data = [
+            'titulo' => 'Panel de Administración',
+            'ultimosUsuarios' => $ultimosUsuarios,
+            'productosBajoStock' => $productosBajoStock,
+            //'ultimasConsultas' => $ultimasConsultas,
+        ];
+
         echo view('front/head', $data);
         echo view('front/admin/navbar_admin', $data);
         echo view('front/admin/plantilla_admin', $data);
@@ -19,10 +53,23 @@ class AdminController extends BaseController
     public function crudUsuarios()
     {
         $model = new \App\Models\Usuarios_model();
-        $usuarios = $model->where('baja', 'NO')->findAll();
+
+        $tipo = $this->request->getGet('tipo'); // perfil_id
+        $baja = $this->request->getGet('baja');
+        $orden = $this->request->getGet('orden');
+        $buscar = $this->request->getGet('buscar');
+
+        $usuariosQuery = $model->filtrarUsuarios($tipo, $baja, $orden, $buscar);
 
         $data['titulo'] = 'CRUD Usuarios';
-        $data['usuarios'] = $usuarios;
+        $data['usuarios'] = $usuariosQuery->paginate(10, 'usuarios');
+        $data['pager'] = $model->pager;
+
+        // Para usar en los selects (opcional si tenés tabla perfiles)
+        $data['tipoSeleccionado'] = $tipo;
+        $data['bajaSeleccionado'] = $baja;
+        $data['ordenSeleccionado'] = $orden;
+        $data['buscar'] = $buscar;
 
         echo view('front/head', $data);
         echo view('front/admin/navbar_admin', $data);
@@ -30,19 +77,34 @@ class AdminController extends BaseController
         echo view('front/admin/footer_admin', $data);
     }
 
+
     public function crudProductos()
     {
-        $model = new \App\Models\Producto_model();
-        $producto = $model->where('eliminado', 'NO')->findAll();
+        $productoModel = new \App\Models\Producto_model();
+        $categoriaModel = new \App\Models\Categoria_model();
 
+        // Obtener filtros desde la URL
+        $categoria = $this->request->getGet('categoria');
+        $orden = $this->request->getGet('orden');
+        $buscar = $this->request->getGet('buscar');
+
+        // Aplicar filtro
+        $productosFiltrados = $productoModel->filtrarProductos($categoria, $orden, $buscar);
+
+        // Paginación (10 por página)
+        $data['productos'] = $productosFiltrados->paginate(15, 'productos');
+        $data['pager'] = $productoModel->pager;
+
+        // Categorías para el filtro
+        $data['categorias'] = $categoriaModel->getCategorias();
         $data['titulo'] = 'CRUD Productos';
-        $dato['productos'] = $producto;
 
         echo view('front/head', $data);
         echo view('front/admin/navbar_admin', $data);
-        echo view('front/admin/crud_productos', $dato);
+        echo view('front/admin/crud_productos', $data);
         echo view('front/admin/footer_admin', $data);
     }
+
 
     public function ventas()
     {
@@ -54,13 +116,15 @@ class AdminController extends BaseController
     }
 
     public function setup()
-    {
+    {  
+        
         $data['titulo'] = 'Admin';
         echo view('front/head', $data);
         echo view('front/admin/setup_admin', $data);
         echo view('front/admin/footer_admin', $data);
 
     }
+
     public function editarUsuario($id)
     {
         $model = new \App\Models\Usuarios_model();

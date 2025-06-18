@@ -3,27 +3,38 @@
         <h2 class="titulo-crud">Listado de Productos</h2>
    
         <div class="row align-items-center mb-2">
-            <div class="col-12 col-md-6 d-flex flex-wrap gap-2 mb-2 mb-md-0">
-                <select class="form-select form-select-sm w-auto">
-                <option value="">Filtrar por categoría</option>
-                <option value="hombre">Hombre</option>
-                <option value="mujer">Mujer</option>
-                </select>
+            <form method="get"  action="<?= site_url('crud-productos'); ?>" class="row align-items-center mb-2">
+                <div class="col-12 col-md-6 d-flex flex-wrap gap-2 mb-2 mb-md-0">
+                    <select name="categoria" class="form-select form-select-sm w-auto">
+                        <option value="">Filtrar por categoría</option>
+                        <?php foreach ($categorias as $cat): ?>
+                            <option value="<?= $cat['id']; ?>" <?= (isset($_GET['categoria']) && $_GET['categoria'] == $cat['id']) ? 'selected' : ''; ?>>
+                                <?= esc(ucfirst($cat['nombre'])); ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
 
-                <select class="form-select form-select-sm w-auto">
-                <option value="">Ordenar por</option>
-                <option value="precio_asc">Precio: menor a mayor</option>
-                <option value="precio_desc">Precio: mayor a menor</option>
-                </select>
-            </div>
+                    <select name="orden" class="form-select form-select-sm w-auto">
+                        <option value="">Ordenar por</option>
+                        <option value="precio_asc">Precio: menor a mayor</option>
+                        <option value="precio_desc">Precio: mayor a menor</option>
+                        <option value="reciente">Más reciente</option>
+                        <option value="stock">Stock disponible</option>
+                    </select>
 
-            <div class="col-12 col-md-6 d-flex flex-wrap justify-content-center justify-content-md-end align-items-center gap-2">
-                <div class="barra-busqueda w-100 w-md-auto mt-2" style="max-width: 300px;">
-                <input type="text" id="buscarInput" class="form-control form-control-sm w-100" placeholder="Buscar...">
+                    <button type="submit" class="btn btn-outline-dark btn-sm">Aplicar</button>
+                    <a href="<?= site_url('crud-productos'); ?>" class="btn btn-outline-secondary btn-sm">Borrar filtros</a>
                 </div>
-                <a href="<?= site_url('crear'); ?>" class="btn btn-crud guardar py-1 px-2">Agregar</a>
-                <a href="<?= site_url('crear'); ?>" class="btn btn-crud cancelar py-1 px-2">Eliminados</a>
-            </div>
+                
+                <div class="col-12 col-md-6 d-flex flex-wrap justify-content-center justify-content-md-end align-items-center gap-2">
+                    <div class="barra-busqueda w-100 w-md-auto mt-2" style="max-width: 300px;">
+                        <input type="text" name="buscar" id="buscarInput" class="form-control form-control-sm w-100" placeholder="Buscar..." value="<?= esc($_GET['buscar'] ?? '') ?>">
+                    </div>
+                    <a href="<?= site_url('crear'); ?>" class="btn btn-crud guardar py-1 px-2">Agregar</a>
+                    <a href="<?= site_url('crear'); ?>" class="btn btn-crud cancelar py-1 px-2">Eliminados</a>
+                </div>
+    
+            </form>
         </div>
 
         <?php if (session()->getFlashdata('success')): ?>
@@ -80,6 +91,15 @@
                     <?php endif; ?>
                 </tbody>
             </table>
+            <?php if (!empty($pager)) : ?>
+                <div class="col-12 mt-4 d-flex justify-content-center">
+                    <nav aria-label="Page navigation" class="mi-paginacion">
+                        <ul class="pagination">
+                            <?= $pager->links('productos', 'custom_bootstrap') ?>
+                        </ul>
+                    </nav>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </main>
