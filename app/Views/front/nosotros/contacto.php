@@ -23,22 +23,30 @@
 
         <div class="col-12 col-md-3 d-none d-md-flex justify-content-center align-items-center ms-5" style="min-height: 200px;">
             <a href="#">
-                <img src="assets/img/Pequeños toques t.png" alt="Logo" height="40">
+                <img src="assets/img/logo.png" alt="Logo" height="40">
             </a>
         </div>
 
         <div class="display-flex-center col-12 col-md-4 mt-3 ">
             <div class="container-formulario-consulta  ">
+                <?php if (session()->getFlashdata('success')): ?>
+                    <div class="alert alert-success">
+                        <?= session()->getFlashdata('success') ?>
+                    </div>
+                <?php endif; ?>
                 <p class="letra-consulta mt-1">¡Dejanos tu consulta!</p>
-                    <form action="/enviar-consulta" method="post">
-                        <input class="input-nombre form-control mt-5 " type="text" name="nombre" placeholder="Tu nombre" required><br><br>
-                        <input class="input-emailcon form-control mt-0 mb-0" type="email" name="email" placeholder="Tu email" required><br><br>
-                        <textarea class="input-mensaje form-control mb-0" name="mensaje" placeholder="Tu consulta" required></textarea><br><br>
+                    <form action="<?= base_url('enviar-consulta') ?>" method="post">
+                        <?= csrf_field() ?>
                         
-                        <div style="text-align: right;">
+                        <input class="input-nombre form-control mt-4" type="text" name="nombre" placeholder="Nombre" required>
+                        <input class="input-nombre form-control mt-3" type="text" name="apellido" placeholder="Apellido" required>
+                        <input class="input-emailcon form-control mt-3" type="email" name="email" placeholder="Email" required>
+                        <input class="input-nombre form-control mt-3" type="tel" name="telefono" placeholder="Teléfono (opcional)">
+                        <textarea class="input-mensaje form-control mt-3" name="mensaje" placeholder="Tu consulta" required></textarea>
+
+                        <div class="mt-3" style="text-align: right">
                             <button class="boton-enviarcon" type="submit">Enviar</button>
                         </div>
-
                     </form>
                 </div>
             </div>

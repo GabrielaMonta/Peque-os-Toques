@@ -32,8 +32,11 @@
                 <!-- Menú a la izquierda -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active letra-nav" aria-current="page" href="<?php echo base_url('admin');?>">Inicio</a>
+                        <a class="nav-link active letra-nav" aria-current="page" href="<?php echo base_url('admin'); ?>">
+                            <i class="bi bi-house-door-fill"></i> 
+                        </a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link letra-nav" href="<?php echo base_url('crud-usuarios');?>">CRUD Usuarios</a>
                     </li>
@@ -44,6 +47,17 @@
                 
                     <li class="nav-item ">
                         <a class="nav-link letra-nav" href="<?php echo base_url('ventas');?>">Ventas</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link letra-nav position-relative" href="<?= base_url('consultas') ?>">
+                            Consultas
+                            <?php if (isset($consultasPendientes) && $consultasPendientes > 0): ?>
+                                <span class="position-absolute start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem; padding: 2px 5px;">
+                                    <?= $consultasPendientes ?>
+                                </span>
+                            <?php endif; ?>
+                        </a>
                     </li>
                 </ul>    
                 

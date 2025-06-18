@@ -38,6 +38,8 @@ $routes->get('/admin', 'AdminController::panelAdmin', ['filter' => 'auth:1']);
 $routes->get('/crud-usuarios', 'AdminController::crudUsuarios', ['filter' => 'auth:1']);
 $routes->get('/crud-productos', 'AdminController::crudProductos', ['filter' => 'auth:1']);
 $routes->get('/ventas', 'AdminController::ventas', ['filter' => 'auth:1']);
+$routes->get('/consultas', 'AdminController::consultas', ['filter' => 'auth:1']);
+$routes->post('/enviar-consulta', 'ConsultaController::enviar');
 
 
 $routes->get('setup', 'SetupController::index');
@@ -71,3 +73,5 @@ $routes->post('carrito-add', 'CarritoController::add');
 
 $routes->post('carrito-eliminar', 'CarritoController::eliminar');
 
+$routes->get('consultas/atender/(:num)', 'ConsultaController::atender_consultas/$1');
+$routes->get('consultas/eliminar/(:num)', 'ConsultaController::eliminar_consulta/$1');

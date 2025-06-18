@@ -150,3 +150,57 @@
   border-radius: 4px;
   font-size: 14px;
 }
+
+.mi-card-usuarios .card-header {
+  background-color: rgba(138, 148, 47, 0.85) !important; /* Verde oliva translúcido */
+  color: white;
+}
+
+.mi-card-stock .card-header {
+  background-color: rgba(220, 53, 69, 0.85) !important; /* Rojo translúcido */
+  color: white !important;
+
+}
+
+.mi-card-consultas .card-header {
+  background-color: rgba(90, 98, 104, 0.85) !important; /* Gris oscuro translúcido */
+  color: white;
+}
+
+/* Botones personalizados */
+.mi-card-usuarios .btn,
+.mi-card-stock .btn,
+.mi-card-consultas .btn {
+  border-width: 1px;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.mi-card-usuarios .btn {
+  border-color: #8a942f;
+  color: #8a942f;
+}
+.mi-card-usuarios .btn:hover {
+  background-color: #8a942f;
+  color: white;
+}
+
+.mi-card-stock .btn {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+.mi-card-stock .btn:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.mi-card-consultas .btn {
+  border-color: #5a6268;
+  color: #5a6268;
+}
+.mi-card-consultas .btn:hover {
+  background-color: #5a6268;
+  color: white;
+}
+

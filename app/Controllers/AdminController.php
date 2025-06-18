@@ -2,7 +2,11 @@
 
 namespace App\Controllers;
 use App\Models\Usuarios_model;
+use App\Models\Categoria_model;
+use App\Models\Producto_model;
+use App\Models\Consulta_model;
 use CodeIgniter\Controller;
+
 
 class AdminController extends BaseController
 {
@@ -10,7 +14,7 @@ class AdminController extends BaseController
     public function panelAdmin()
     {
          // Últimos usuarios registrados
-        $usuarioModel = new \App\Models\Usuarios_model();
+        $usuarioModel = new Usuarios_model();
         $ultimosUsuarios = $usuarioModel
             ->where('baja', 'NO')
             ->orderBy('id', 'DESC')
@@ -19,7 +23,7 @@ class AdminController extends BaseController
             ->getResultArray();
 
         // Productos con stock bajo
-        $productoModel = new \App\Models\Producto_model();
+        $productoModel = new Producto_model();
         $productosBajoStock = $productoModel
             ->where('eliminado', 'NO')
             ->where('stock <=', 1)
@@ -28,20 +32,25 @@ class AdminController extends BaseController
             ->get()
             ->getResultArray();
 
-        // Últimas consultas (suponiendo tabla 'consultas' con campos: nombre, asunto, fecha)
-        //$consultaModel = new Consulta_model();
-        //$ultimasConsultas = $consultaModel
-            //->orderBy('id', 'DESC')
-            //->limit(5)
-            //->get()
-            //->getResultArray();
+        // Últimas consultas
+        $consultaModel = new Consulta_model();
+        $ultimasConsultas = $consultaModel
+            ->orderBy('id_consulta', 'DESC')
+            ->limit(5)
+            ->get()
+            ->getResultArray();
+
+        $pendientes = $consultaModel
+        ->where('respuesta', 'NO')
+        ->countAllResults();
 
         // Enviar los datos a la vista
         $data = [
             'titulo' => 'Panel de Administración',
             'ultimosUsuarios' => $ultimosUsuarios,
             'productosBajoStock' => $productosBajoStock,
-            //'ultimasConsultas' => $ultimasConsultas,
+            'ultimasConsultas' => $ultimasConsultas,
+            'consultasPendientes' => $pendientes,
         ];
 
         echo view('front/head', $data);
@@ -52,7 +61,7 @@ class AdminController extends BaseController
 
     public function crudUsuarios()
     {
-        $model = new \App\Models\Usuarios_model();
+        $model = new Usuarios_model();
 
         $tipo = $this->request->getGet('tipo'); // perfil_id
         $baja = $this->request->getGet('baja');
@@ -80,8 +89,8 @@ class AdminController extends BaseController
 
     public function crudProductos()
     {
-        $productoModel = new \App\Models\Producto_model();
-        $categoriaModel = new \App\Models\Categoria_model();
+        $productoModel = new Producto_model();
+        $categoriaModel = new Categoria_model();
 
         // Obtener filtros desde la URL
         $categoria = $this->request->getGet('categoria');
@@ -117,18 +126,30 @@ class AdminController extends BaseController
 
     public function setup()
     {  
-        
         $data['titulo'] = 'Admin';
         echo view('front/head', $data);
         echo view('front/admin/setup_admin', $data);
         echo view('front/admin/footer_admin', $data);
+    }
 
+    public function consultas()
+    {
+        $model = new Consulta_model();
+        $consultas = $model->orderBy('id_consulta', 'DESC')->findAll(); // Podés paginar más adelante
+
+        $data['titulo'] = 'Consultas';
+        $data['consultas'] = $consultas;
+
+        echo view('front/head', $data);
+        echo view('front/admin/navbar_admin', $data);
+        echo view('front/admin/consultas', $data);
+        echo view('front/admin/footer_admin', $data);
     }
 
     public function editarUsuario($id)
     {
-        $model = new \App\Models\Usuarios_model();
-        $usuario = $model->find($id);
+        $model = new Usuarios_model();
+        $usuario = $model->find($id); 
 
         if (!$usuario) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Usuario no encontrado');
