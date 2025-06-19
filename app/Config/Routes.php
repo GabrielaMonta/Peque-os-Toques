@@ -22,13 +22,8 @@ $routes->get('novedades', 'CatalogoController::novedades');
 $routes->get('catalogo', 'CatalogoController::index');
 $routes->get('catalogo/detalle/(:num)', 'CatalogoController::detalle/$1');
 
-/*Carrito */
-$routes->get('/carrito', 'Home::carrito');
-$routes->get('/producto', 'Home::producto');
-$routes->get('/iniciar-pago', 'ClienteController::iniciarPago', ['filter' => 'auth:2']);
+
 $routes->post('/enviar-form', 'UsuarioController::registrar');
-
-
 $routes->post('/enviar-login', 'LoginController::auth');
 $routes->get('/logout', 'LoginController::logout');
 
@@ -58,7 +53,6 @@ $routes->get('/editarProducto/(:num)', 'ProductoController::editarProducto/$1');
 $routes->post('/actualizarProducto/(:num)', 'ProductoController::actualizarProducto/$1');
 
 $routes->get('/cuenta', 'ClienteController::clientePerfil', ['filter' => 'auth:2']);
-$routes->get('/mis-compras', 'ClienteController::misCompras', ['filter' => 'auth:2']);
 $routes->get('editarPerfil', 'ClienteController::editarPerfil', ['filter' => 'auth:2']);
 $routes->post('cliente-actualizar-perfil', 'ClienteController::clienteActualizarPerfil', ['filter' => 'auth:2']);
 
@@ -69,9 +63,22 @@ $routes->post('/agregar-direccion', 'ClienteController::agregarDireccion', ['fil
 $routes->get('/editar-direccion/(:num)', 'ClienteController::editarDireccion/$1', ['filter' => 'auth:2']);
 $routes->post('/actualizar-direccion/(:num)', 'ClienteController::actualizarDireccion/$1', ['filter' => 'auth:2']);
 $routes->get('/eliminar-direccion/(:num)', 'ClienteController::eliminarDireccion/$1', ['filter' => 'auth:2']);
-$routes->post('carrito-add', 'CarritoController::add');
 
-$routes->post('carrito-eliminar', 'CarritoController::eliminar');
+/*Carrito */
+$routes->get('/verCarrito', 'CarritoController::verCarrito');
+$routes->get('/producto', 'Home::producto');
+$routes->get('/iniciar-compra', 'ClienteController::iniciarCompra', ['filter' => 'auth:2']);
+$routes->post('/carrito-add', 'CarritoController::add');
+$routes->post('/carrito-eliminar', 'CarritoController::eliminar');
+$routes->get('/carrito-actualizar', 'CarritoController::actualizar_carrito');
+$routes->post('/carrito-comprar', 'VentasController::registrar_venta', ['filter' => 'auth:2']);
+
+$routes->get('/mis-compras', 'VentasController::mis_compras', ['filter' => 'auth:2']);
+$routes->get('/ver-detalle-compra/(:num)', 'VentasController::ver_detalle/$1', ['filter' => 'auth:2']);
+
+$routes->get('admin/detalle-ventas(:num)', 'AdminController::editarVentas/$1', ['filter' => 'auth:1']);
+$routes->post('actualizar-estado-venta(:num)', 'AdminController::actualizarEstadoVenta/$1', ['filter' => 'auth:1']);
+
 
 $routes->get('consultas/atender/(:num)', 'ConsultaController::atender_consultas/$1');
 $routes->get('consultas/eliminar/(:num)', 'ConsultaController::eliminar_consulta/$1');

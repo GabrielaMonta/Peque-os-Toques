@@ -42,8 +42,13 @@ class Producto_model extends Model
                     break;
             }
         }
-
+    
         return $builder;
+    }
+    
+    public function getProducto($id)
+    {
+    return $this->where('id', $id)->first();
     }
 
 }

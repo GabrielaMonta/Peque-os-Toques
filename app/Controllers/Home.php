@@ -7,7 +7,7 @@ class Home extends BaseController
     public function index()
     { 
         $session = session();
-        
+        $cart = \Config\Services::Cart();
         $data = [
             'titulo' => 'Pequeños Toques',
             'showRegistroModal' => $session->get('showRegistroModal'),
@@ -28,6 +28,7 @@ class Home extends BaseController
     /*Nosotros*/
     public function sobreNosotros()
     {
+        $cart = \Config\Services::Cart();
         $data =[
             'titulo' => 'Sobre Nosotros',
             'cart'   => $this->cart,
@@ -39,6 +40,7 @@ class Home extends BaseController
     }
     public function comercializacion()
     {
+        $cart = \Config\Services::Cart();
         $data = [
             'titulo' => 'Comercialización',
             'cart'   => $this->cart,
@@ -50,6 +52,7 @@ class Home extends BaseController
     }
     public function contacto()
     {
+        $cart = \Config\Services::Cart();
     $data = [
             'titulo' => 'Contacto',
             'cart'   => $this->cart,
@@ -61,6 +64,7 @@ class Home extends BaseController
     }
     public function preguntasFrecuentes()
     {
+        $cart = \Config\Services::Cart();
         $data = [
             'titulo' => 'Preguntas frecuentes',
             'cart'   => $this->cart,
@@ -75,6 +79,7 @@ class Home extends BaseController
     /*Novedades*/
     public function novedades()
     {
+        $cart = \Config\Services::Cart();
         $data = [
             'titulo' => 'Novedades',
             'cart'   => $this->cart,
@@ -87,6 +92,7 @@ class Home extends BaseController
 
 
     public function producto(){
+        $cart = \Config\Services::Cart();
         $data = [
             'titulo' => 'Producto',
             'cart'   => $this->cart,
@@ -98,17 +104,7 @@ class Home extends BaseController
     }
 
     
-     public function carrito()
-    {
-        $data = [
-            'titulo' => 'Carrito',
-            'cart'   => $this->cart,
-        ] ;
-        echo view('front/head', $data);
-        echo view('front/navbar', $data);
-        echo view('front/Carrito/carrito', $data);
-        echo view('front/footer', $data);
-    }
+     
     
     
 }
