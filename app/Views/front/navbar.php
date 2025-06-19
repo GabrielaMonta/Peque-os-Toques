@@ -174,8 +174,8 @@
         <div class="pie-carrito">
                     
             <a href="<?php echo base_url('verCarrito');?>" class="btn boton-ver-carrito">Ver carrito</a>
-            <a href="<?php echo base_url('catalogo-todo');?>" class="btn boton-seguir-comprando">Seguir comprando</a>
-            <img src="assets/img/logo.png" class="img-fluid rounded-start mb-2" alt="Imagen" style="width: 50px; height: 50px;">
+            <a href="<?php echo base_url('catalogo');?>" class="btn boton-seguir-comprando">Seguir comprando</a>
+            <img src="<?= base_url('assets/img/logo.png') ?>" class="img-fluid rounded-start mb-2" alt="Imagen" style="width: 50px; height: 50px;">
         
         </div>
     </div>

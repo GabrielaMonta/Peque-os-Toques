@@ -131,6 +131,8 @@ class CatalogoController extends BaseController
 
     public function detalle($id)
     {
+        $cart = \Config\Services::cart();
+
         $productoModel = new Producto_model();
         $categoriaModel = new Categoria_model();
         // Asegúrate de que el producto no esté eliminado cuando se accede directamente por ID
@@ -146,7 +148,7 @@ class CatalogoController extends BaseController
 
         $categoria = $categoriaModel->find($producto['categoria_id']);
         $data['categoria_nombre'] = $categoria['nombre']; 
-        $data['cart']   = $this->cart;
+        $data['cart']   = $cart;
 
         echo view('front/head', $dato);
         echo view('front/navbar', $data);

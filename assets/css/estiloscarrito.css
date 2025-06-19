@@ -417,7 +417,7 @@
     margin-bottom: 1rem;
     padding: 1rem;
     background-color: #ffffff;
-    max-height: 60%;
+    max-height: auto;
     border: 2px solid #eae0d5;
     
 }

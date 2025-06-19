@@ -15,6 +15,7 @@
                     </div>
                     <button type="submit" class="btn btn-success">Enviar respuesta</button>
                     <a href="<?= base_url('consultas') ?>" class="btn btn-secondary">Cancelar</a>
+                    
                 </form>
             </div>
         </div>
