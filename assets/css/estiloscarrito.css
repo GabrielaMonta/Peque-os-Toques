@@ -393,8 +393,8 @@
 .card-envio:hover{
     border-radius: 15px;
     border: 3px solid #9da53a;
-    width: 60%;
-    height: start;
+    max-width: 600px;
+    height: auto;
     font-family: 'Libre Bondi', serif; 
     font-size: clamp(12px, 1rem, 32px);
     margin-top: 1rem;

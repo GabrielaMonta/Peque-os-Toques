@@ -34,17 +34,17 @@
                                 <br><input class="input-facturacion" name="provincia" type="text" required value="<?= esc($direccion['provincia'] ?? '') ?>">
                             </div><br>
                             <div>
-                                <label for="email">Correo Electrónico <span class="obligatorio">*</span></label>
-                                <br><input class="input-facturacion" name="email" type="email" required value="<?= esc($usuario['email']) ?>">
-                            </div><br>
-                            <div>
                                 <label for="piso/dpto">Piso/Departamento</label>
                                 <br><input class="input-facturacion" name="piso/dpto" type="text" value="<?= esc($direccion['piso/dpto'] ?? '') ?>" >
                             </div><br>  
+                            <div>
+                                <label for="observaciones">Información adicional</label>
+                                <br><input class="input-facturacion" name="observaciones" type="text" value="<?= esc($direccion['observaciones'] ?? '') ?>" >
+                            </div><br> 
                         </div>
                         <div class="col-12 col-md-6">
                             <div> 
-                                <label for="nombre">Apellido <span class="obligatorio">*</span></label>
+                                <label for="apellido">Apellido <span class="obligatorio">*</span></label>
                                 <br><input class="input-facturacion" name="apellido" type="text" required value="<?= esc($usuario['apellido']) ?>">
                             </div><br>
                             <div>
@@ -60,13 +60,10 @@
                                 <br><input class="input-facturacion" name="cp" type="text" required value="<?= esc($direccion['cp'] ?? '') ?>">
                             </div><br>
                             <div> 
-                                <label for="teléfono">Teléfono <span class="obligatorio">*</span></label>
-                                <br><input class="input-facturacion" id="teléfono" type="text" required value="<?= esc($usuario['telefono'] ?? '') ?>">
+                                <label for="telefono">Teléfono <span class="obligatorio">*</span></label>
+                                <br><input class="input-facturacion" name = "telefono" type="text" required value="<?= esc($usuario['telefono'] ?? '') ?>">
                             </div><br>
-                            <div>
-                                <label for="observaciones">Información adicional</label>
-                                <br><input class="input-facturacion" name="observaciones" type="text" value="<?= esc($direccion['observaciones'] ?? '') ?>" >
-                            </div><br>                            
+                                                       
                         </div>
                         <div class = "row">
                             <div class="d-flex align-items-center">

@@ -21,6 +21,7 @@ class VentasController extends Controller{
         $detalleModel = new Ventas_detalle_model();
         $direccionModel = new Direcciones_model(); 
         $direccionVentaModel = new Direcciones_ventas_model(); 
+        $usuario = new Usuarios_model();
 
         $cart = \Config\Services::cart();
 
@@ -151,6 +152,18 @@ class VentasController extends Controller{
             'observaciones' => $this->request->getPost('observaciones'),
         ];
         $direccionVentaModel->insert($direccionVentaData);
+
+        $usuarioData = [
+            'nombre' => $this->request->getPost('nombre'),
+            'apellido' => $this->request->getPost('apellido'),
+            'dni' => $this->request->getPost('dni'),
+            'telefono' => $this->request->getPost('telefono'),
+            'email' => $session->get('email'),
+
+        ];
+        $id = session()->get('id');
+        $usuario->update($id, $usuarioData);
+
 
         // Vaciar carrito, confirmar venta y volver a compras
         $cart->destroy();

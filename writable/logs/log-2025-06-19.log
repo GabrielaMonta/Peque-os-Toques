@@ -4480,3 +4480,22 @@ WARNING - 2025-06-19 15:33:43 --> [DEPRECATED] Passing lowercase HTTP method "po
  9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 DEBUG - 2025-06-19 15:33:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-06-19 15:33:43 --> Cart Class Initialized
+CRITICAL - 2025-06-19 18:04:03 --> TypeError: Cannot assign null to property Config\Email::$fromEmail of type string
+[Method: POST, Route: consultas/responder/5]
+in APPPATH\Config\Email.php on line 124.
+ 1 SYSTEMPATH\Config\Factories.php(235): Config\Email->__construct()
+ 2 SYSTEMPATH\Config\Factories.php(169): CodeIgniter\Config\Factories::createInstance('config', 'Config\\Email', [])
+ 3 SYSTEMPATH\Config\Factories.php(188): CodeIgniter\Config\Factories::__callStatic('config', [])
+ 4 SYSTEMPATH\Common.php(210): CodeIgniter\Config\Factories::get('config', 'Config\\Email')
+ 5 SYSTEMPATH\Config\Services.php(234): config('Config\\Email')
+ 6 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::email(null, false)
+ 7 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('email', [...])
+ 8 SYSTEMPATH\Config\Services.php(230): CodeIgniter\Config\BaseService::getSharedInstance('email', null)
+ 9 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::email()
+10 APPPATH\Controllers\ConsultaController.php(38): CodeIgniter\Config\BaseService::__callStatic('email', [])
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->responder('5')
+12 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+13 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

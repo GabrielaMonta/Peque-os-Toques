@@ -22,19 +22,21 @@
             <h6 class= "preguntas-comercializacion"> Formas de envío </h6>
             <hr style= "border: 1px solid #bfc86a; width:80%; margin-top: 5px; margin-left: 8vw; margin-right: auto;">
             <p class="parrafos-preguntas me-5"> Realizamos envíos a toda la Argentina por Correo Argentino, 
-                Andreani y Crucero Express... El envío hasta el depósito del transporte seleccionado es sin cargo.
-            <br> El costo del envío es a cargo del cliente y se abona al momento de realizar la compra. 
+                Andreani o Crucero Express...
+            <br> El costo del envío es a cargo del cliente. Nosotros te enviaremos las cotizaciones para que elijas 
+            cual te conviene y lo abonas junto con la compra. 
                 Los valores de los servicios del transporte son ajenos a Pequeños toques. </p>
             
             <h6 class= "preguntas-comercializacion"> Métodos de pago </h6>
             <hr style= "border: 1px solid #bfc86a; width:80%; margin-top: 5px; margin-left: 8vw; margin-right: auto;">
             <p class="parrafos-preguntas me-5"> Para compras a través de la tienda online aceptamos Mercado Pago, 
-                tarjetas de débito/crédito, transferencia/depósito bancario, pagos con QR.
+                tarjetas de débito/crédito, transferencia/depósito bancario, GoCuotas. Cuando tengamos tu pedido armado
+                nosotros te enviaremos por WhatsApp el link correspondiente o los datos de la cuenta para que puedas realizar el pago.
             <br> Para retiro o compras en la tienda física todo lo anteriormente 
-                nombrado y efectivo.
-            <br> En Pequeños toques cada producto cuenta con un precio de lista que
-                 podes abonarlo con tarjeta de crédito en hasta 3 cuotas sin interés. Los pagos al contado tienen <strong>descuentos</strong>
-                 que vas a ver reflejado al momento de elegir tu medio de pago.</p>
+                 nombrado y efectivo.
+            <br> En Pequeños toques cada producto cuenta con un precio de lista y podes abonarlo con tarjeta de crédito 
+            o GoCuotas en hasta 3 cuotas sin interés. Los pagos al contado tienen <strong>descuentos</strong>
+            que vas a ver reflejado al momento de elegir tu medio de pago.</p>
 
             <h4 class="letra-agradecimiento me-5 fs-4">¿Tiene alguna duda? Puedes visitar la sección de
                 <a href="<?= site_url('preguntas-frecuentes'); ?>" class=" resaltado"> Preguntas frecuentes </a>

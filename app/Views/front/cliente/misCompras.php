@@ -16,7 +16,6 @@
                     <li><a class="<?= $seccion == 'cuenta' ? 'activo' : '' ?>" href="<?php echo base_url('cuenta'); ?>">Perfil</a></li>
                     <li><a class="<?= $seccion == 'direcciones' ? 'activo' : '' ?>" href="<?php echo base_url('direcciones'); ?>">Direcciones</a></li>
                     <li><a class="<?= $seccion == 'pedidos' ? 'activo' : '' ?>" href="<?php echo base_url('mis-compras'); ?>">Pedidos</a></li>
-                    <li><a class="<?= $seccion == '' ? 'activo' : '' ?>" href="<?php echo base_url('tarjetas'); ?>">Tarjetas</a></li>
                     <li><a href="<?php echo base_url('logout'); ?>">Cerrar sesión</a></li>
                 </ul>
             </div>
