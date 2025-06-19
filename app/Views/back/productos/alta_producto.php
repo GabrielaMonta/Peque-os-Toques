@@ -124,7 +124,7 @@
                     <div id="collapseColor" class="accordion-collapse collapse" aria-labelledby="headingColor" data-bs-parent="#accordionColor">
                         <div class="accordion-body">
                             <?php
-                            $colores_disponibles = ['amarillo','azul','beige','blanco','bordo','celeste','gris','marron','negro','naranja','rosa','rojo','violeta'];
+                            $colores_disponibles = ['amarillo','azul','beige','blanco','bordo','celeste','gris','marron','negro','naranja','rosa','rojo','verde','violeta'];
 
                             // Asegúrate de que $colores_seleccionados sea siempre un array
                             // old('color') devuelve un array de los valores seleccionados si la validación falla

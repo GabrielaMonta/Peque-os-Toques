@@ -49,33 +49,20 @@
             </div>
           <?php endif; ?>
 
-                <div class="mt-1 mb-1">
+                <div class="mt-1 mb-4">
                     <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
                     <input type="email" name="email"class="form-control input-auth" id="exampleInputEmail1" aria-describedby="emailHelp"value="<?= old('email') ?>">
                   </div>
                   <div class="mb-1">
                     <label for="exampleInputPassword1" class="form-label">Contraseña</label>
                     <input type="password" name="pass" class="form-control input-auth" id="exampleInputPassword1">
-                    <div id="passwordHelp" class="fo-textrm">¿Olvidaste tu contraseña?</div>
+                    <!-- <div id="passwordHelp" class="mt-1 fo-textrm">¿Olvidaste tu contraseña?</div>-->
                   </div>
-                  <div class="d-flex flex-column align-items-center botones-modal">
+                  <div class="mt-4 d-flex flex-column align-items-center botones-modal">
                     <button type="submit" class="btn btn-primary boton-inicio">Iniciar sesion</button>
                     <button type="button" class="btn btn-primary boton-registro" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Registrarse</button>
                   </div>
         </form>
-      </div>
-      <div class="divisor-texto text-center">
-            <span>o sino</span>
-      </div>
-      <div class="modal-footer justify-content-center border-0 mb-3 text-center">
-        <div class="d-flex flex-column flex-md-row gap-2 w-100 justify-content-center">
-          <button type="button" class="btn btn-primary btn-inicio-alternativo">
-            <i class="bi bi-google me-2"></i> Ingresar con Google
-          </button>
-          <button type="button" class="btn btn-primary btn-inicio-alternativo">
-            <i class="bi bi-key me-2"></i> Código de acceso rápido
-          </button>
-        </div>
       </div>
     </div>
   </div>

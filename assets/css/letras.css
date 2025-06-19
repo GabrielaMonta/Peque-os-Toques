@@ -91,6 +91,7 @@
 .parrafos-nosotros{
     font-family: 'Libre Bondi', serif; 
     font-size: clamp(16px, 1rem, 32px);
+    text-align: justify;
 }
 .parrafos-preguntas{
     font-family: 'Libre Bondi', serif; 

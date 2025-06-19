@@ -61,7 +61,7 @@ class ProductoController extends Controller{
 
         $colores_array = $this->request->getVar('color') ?? [];
         $colores_array = array_map('strtolower', array_map('trim', $colores_array));
-        $permitidos = ['amarillo','azul','beige','blanco','bordo','celeste','gris','marron','negro','naranja','rosa','rojo','violeta'];
+        $permitidos = ['amarillo','azul','beige','blanco','bordo','celeste','gris','marron','negro','naranja','rosa','rojo','verde','violeta'];
         $colores_array = array_filter($colores_array, fn($color) => in_array($color, $permitidos));
         $colores_string = implode(',', $colores_array);
 
@@ -107,7 +107,7 @@ class ProductoController extends Controller{
 
         $colores_array = $this->request->getVar('color') ?? [];
         $colores_array = array_map('strtolower', array_map('trim', $colores_array));
-        $permitidos = ['amarillo','azul','beige','blanco','bordo','celeste','gris','marron','negro','naranja','rosa','rojo','violeta'];
+        $permitidos = ['amarillo','azul','beige','blanco','bordo','celeste','gris','marron','negro','naranja','rosa','rojo','verde','violeta'];
         $colores_array = array_filter($colores_array, fn($color) => in_array($color, $permitidos));
         $colores_string = implode(',', $colores_array);
 

@@ -12,12 +12,12 @@
 
                 <div class="fila-contacto">
                     <i class="icono-redes bi bi-facebook ms-5 fs-2" style="color:rgb(0, 0, 0);"></i>
-                    <p class="parrafos-contacto"><a href="https://www.facebook.com/profile.php?id=100062870595052" target="_blank">Pequeños toques</a></p>
+                    <p class="parrafos-contacto"><a href="https://www.facebook.com/profile.php?id=100062870595052" style="color:rgb(0, 0, 0);  text-decoration: none" target="_blank">Pequeños toques</a></p>
                 </div>
 
                 <div class="fila-contacto">
                     <i class="icono-redes bi bi-instagram ms-5 fs-2" style="color:rgb(0, 0, 0);"></i>
-                    <p class="parrafos-contacto"><a href="https://www.instagram.com" target="_blank">Pequeños toques</a></p>
+                    <p class="parrafos-contacto"><a href="https://www.instagram.com" style="color:rgb(0, 0, 0);  text-decoration: none" target="_blank">Pequeños toques</a></p>
                 </div>
         </div>  
 

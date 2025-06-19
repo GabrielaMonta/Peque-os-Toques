@@ -35,6 +35,7 @@ class AdminController extends BaseController
         // Últimas consultas
         $consultaModel = new Consulta_model();
         $ultimasConsultas = $consultaModel
+            ->where('respuesta', 'NO')
             ->orderBy('id_consulta', 'DESC')
             ->limit(5)
             ->get()
@@ -96,10 +97,14 @@ class AdminController extends BaseController
         $categoria = $this->request->getGet('categoria');
         $orden = $this->request->getGet('orden');
         $buscar = $this->request->getGet('buscar');
+        $estado = $this->request->getGet('estado');
 
-        // Aplicar filtro
-        $productosFiltrados = $productoModel->filtrarProductos($categoria, $orden, $buscar);
+        // Traducimos el estado a valor de base de datos
+        $estadoFiltro = ($estado === 'eliminado') ? 'SI' : 'NO';
 
+        // Obtener productos filtrados con estado incluido
+        $productosFiltrados = $productoModel->filtrarProductos($categoria, $orden, $buscar, $estadoFiltro);
+        
         // Paginación (10 por página)
         $data['productos'] = $productosFiltrados->paginate(15, 'productos');
         $data['pager'] = $productoModel->pager;
@@ -107,6 +112,7 @@ class AdminController extends BaseController
         // Categorías para el filtro
         $data['categorias'] = $categoriaModel->getCategorias();
         $data['titulo'] = 'CRUD Productos';
+        $data['estado'] = $estado;
 
         echo view('front/head', $data);
         echo view('front/admin/navbar_admin', $data);
@@ -135,10 +141,17 @@ class AdminController extends BaseController
     public function consultas()
     {
         $model = new Consulta_model();
-        $consultas = $model->orderBy('id_consulta', 'DESC')->findAll(); // Podés paginar más adelante
 
+        $filtro = $this->request->getGet('estado'); // 'SI', 'NO' o null
+
+        if ($filtro === 'SI' || $filtro === 'NO') {
+            $model->where('respuesta', $filtro);
+    }
+        
+        $data['consultas'] = $model->orderBy('id_consulta', 'DESC')->paginate(10);
+        $data['pager'] = $model->pager;
         $data['titulo'] = 'Consultas';
-        $data['consultas'] = $consultas;
+        $data['estado' ] = $filtro;
 
         echo view('front/head', $data);
         echo view('front/admin/navbar_admin', $data);

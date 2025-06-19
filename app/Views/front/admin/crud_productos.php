@@ -1,8 +1,18 @@
 <main>
     <div class="container mt-4">
         <h2 class="titulo-crud">Listado de Productos</h2>
-   
         <div class="row align-items-center mb-2">
+            <!-- Botones de estado: Activos / Eliminados -->
+            <div class="col-12 mb-2">
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="<?= base_url('crud-productos') ?>" class="btn btn-outline-secondary btn-sm <?= $estado === null ? 'active' : '' ?>">
+                        <i class="fas fa-box-open"></i> Todos
+                    </a>
+                    <a href="<?= base_url('crud-productos?estado=eliminado') ?>" class="btn btn-outline-danger btn-sm <?= $estado === 'eliminado' ? 'active' : '' ?>">
+                        <i class="fas fa-trash"></i> Eliminados
+                    </a>
+                </div>
+            </div>
             <form method="get"  action="<?= site_url('crud-productos'); ?>" class="row align-items-center mb-2">
                 <div class="col-12 col-md-6 d-flex flex-wrap gap-2 mb-2 mb-md-0">
                     <select name="categoria" class="form-select form-select-sm w-auto">
@@ -31,7 +41,6 @@
                         <input type="text" name="buscar" id="buscarInput" class="form-control form-control-sm w-100" placeholder="Buscar..." value="<?= esc($_GET['buscar'] ?? '') ?>">
                     </div>
                     <a href="<?= site_url('crear'); ?>" class="btn btn-crud guardar py-1 px-2">Agregar</a>
-                    <a href="<?= site_url('crear'); ?>" class="btn btn-crud cancelar py-1 px-2">Eliminados</a>
                 </div>
     
             </form>

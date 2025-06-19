@@ -75,3 +75,5 @@ $routes->post('carrito-eliminar', 'CarritoController::eliminar');
 
 $routes->get('consultas/atender/(:num)', 'ConsultaController::atender_consultas/$1');
 $routes->get('consultas/eliminar/(:num)', 'ConsultaController::eliminar_consulta/$1');
+$routes->post('consultas/responder/(:num)', 'ConsultaController::responder/$1');
+

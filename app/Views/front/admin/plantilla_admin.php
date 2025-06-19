@@ -45,7 +45,8 @@
             <div class="col-md-4">
             <div class="card shadow mi-card-consultas rounded-4">
                 <div class="card-header">
-                <i class="bi bi-envelope-open-fill me-2"></i>Últimas consultas
+                <i class="bi bi-envelope-open-fill me-2"></i>Últimas consultas sin respuesta
+                <span class="badge bg-danger ms-2"><?= $consultasPendientes ?></span>
                 </div>
                 <ul class="list-group list-group-flush">
                 <?php foreach ($ultimasConsultas as $consulta): ?>

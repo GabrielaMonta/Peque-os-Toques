@@ -9,14 +9,45 @@ class ConsultaController extends BaseController{
     public function atender_consultas($id = null)
     {
         $model = new Consulta_model();
-
-        // Verificar si existe
         $consulta = $model->find($id);
-        if ($consulta) {
-            $model->update($id, ['respuesta' => 'SI']);
+
+        $data = [
+            'titulo' => 'Atender Consulta',
+            'consulta' => $consulta
+        ];
+
+        echo view('front/head', $data);
+        echo view('front/admin/navbar_admin', $data);
+        echo view('front/admin/atender_consultas', $data);
+        echo view('front/admin/footer_admin', $data);
+    }
+
+    
+    public function responder($id)
+    {
+         $model = new Consulta_model();
+        $consulta = $model->find($id);
+
+        if (!$consulta) {
+            return redirect()->to(base_url('consultas'))->with('error', 'Consulta no encontrada.');
         }
 
-        return redirect()->to(base_url('consultas'));
+        $mensajeRespuesta = $this->request->getPost('respuesta');
+
+        // Enviar el correo
+        $email = \Config\Services::email();
+        $email->setFrom('pequenostoques@gmail.com', 'Pequeños Toques');
+        $email->setTo($consulta['email']);
+        $email->setSubject('Respuesta a tu consulta');
+        $email->setMessage("Hola " . $consulta['nombre'] . ":\n\n" . $mensajeRespuesta . "\n\n¡Gracias por contactarnos!");
+
+        if ($email->send()) {
+            // Si se envió el mail, marcamos como respondida
+            $model->update($id, ['respuesta' => 'SI']);
+            return redirect()->to(base_url('consultas'))->with('success', 'Respuesta enviada correctamente al correo del usuario.');
+        } else {
+            return redirect()->back()->with('error', 'No se pudo enviar el correo. Verificá la configuración.');
+        }
     }
 
     public function eliminar_consulta($id = null)
@@ -41,7 +72,7 @@ class ConsultaController extends BaseController{
             'apellido'  => $this->request->getPost('apellido'),
             'email'     => $this->request->getPost('email'),
             'mensaje'   => $this->request->getPost('mensaje'),
-            'telefono'  => $this->request->getPost('telefono'), // si lo agregás
+            'telefono'  => $this->request->getPost('telefono'), 
             'respuesta' => 'NO' // Valor por defecto
         ];
 

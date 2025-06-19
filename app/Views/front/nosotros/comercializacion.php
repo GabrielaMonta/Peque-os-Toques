@@ -36,7 +36,7 @@
                  podes abonarlo con tarjeta de crédito en hasta 3 cuotas sin interés. Los pagos al contado tienen <strong>descuentos</strong>
                  que vas a ver reflejado al momento de elegir tu medio de pago.</p>
 
-            <h4 class="letra-agradecimiento me-5">¿Tiene alguna duda? Puedes visitar la sección de
+            <h4 class="letra-agradecimiento me-5 fs-4">¿Tiene alguna duda? Puedes visitar la sección de
                 <a href="<?= site_url('preguntas-frecuentes'); ?>" class=" resaltado"> Preguntas frecuentes </a>
                    
             </h4> 

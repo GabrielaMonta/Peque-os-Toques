@@ -73,7 +73,7 @@
                     <label class="titulo-form ps-2 pb-1">Colores disponibles</label>
 
                     <?php
-                    $colores_disponibles = ['amarillo','azul','beige','blanco','bordo','celeste','gris','marron','negro','naranja','rosa','rojo','violeta'];
+                    $colores_disponibles = ['amarillo','azul','beige','blanco','bordo','celeste','gris','marron','negro','naranja','rosa','rojo','verde','violeta'];
                     // Los colores que tiene el producto se guardan en un string separado por comas
                     $colores_seleccionados = explode(',', $producto['color']);
                     ?>
@@ -94,6 +94,7 @@
                         <option value="hombre" <?= ($producto['genero'] == 'hombre') ? 'selected' : ''; ?>>Hombre</option>
                         <option value="mujer" <?= ($producto['genero'] == 'mujer') ? 'selected' : ''; ?>>Mujer</option>
                         <option value="niños" <?= ($producto['genero'] == 'niños') ? 'selected' : ''; ?>>Niños</option>
+                        <option value="unisex" <?= ($producto['genero'] == 'unisex') ? 'selected' : ''; ?>>Unisex</option>
                     </select>
                 </div>
 

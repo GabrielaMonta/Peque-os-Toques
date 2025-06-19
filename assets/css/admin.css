@@ -31,23 +31,23 @@
 }
 
 /* Centrar los botones en la celda */
-.tabla-admin .acciones-columna {
-    text-align: center;
-    vertical-align: middle;
+.acciones-columna {
+    text-align: center !important;
+    vertical-align: middle !important;
 }
 
-.tabla-admin .btn-crud-editar {
+.btn-crud-editar {
     color: #D4AF37; 
 }
-.tabla-admin .btn-crud-editar:hover {
+.btn-crud-editar:hover {
     background-color: #D4AF37;
     color: #fff;
 }
 
-.tabla-admin .btn-crud-eliminar {
+.btn-crud-eliminar {
     color:  #dc3545; 
 }
-.tabla-admin .btn-crud-eliminar:hover {
+.btn-crud-eliminar:hover {
     background-color: #c82333;
     color: #fff;
 }

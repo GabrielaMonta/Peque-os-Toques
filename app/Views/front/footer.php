@@ -24,8 +24,8 @@
             <!-- Redes sociales centradas -->
             <div class="text-center pt-1">
                 <a href="#" class="text-dark me-3"><i class="bi bi-whatsapp fs-4"style="color: #9da53a;"></i></a>
-                <a href="#" class="text-dark me-3"><i class="bi bi-facebook fs-4"style="color: #9da53a;"></i></a>
-                <a href="#" class="text-dark "><i class="bi bi-instagram fs-4"style="color: #9da53a;"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100062870595052" class="text-dark me-3"><i class="bi bi-facebook fs-4"style="color: #9da53a;"></i></a>
+                <a href="https://www.instagram.com" class="text-dark "><i class="bi bi-instagram fs-4"style="color: #9da53a;"></i></a>
             </div>
             <h4 class="footer-consulta ms-0 ">¿Tienes alguna otra duda o sugerencia? 
                 <a href="<?= site_url('contacto'); ?>" class="resaltado"> Contactanos </a>
@@ -46,7 +46,7 @@
     </footer>
         <!-- Modal de Términos y Condiciones -->
         <div class="modal fade" id="terminosModal" tabindex="-1" aria-labelledby="terminosModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable modal-lg"> <!-- Responsivo y con scroll -->
+        <div class="modal-dialog modal-dialog-scrollable modal-lg"> 
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="terminosModalLabel">Términos y Condiciones</h5>
@@ -144,9 +144,6 @@
                 // Lógica similar para filtrar por género (requeriría JS/Ajax o recarga de página)
                 // window.location.href = `<?= base_url('catalogo') ?>?genero=${selectedValue}`;
             });
-
-            // NOTA: No es necesario inicializar el acordeón manualmente si usas Bootstrap 5.
-            // Bootstrap 5 inicializa sus componentes automáticamente a través de los atributos data-bs-*.
         });
     </script>
     <script>

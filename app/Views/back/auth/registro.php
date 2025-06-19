@@ -76,9 +76,6 @@
             </div>
             <div class="d-flex flex-column align-items-center botones-modal mt-3">
               <button type="submit" id="enviarRegistro"  class="btn btn-primary boton-inicio ">Registrarse</button>
-              <button type="button" class="btn btn-primary boton-registro">
-                  <i class="bi bi-google mb-0"></i> Continuar con google
-              </button>
             </div>
           </div>
         </form>
