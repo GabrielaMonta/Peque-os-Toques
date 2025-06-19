@@ -40,7 +40,7 @@
                                 <div>
                                     <p class="mb-1 letra-card-compras">FECHA DE COMPRA</p>
                                     <p class="fw-bold"><?= ucfirst($fecha) ?></p>
-                                    <span class="badge bg-warning text-dark"><?= $compra['estado_venta'] ?></span>
+                                    <span class="badge estado-venta"><?= $compra['estado_venta'] ?></span>
                                     <p class="mt-2">#<?= $compra['venta_id'] ?></p>
                                 </div>
                                 <div class="text-end">

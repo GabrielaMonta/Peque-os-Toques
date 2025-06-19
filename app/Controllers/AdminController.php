@@ -125,15 +125,11 @@ class AdminController extends BaseController
 
         $detalle= $detalleModel->getDetalles($venta_id);
         $cabecera = $cabeceraModel->getCabecera($venta_id);
-        
-
 
         $data = [
             'titulo' => 'Detalle venta',
-            
             'detalle' => $detalle,
             'cabecera' => $cabecera,
-            
         ];
 
         echo view('front/head', $data);
@@ -142,6 +138,19 @@ class AdminController extends BaseController
         echo view('front/admin/footer_admin', $data);
     }
 
+    public function actualizarEstadoVenta($venta_id){
+        
+        $cabeceraModel = new Ventas_cabecera_model();
+
+        $venta_id = $this->request->getVar('venta_id');
+        $nuevo_estado = $this->request->getVar('nuevo_estado');
+        
+        // Actualizar stock en la base de datos con el valor final simulado
+        $cabeceraModel->update($venta_id, ['estado_venta' => $nuevo_estado]);
+
+       
+        return redirect()->to(base_url('admin/detalle-ventas' . $venta_id))->with('success','Estado actualizado correctamente');
+    }
     
     
 }

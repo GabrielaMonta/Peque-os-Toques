@@ -38,14 +38,14 @@
             </div>
 
             <div class="col-md-2 col-sm-3">
-                <label for="medio_entrega" class="form-label">Estado:</label>
+                <label for="medio_entrega" class="form-label">Entrega:</label>
                 <select class="form-select" id="medio_entrega" name="medio_entrega">
-                    <option value="">Todos los estados</option>
+                    <option value="">Medio</option>
                     <?php
                     
                     $medios = ['Correo', 'Retiro'];
                     foreach ($medios as $medio) {
-                        $selected = (isset($medio_entrega_seleccion) && $medio_entrega_seleccion == $estado) ? 'selected' : '';
+                        $selected = (isset($medio_entrega_seleccion) && $medio_entrega_seleccion == $medio) ? 'selected' : '';
                         echo "<option value=\"{$medio}\" {$selected}>{$medio}</option>";
                     }
                     ?>
@@ -88,7 +88,7 @@
                             <td><?= esc($venta['metodo_pago']) ?></td>
                             <td><?= esc($venta['medio_entrega']) ?></td>
                             <td>
-                                <a href="<?= base_url('admin/detalle-ventas' . $venta['venta_id']) ?>" class="btn btn-sm btn-info" title="Ver Detalle"><i class="fas fa-eye"></i></a>
+                                <a href="<?= base_url('admin/detalle-ventas' . $venta['venta_id']) ?>" class="btn btn-sm btn-vista" title="Ver Detalle"><i class="fas fa-eye"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

@@ -176,7 +176,11 @@
     margin-top: 31px;
     margin-left: 2rem;
     width: 100%;
+    
+    max-width: 100%;
+    overflow-x: auto;
 }
+
 
 .card-body-producto{
     background-color: #ffffff;
@@ -377,7 +381,7 @@
     background-color: #ffffff;
     border-radius: 15px;
     border: 1.5px solid #9da53a;
-    width: 60%;
+    max-width: 600px;
     height: auto;
     text-align: start;
     font-family: 'Libre Bondi', serif; 
@@ -438,6 +442,7 @@
     width: 15rem;
     font-family: 'Nunito Sans'; 
     font-size: clamp(12px, 1rem, 32px);
+    color: #ffffff;
 }
 .container-compra-usuario{
     background-color: #ffffff;
@@ -461,3 +466,56 @@
     text-decoration: none; 
     font-family: 'Nunito Sans'; 
 }
+
+.estado-venta{
+    background-color:#9da53a;
+    font-family: 'Nunito Sans'; 
+    color:#ffffff;
+}
+
+.letra-pedido{
+    font-family: 'Nunito Sans'; 
+    color:#9da53a;
+}
+
+.container-venta-usuario{
+    background-color: #ffffff;
+    border: 2px solid #eae0d5;
+    border-radius: 15px;;
+    width: 100%;
+    height: max-content;
+    padding: 1rem;
+}
+.container-venta-compra{
+    background-color: #ffffff;
+    border: 2px solid #eae0d5;
+    border-radius: 15px;;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+}
+
+.container-factura{
+    border: 1px solid #000000
+}
+
+.btn-vista{
+    background-color: #9da53a;
+}
+
+.btn-vista:hover{
+    background-color: #eae0d5;
+    border-color: #000000;
+}
+
+.table-responsive{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Para que los bordes se unan */
+}
+
+

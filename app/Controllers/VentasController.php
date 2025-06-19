@@ -11,101 +11,136 @@ Use App\Models\Direcciones_ventas_model;
 class VentasController extends Controller{
 
     public function registrar_venta() {
-    $session = session();
+        $session = session();
 
-    require(APPPATH . 'Controllers/CarritoController.php');
-    $cartController = new CarritoController();
-    $carrito_contents = $cartController->devolver_carrito();
-    $productoModel = new Producto_model();
-    $ventasModel = new Ventas_cabecera_model();
-    $detalleModel = new Ventas_detalle_model();
-    $direccionModel = new Direcciones_model(); 
-    $direccionVentaModel = new Direcciones_ventas_model(); 
+        require(APPPATH . 'Controllers/CarritoController.php');
+        $cartController = new CarritoController();
+        $carrito_contents = $cartController->devolver_carrito();
+        $productoModel = new Producto_model();
+        $ventasModel = new Ventas_cabecera_model();
+        $detalleModel = new Ventas_detalle_model();
+        $direccionModel = new Direcciones_model(); 
+        $direccionVentaModel = new Direcciones_ventas_model(); 
 
-    $cart = \Config\Services::cart();
+        $cart = \Config\Services::cart();
 
-    $productos_validos = [];
-    $productos_sin_stock = [];
-    $subtotal = 0;
+        $productos_validos = [];
+        $productos_sin_stock = [];
+        $productos_disminuir_stock = [];
+        $subtotal = 0;
 
-    // Paso 1: construir mapa de stock actual
-    $stockTemporal = [];
+        $stockTemporal = [];
 
-    foreach ($carrito_contents as $item) {
-        $idProducto = $item['id'];
-        if (!isset($stockTemporal[$idProducto])) {
-            $producto = $productoModel->getProducto($idProducto);
-            $stockTemporal[$idProducto] = $producto['stock'];
+        foreach ($carrito_contents as $item) {
+            $idProducto = $item['id'];
+            if (!isset($stockTemporal[$idProducto])) {
+                $producto = $productoModel->getProducto($idProducto);
+                $stockTemporal[$idProducto] = $producto['stock'];
+            }
+
+            // Validación de stock simulando reducción en memoria
+            if ($stockTemporal[$idProducto] >= $item['qty']) {
+                $stockTemporal[$idProducto] -= $item['qty'];
+                $productos_validos[] = $item;
+                $subtotal += $item['subtotal'];
+
+            } else if($stockTemporal[$idProducto] > 0 && $item['qty'] > $stockTemporal[$idProducto] ){
+                $nuevaCantidad = $stockTemporal[$idProducto];
+                $productos_disminuir_stock[] = $item['name'];
+
+                $data = array(
+                    'rowid'   => $item['rowid'], 
+                    'qty'     => $nuevaCantidad,
+                );
+                $cart->update($data);
+                
+                // Actualiza item localmente
+                $item['qty'] = $nuevaCantidad;
+                $item['subtotal'] = $item['price'] * $nuevaCantidad;
+
+                // Actualiza stock temporal
+                $stockTemporal[$idProducto] = 0;
+            }else{
+                $productos_sin_stock[] = $item['name'];
+                $cartController->eliminar_item($item['rowid']);
+            }
         }
 
-        // Validación de stock simulando reducción en memoria
-        if ($stockTemporal[$idProducto] >= $item['qty']) {
-            $stockTemporal[$idProducto] -= $item['qty'];
-            $productos_validos[] = $item;
-            $subtotal += $item['subtotal'];
-        } else {
-            $productos_sin_stock[] = $item['name'];
-            $cartController->eliminar_item($item['rowid']);
+        $mensajeTemporal = [];
+
+
+        if (!empty($productos_sin_stock)) {
+            $mensajeTemporal[] = 'Los siguientes productos no tienen stock y fueron eliminados del carrito: ' . implode(', ', $productos_sin_stock) . '.';
         }
-    }
 
-    // Si hay productos sin stock, notificar y cancelar la venta
-    if (!empty($productos_sin_stock)) {
-        $mensaje = 'Los siguientes productos no tienen stock suficiente y fueron eliminados del carrito: ' . implode(', ', $productos_sin_stock);
-        $session->setFlashdata('mensaje', $mensaje);
-        return redirect()->to(base_url('iniciar-compra'));
-    }
+        if (!empty($productos_disminuir_stock)) {
+            $mensajeTemporal[] = 'La cantidad de los siguientes productos no es suficiente y fueron modificadas: ' . implode(', ', $productos_disminuir_stock) . '.';
+        }
 
-    // Si no hay productos válidos
-    if (empty($productos_validos)) {
-        $session->setFlashdata('mensaje', 'No hay productos válidos para registrar la venta.');
-        return redirect()->to(base_url('inicio'));
-    }
+        if (!empty($mensajeTemporal)) {
+            $mensajeFinal = 'Su compra no pudo ser procesada. Por favor, revise los siguientes puntos: ' . implode(' ', $mensajeTemporal);
+            $session->setFlashdata('mensaje', $mensajeFinal);
+            return redirect()->to(base_url('verCarrito'));
+        }
 
-    // Recuperar método de pago y entrega
-    $metodo_pago = $this->request->getPost('metodo_pago');
-    $medio_entrega = $this->request->getPost('medio_entrega');
-    if (!$medio_entrega) {
-        $session->setFlashdata('mensaje', 'Debe seleccionar un método de entrega.');
-        return redirect()->back()->withInput();
-    }
+        // Recuperar método de pago y entrega
+        $metodo_pago = $this->request->getPost('metodo_pago');
+        $medio_entrega = $this->request->getPost('medio_entrega');
+        if (!$medio_entrega) {
+            $session->setFlashdata('mensaje', 'Debe seleccionar un método de entrega.');
+            return redirect()->back()->withInput();
+        }
 
-    $aplica_descuento = in_array($metodo_pago, ['Transferencia', 'Debito', 'Efectivo']);
-    $descuento = $aplica_descuento ? $subtotal * 0.15 : 0;
-    $total_venta = $subtotal - $descuento;
+        $aplica_descuento = in_array($metodo_pago, ['Transferencia', 'Debito', 'Efectivo']);
+        $descuento = $aplica_descuento ? $subtotal * 0.15 : 0;
+        $total_venta = $subtotal - $descuento;
 
-    // Registrar cabecera de venta
-    $nueva_venta = [
-        'usuario_id'    => $session->get('id'),
-        'fecha'         => date('Y-m-d H:i:s'),
-        'metodo_pago'   => $metodo_pago,
-        'subtotal'      => $subtotal,
-        'descuento'     => $descuento,
-        'total_venta'   => $total_venta,
-        'medio_entrega' => $medio_entrega,
-    ];
-    $venta_id = $ventasModel->insert($nueva_venta);
-
-    // Registrar detalle y actualizar stock real
-    foreach ($productos_validos as $item) {
-        $detalle = [
-            'venta_id'    => $venta_id,
-            'producto_id' => $item['id'],
-            'cantidad'    => $item['qty'],
-            'precio'      => $item['subtotal'],
-            'color'       => $item['options']['color'],
-            'nota'        => $item['options']['nota'],
-            
+        // Registrar cabecera de venta
+        $nueva_venta = [
+            'usuario_id'    => $session->get('id'),
+            'fecha'         => date('Y-m-d H:i:s'),
+            'metodo_pago'   => $metodo_pago,
+            'subtotal'      => $subtotal,
+            'descuento'     => $descuento,
+            'total_venta'   => $total_venta,
+            'medio_entrega' => $medio_entrega,
         ];
-        $detalleModel->insert($detalle);
+        $venta_id = $ventasModel->insert($nueva_venta);
 
-        // Actualizar stock en la base de datos con el valor final simulado
-        $productoModel->update($item['id'], ['stock' => $stockTemporal[$item['id']]]);
-    }
+        // Registrar detalle y actualizar stock real
+        foreach ($productos_validos as $item) {
+            $detalle = [
+                'venta_id'    => $venta_id,
+                'producto_id' => $item['id'],
+                'cantidad'    => $item['qty'],
+                'precio'      => $item['subtotal'],
+                'color'       => $item['options']['color'],
+                'nota'        => $item['options']['nota'],
+                
+            ];
+            $detalleModel->insert($detalle);
 
-    // Guardar dirección si corresponde
-    if ($this->request->getPost('guardar-direccion')) {
-        $direccionData = [
+            // Actualizar stock en la base de datos con el valor final simulado
+            $productoModel->update($item['id'], ['stock' => $stockTemporal[$item['id']]]);
+        }
+
+        // Guardar dirección si corresponde
+        if ($this->request->getPost('guardar-direccion')) {
+            $direccionData = [
+                'usuario_id'    => $session->get('id'),
+                'calle'         => $this->request->getPost('calle'),
+                'altura'        => $this->request->getPost('altura'),
+                'piso/dpto'     => $this->request->getPost('piso/dpto'),
+                'localidad'     => $this->request->getPost('localidad'),
+                'provincia'     => $this->request->getPost('provincia'),
+                'cp'            => $this->request->getPost('cp'),
+                'observaciones' => $this->request->getPost('observaciones'),
+            ];
+            $direccionModel->insert($direccionData);
+        }
+
+        $direccionVentaData = [
+            'venta_id'      => $venta_id,
             'usuario_id'    => $session->get('id'),
             'calle'         => $this->request->getPost('calle'),
             'altura'        => $this->request->getPost('altura'),
@@ -115,39 +150,22 @@ class VentasController extends Controller{
             'cp'            => $this->request->getPost('cp'),
             'observaciones' => $this->request->getPost('observaciones'),
         ];
-        $direccionModel->insert($direccionData);
+        $direccionVentaModel->insert($direccionVentaData);
+
+        // Vaciar carrito, confirmar venta y volver a compras
+        $cart->destroy();
+        $session->setFlashdata('mensaje', 'Venta registrada exitosamente');
+        return redirect()->to(base_url('/mis-compras'));
     }
-
-    $direccionVentaData = [
-        'venta_id'      => $venta_id,
-        'usuario_id'    => $session->get('id'),
-        'calle'         => $this->request->getPost('calle'),
-        'altura'        => $this->request->getPost('altura'),
-        'piso/dpto'     => $this->request->getPost('piso/dpto'),
-        'localidad'     => $this->request->getPost('localidad'),
-        'provincia'     => $this->request->getPost('provincia'),
-        'cp'            => $this->request->getPost('cp'),
-        'observaciones' => $this->request->getPost('observaciones'),
-    ];
-    $direccionVentaModel->insert($direccionVentaData);
-
-    // Vaciar carrito y confirmar venta
-    $cart->destroy();
-    $session->setFlashdata('mensaje', 'Venta registrada exitosamente');
-    return redirect()->to(base_url('/mis-compras'));
-}
 
     public function mis_compras()
     {
         $session = session(); 
         $id = $session->get('id');
         $cart = \Config\Services::cart();
-        
         $cabeceraModel = new Ventas_cabecera_model();
 
-        $cabecera = $cabeceraModel->getVentas($id);
-
-          
+        $cabecera = $cabeceraModel->getVentas($id); 
 
         $data = [
             'titulo' => 'Compras',
@@ -161,7 +179,6 @@ class VentasController extends Controller{
         echo view('front/footer', $data);
     }
 
-    //funcion del usuario cliente para ver sus compras
     public function ver_detalle($venta_id){
         
         $detalleModel = new Ventas_detalle_model();
@@ -169,15 +186,11 @@ class VentasController extends Controller{
 
         $detalle= $detalleModel->getDetalles($venta_id);
         $cabecera = $cabeceraModel->getCabecera($venta_id);
-        
-
 
         $data = [
             'titulo' => 'Pequeños toques',
-            
             'detalle' => $detalle,
             'cabecera' => $cabecera,
-            
         ];
 
         echo view('front/head', $data);
@@ -185,4 +198,6 @@ class VentasController extends Controller{
         echo view('front/cliente/verDetalleCompra', $data);
         echo view('front/footer', $data);
     }
+
+    
 }

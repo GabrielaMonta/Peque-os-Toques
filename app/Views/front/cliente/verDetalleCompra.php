@@ -27,12 +27,14 @@
                         <i class="fas fa-arrow-left "></i> VOLVER
                     </a>
                 </div><br>
-                <h4>Pedido # <?= $cabecera['venta_id'] ?> </h4>    
+                <h4 class = "letra-pedido"><strong>Pedido # <?= $cabecera['venta_id'] ?> </strong></h4>    
                 <?php setlocale(LC_TIME, 'es_ES.utf8', 'es_ES.UTF-8', 'spanish'); 
                 $fecha = strftime('%d de %B de %Y', strtotime($cabecera['fecha']))?> 
-
                 <p class="fw-bold"><?= ucfirst($fecha) ?></p>
-                <div class ="container-compra-usuario">
+                <strong style ="color: #9da53a">Entrega: </strong> <?= $cabecera['medio_entrega'] ?>
+                
+                <!-- Datos usuario-->
+                <div class ="container-compra-usuario mt-2">
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <strong>Cliente: </strong> <?= $cabecera['nombre'] ?> <?= $cabecera['apellido'] ?> 
@@ -45,6 +47,7 @@
                     </div>
                 </div>
                 <br>
+                <!-- Datos del pago-->
                 <div class ="container-compra-usuario">
                     <h6><strong>Información del pago </strong> </h6>
                     <br>
@@ -64,6 +67,7 @@
                     </div>
                 </div>
                 <br>
+                <!-- Datos para el envio -->
                 <div class ="container-compra-usuario">
                     <h6><strong>Dirección de envío</strong> </h6>
                     <br>
@@ -84,6 +88,7 @@
                     </div>
                 </div>
                 <br>
+                <!-- Productos-->
                 <div class ="container-detalle-compra">
                     <h6><strong> PRODUCTOS</strong> </h6>
                     

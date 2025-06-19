@@ -1,4 +1,10 @@
 <main>
+    <?php if (session()->getFlashdata('mensaje')): ?>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <?= session()->getFlashdata('mensaje') ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+        </div>
+    <?php endif; ?>
     <div class="container my-4">
         <div class="text-center">
             <?php if (empty($cart->contents())): ?>
@@ -16,6 +22,7 @@
             <!-- Detalle productos-->
             <div class="col-12 col-md-8 ">
                 <h4 class="titulo-micompra">Mi carrito</h4>
+                    <div class = "table-responsive">
                         <table class="table">
                             <thead>
                                 <tr style= "border-bottom: 1px solid #bfc86a; margin: 0">
@@ -51,14 +58,15 @@
                                         </td>                                
                                     </tr>
                                 <?php endforeach; ?>       
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                     
             </div>
         
 
             <!-- Columna del resumen de compra -->
-            <div class="col-12 col-md-4 ">
+            <div class="col-12 col-md-4 ms-0 ">
                 <div class="card card-resumen p-3 ms-0">
                     <h5 class="card-title titulo-resumen">Resumen</h5>
                     

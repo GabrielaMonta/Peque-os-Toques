@@ -76,6 +76,6 @@ $routes->get('/mis-compras', 'VentasController::mis_compras', ['filter' => 'auth
 $routes->get('/ver-detalle-compra/(:num)', 'VentasController::ver_detalle/$1', ['filter' => 'auth:2']);
 
 $routes->get('admin/detalle-ventas(:num)', 'AdminController::editarVentas/$1', ['filter' => 'auth:1']);
-$routes->post('actualizar-estado-venta', 'AdminController::actualizarEstadoVenta', ['filter' => 'auth:1']);
+$routes->post('actualizar-estado-venta(:num)', 'AdminController::actualizarEstadoVenta/$1', ['filter' => 'auth:1']);
 
 
