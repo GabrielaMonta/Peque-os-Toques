@@ -26,12 +26,12 @@
                                 <br><input class="input-facturacion" name="dni" type="text" required value="<?= esc($usuario['dni']) ?>">
                             </div><br> 
                             <div>
-                                <label for="calle">Calle <span class="obligatorio">*</span></label>
-                                <br><input class="input-facturacion" name="calle" type="text" required value="<?= esc($direccion['calle']) ?>">
+                                <label for="calle">Calle <span class="obligatorio" >*</span></label>
+                                <br><input class="input-facturacion" name="calle" type="text" required value="<?= esc($direccion['calle'] ?? '') ?>">
                             </div><br>
                             <div> 
                                 <label for="provincia">Provincia <span class="obligatorio">*</span></label>
-                                <br><input class="input-facturacion" name="provincia" type="text" required value="<?= esc($direccion['provincia']) ?>">
+                                <br><input class="input-facturacion" name="provincia" type="text" required value="<?= esc($direccion['provincia'] ?? '') ?>">
                             </div><br>
                             <div>
                                 <label for="email">Correo Electrónico <span class="obligatorio">*</span></label>
@@ -39,7 +39,7 @@
                             </div><br>
                             <div>
                                 <label for="piso/dpto">Piso/Departamento</label>
-                                <br><input class="input-facturacion" name="piso/dpto" type="text" value="<?= esc($direccion['piso/dpto']) ?>" >
+                                <br><input class="input-facturacion" name="piso/dpto" type="text" value="<?= esc($direccion['piso/dpto'] ?? '') ?>" >
                             </div><br>  
                         </div>
                         <div class="col-12 col-md-6">
@@ -49,23 +49,23 @@
                             </div><br>
                             <div>
                                 <label for="localidad">Localidad <span class="obligatorio">*</span></label>
-                                <br><input class="input-facturacion" name="localidad" type="text" required value="<?= esc($direccion['localidad']) ?>">
+                                <br><input class="input-facturacion" name="localidad" type="text" required value="<?= esc($direccion['localidad'] ?? '') ?>">
                             </div><br>
                             <div> 
                                 <label for="altura">Altura <span class="obligatorio">*</span></label>
-                                <br><input class="input-facturacion" name="altura" type="text" required value="<?= esc($direccion['altura']) ?>">
+                                <br><input class="input-facturacion" name="altura" type="text" required value="<?= esc($direccion['altura'] ?? '') ?>">
                             </div><br>
                             <div> 
                                 <label for="cp">Código Postal <span class="obligatorio">*</span></label>
-                                <br><input class="input-facturacion" name="cp" type="text" required value="<?= esc($direccion['cp']) ?>">
+                                <br><input class="input-facturacion" name="cp" type="text" required value="<?= esc($direccion['cp'] ?? '') ?>">
                             </div><br>
                             <div> 
                                 <label for="teléfono">Teléfono <span class="obligatorio">*</span></label>
-                                <br><input class="input-facturacion" id="teléfono" type="text" required value="<?= esc($usuario['telefono']) ?>">
+                                <br><input class="input-facturacion" id="teléfono" type="text" required value="<?= esc($usuario['telefono'] ?? '') ?>">
                             </div><br>
                             <div>
                                 <label for="observaciones">Información adicional</label>
-                                <br><input class="input-facturacion" name="observaciones" type="text" value="<?= esc($direccion['observaciones']) ?>" >
+                                <br><input class="input-facturacion" name="observaciones" type="text" value="<?= esc($direccion['observaciones'] ?? '') ?>" >
                             </div><br>                            
                         </div>
                         <div class = "row">

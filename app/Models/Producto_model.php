@@ -45,7 +45,7 @@ class Producto_model extends Model
     
         return $builder;
     }
-    
+
     public function getProducto($id)
     {
     return $this->where('id', $id)->first();

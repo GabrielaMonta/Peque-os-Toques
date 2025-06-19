@@ -5,7 +5,7 @@
             </div>
 
             <div class="col-12 col-md-6">
-                <a href="#" onclick="history.back()" class="boton-volver">
+                <a href="<?= base_url('ventas') ?>"  class="boton-volver">
                     <i class="fas fa-arrow-left "></i> VOLVER
                 </a>
                 <br><br>

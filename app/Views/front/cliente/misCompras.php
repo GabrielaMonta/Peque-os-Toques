@@ -26,7 +26,7 @@
                     <div class="text-center mt-5">
                         <h4>No posee compras registradas.</h4>
                         <p> Para realizar una compra visite nuestro catálogo </p>
-                        <a class="btn boton-finalizarcompra" href="<?= base_url('/catalogo-todo') ?>">
+                        <a class="btn boton-finalizarcompra" href="<?= base_url('catalogo'); ?>">
                         <i class="mt-2"></i>Volver al catalogo
                     </a></div>      
                 <?php } ?>

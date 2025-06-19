@@ -11,7 +11,7 @@
                 <h4 class="titulo-micompra">Mi carrito</h4>
                 <h4>El carrito está vacío.</h4>
                 <p> Para agregar productos hace clic en: </p>
-                <a class="btn boton-finalizarcompra" href="<?= base_url('/catalogo-todo') ?>">
+                <a class="btn boton-finalizarcompra" href="<?= base_url('catalogo'); ?>">
                 <i class="mt-2"></i>Volver al catalogo
                 </a>
             <?php endif; ?>
