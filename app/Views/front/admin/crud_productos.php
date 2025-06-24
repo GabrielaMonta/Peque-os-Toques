@@ -65,7 +65,9 @@
                         <th>Stock</th>
                         <th>Stock Mínimo</th>
                         <th>Colores</th>
-                        <th>Acciones</th>
+                        <?php if ($estado !== 'eliminado'): ?>
+                            <th>Acciones</th>
+                        <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -82,15 +84,16 @@
                                 <td><?= esc($prod['stock']); ?></td>
                                 <td><?= esc($prod['stock_min']); ?></td>
                                 <td><?= esc($prod['color']); ?></td>
-                                
-                                <td class="acciones-columna">
-                                    <a href="<?= base_url('editarProducto/' . $prod['id']); ?>"  class="btn btn-sm btn-crud-editar" title="Editar">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-                                    <a href="<?= base_url('eliminarProducto/' . $prod['id']); ?>" class="btn btn-sm btn-crud-eliminar" title="Eliminar" onclick="return confirm('¿Estás seguro de eliminar este producto?');">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </a>
-                                </td> 
+                                <?php if ($estado !== 'eliminado'): ?>
+                                    <td class="acciones-columna">
+                                        <a href="<?= base_url('editarProducto/' . $prod['id']); ?>"  class="btn btn-sm btn-crud-editar" title="Editar">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="<?= base_url('eliminarProducto/' . $prod['id']); ?>" class="btn btn-sm btn-crud-eliminar" title="Eliminar" onclick="return confirm('¿Estás seguro de eliminar este producto?');">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </td> 
+                                <?php endif; ?>
                             </tr>
                         <?php endforeach; ?>
                     <?php else: ?>

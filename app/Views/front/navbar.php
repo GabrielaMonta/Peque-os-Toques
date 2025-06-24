@@ -21,7 +21,7 @@
                 <!-- Íconos lupa para buscador -->
                 <ul class="navbar-nav flex-row">
                     <li class="nav-item  mx-2 ms-3">
-                        <form class=" form-busqueda" role="search" action="<?= site_url('catalogo-todo'); ?>" method="get">
+                        <form class=" form-busqueda" role="search" action="<?= site_url('catalogo'); ?>" method="get">
                             <input type="checkbox" id="toggleBusqueda" class="toggle-busqueda">
                                     
                             <label for ="toggleBusqueda" class="btn lupa-busqueda p-0 ">
