@@ -44,11 +44,7 @@ class CatalogoController extends BaseController
 
         // Filtrar por género
         if (!empty($genero_filtros)) {
-            $query->groupStart();
-            foreach ($genero_filtros as $g) {
-                $query->orLike('genero', $g);
-            }
-            $query->groupEnd();
+            $query->whereIn('genero', $genero_filtros);
         }
 
         // Filtrar por color 
