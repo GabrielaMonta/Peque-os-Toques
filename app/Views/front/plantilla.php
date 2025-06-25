@@ -1,6 +1,12 @@
 <link href="assets/css/novedades.css" rel="stylesheet" > 
 <main>
-
+    <?php if (session()->getFlashdata('msg')): ?>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <?= session()->getFlashdata('msg') ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+        </div>
+    <?php endif; ?>
+    
         <div id="carouselExampleDark" class="carousel carousel-dark slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

@@ -94,16 +94,33 @@ class UsuarioController extends Controller {
     }
 
     public function borrar($id)
-    {
+{
     $model = new Usuarios_model();
-    $model->update($id, ['baja' => 'SI']);
 
-    return redirect()->to('/crud-usuarios')->with('success', 'Usuario dado de baja.');
+    // Se obtienen todos los usuarios activos con perfil admin
+    $admins = $model->where('perfil_id', 1)
+                    ->where('baja', 'NO')
+                    ->findAll();
+
+    $usuario = $model->where('id', $id)->first();             
+    // Se verifica si el usuario a borrar es el admin con perfil_ID 1
+    if ($usuario && $usuario['perfil_id'] == 1 && $usuario['baja'] == 'NO') {
+        if (count($admins) > 1) {
+            // Si hay más de un admin activo, se puede dar de baja
+            $model->update($id, ['baja' => 'SI']);
+            return redirect()->to('/crud-usuarios')->with('success', 'Administrador dado de baja.');
+        } else {
+            // Solo queda un admin, no se puede borrar
+            return redirect()->to('/crud-usuarios')->with('error', 'No se puede dar de baja al único administrador.');
+        }
+    }else{
+        $model->update($id, ['baja' => 'SI']);
     }
-
-
     
 
+   
+    return redirect()->to('/crud-usuarios')->with('success', 'Usuario dado de baja.');
+}
 
 }
 
