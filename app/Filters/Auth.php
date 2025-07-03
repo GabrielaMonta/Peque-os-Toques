@@ -29,8 +29,8 @@ class Auth implements FilterInterface
         if (!$usuario || $usuario['baja'] === 'SI') {
             
             return redirect()->to('/')
-                            ->with('msg', 'Tu cuenta fue dada de baja. Contactá con un administrador.')
-                            ->with('showLoginModal', true);
+                            ->with('msg', 'Tu cuenta fue dada de baja. Contactá con un administrador.');
+                            
             $session->destroy(); // Cerramos sesión
         }
 

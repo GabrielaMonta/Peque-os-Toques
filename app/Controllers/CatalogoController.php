@@ -79,7 +79,7 @@ class CatalogoController extends BaseController
         }
 
         // Paginacion
-       $data['productos'] = $query->paginate(15, 'productos');
+        $data['productos'] = $query->paginate(15, 'productos');
         $data['pager'] = $query->pager;
 
         // Obtener los tipos disponibles según la categoría
